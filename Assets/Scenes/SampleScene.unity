@@ -2227,6 +2227,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6629561452925704104}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1714549923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714549922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea1db36131593e4eb7fbd5e81c0c8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  isMoveUp: 0
+  isMoveDown: 0
+  isMoveRight: 0
+  isMoveLeft: 0
 --- !u!50 &1714549926
 Rigidbody2D:
   serializedVersion: 4
@@ -2247,7 +2264,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1714549930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30138,7 +30155,7 @@ PrefabInstance:
     - target: {fileID: 5728418134651625004, guid: 7e18849cd3238224e8aa4fc03fb1d780,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e18849cd3238224e8aa4fc03fb1d780, type: 3}
