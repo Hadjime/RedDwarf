@@ -5,15 +5,15 @@ using UnityEngine;
 public class Moving_2 : MonoBehaviour
 {
     [SerializeField]
-    float moveSpeed = 5;
+    private float moveSpeed = 5;
     [SerializeField]
-    bool isMoveUp = false;
+    private bool isMoveUp = false;
     [SerializeField]
-    bool isMoveDown = false;
+    private bool isMoveDown = false;
     [SerializeField]
-    bool isMoveRight = false;
+    private bool isMoveRight = false;
     [SerializeField]
-    bool isMoveLeft = false;
+    private bool isMoveLeft = false;
 
     Rigidbody2D rb;
     Vector2 movement;
@@ -25,8 +25,18 @@ public class Moving_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetAxisRaw("Horizontal") != 0 )
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = 0;
+        }
+        if (Input.GetAxisRaw("Vertical") != 0)
+        {
+            movement.y = Input.GetAxisRaw("Vertical");
+            movement.x = 0;
+        }
+        /*movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");*/
     }
     private void FixedUpdate()
     {
