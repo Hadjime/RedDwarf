@@ -25,21 +25,30 @@ public class Moving_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0 )
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        if (horizontal > 0 )
         {
-            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.x = horizontal;
             movement.y = 0;
+            rb.rotation = 0;
         }
-        if (Input.GetAxisRaw("Vertical") != 0)
+        if (horizontal < 0)
         {
-            movement.y = Input.GetAxisRaw("Vertical");
-            movement.x = 0;
+            movement.x = horizontal;
+            movement.y = 0;
+            rb.rotation = 180;
         }
-        /*movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");*/
+        if (vertical != 0)
+        {
+            movement.y = vertical;
+            movement.x = 0;
+            rb.rotation = 90 * vertical;
+        }
     }
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        
     }
 }
