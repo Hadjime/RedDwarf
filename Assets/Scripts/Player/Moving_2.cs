@@ -6,14 +6,14 @@ public class Moving_2 : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed = 5;
-    [SerializeField]
+    /*[SerializeField]
     private bool isMoveUp = false;
     [SerializeField]
     private bool isMoveDown = false;
     [SerializeField]
     private bool isMoveRight = false;
     [SerializeField]
-    private bool isMoveLeft = false;
+    private bool isMoveLeft = false;*/
 
     Rigidbody2D rb;
     Vector2 movement;
