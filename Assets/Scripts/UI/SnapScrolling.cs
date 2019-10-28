@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SnapScrollingVertical : MonoBehaviour
+public class SnapScrolling : MonoBehaviour
 {
     [Header("Controllers")]
     [Range(0, 500)]     public int panOffset;
@@ -55,10 +55,13 @@ public class SnapScrollingVertical : MonoBehaviour
     {
         //OldVariantScroll();
         //MyVariantScrollHorizontal();
-        MyVariantScrollAxisVertical();
+        ScrollAxisVertical();
     }
-
-    private void MyVariantScrollAxisVertical()
+    public int GetSelectedCardID()
+    {
+        return selectedCardID;
+    }
+    private void ScrollAxisVertical()
     {
         //if (!isScrolling)   scrollRect.inertia = false;
 
@@ -86,7 +89,7 @@ public class SnapScrollingVertical : MonoBehaviour
         contentRect.anchoredPosition = contentVector;
     }
 
-    private void MyVariantScrollHorizontal()
+    private void ScrollAxisHorizontal()
     {
         //if (!isScrolling)   scrollRect.inertia = false;
 
