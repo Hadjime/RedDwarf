@@ -15,15 +15,15 @@ public class Moving_2 : MonoBehaviour
     [SerializeField]
     private bool isMoveLeft = false;*/
 
-    Rigidbody2D rb;
-    Vector2 movement;
+    private Rigidbody2D rb;
+    private Vector2 movement;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -48,7 +48,7 @@ public class Moving_2 : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
         
     }
 }

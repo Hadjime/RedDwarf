@@ -1,15 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Scriptable Object/New Inventory", order = 51)]
 public class Inventory : ScriptableObject
 {
     public string namePlayer;
-    public int amountMoney;
+    [SerializeField]
+    private int amountHp;
+    public int AmountHp
+    {
+        get => amountHp;
+        set
+        {
+            amountHp = value <= 0 ? 0 : value;
+            EventManager.TriggerEvent("HPChange");
+        }
+    }
+
+    [SerializeField]
+    private int amountMoney;
+    public int AmountMoney
+    {
+        get => amountMoney;
+        set
+        {
+            amountMoney = value;
+            EventManager.TriggerEvent("MoneyChange");
+        }
+    }
     public int amountPickAxe;
     public List<InventoryItem> items;
-    
+
+    public void ApplyDamage(int damage)
+    {
+        AmountHp -= damage;
+    }
 }
 
 [System.Serializable]
