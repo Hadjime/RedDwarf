@@ -1,0 +1,3 @@
+﻿Title = Привет \n Английский // Description
+Weapon shop = Оружейный \n магазин // Description
+Player = Игрок // Description

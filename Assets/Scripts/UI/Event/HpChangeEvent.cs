@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,24 +10,49 @@ namespace UI.Event
     {
         public Inventory inventory;
         public Image bar;
+
+        [SerializeField] private float updateSpeedSeconds = 0.2f;
         private void Awake()
         {
-            HpChange();
+            inventory.AmountHp = 100;
+            //HpChange();
+            HpChangePct();
         }
 
         private void OnEnable()
         {
-            EventManager.StartListening("HPChange", HpChange);
+            //EventManager.StartListening("HPChange", HpChange);
+            EventManager.StartListening("HPChange", HpChangePct);
         }
 
         private void OnDisable()
         {
-            EventManager.StopListening("HPChange", HpChange);
+            //EventManager.StopListening("HPChange", HpChange);
+            EventManager.StopListening("HPChange", HpChangePct);
         }
 
         private void HpChange()
         {
             bar.fillAmount = inventory.AmountHp / 100f;
+        }
+        private void HpChangePct()
+        {
+            StartCoroutine(ChangeToPct(inventory.AmountHp / 100f));
+        }
+
+        private IEnumerator ChangeToPct(float pct)
+        {
+            float preChangePct = bar.fillAmount;
+            float elapsed = 0f;
+
+            while (elapsed < updateSpeedSeconds)
+            {
+                elapsed += Time.deltaTime;
+                bar.fillAmount = Mathf.Lerp(preChangePct, pct, elapsed / updateSpeedSeconds);
+                yield return null;
+            }
+
+            bar.fillAmount = pct;
         }
     }
 }

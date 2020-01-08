@@ -1,0 +1,3 @@
+﻿Title = Hello \n English // Description
+Weapon shop = Weapon \n shop // Description
+Player = Player // Description

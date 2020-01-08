@@ -37,5 +37,9 @@ public class ShopManager : MonoBehaviour
         else Debug.Log("Not item");
     }
 
+    public void ModifyHealth(float amount)
+    {
+        
+    }
 
 }

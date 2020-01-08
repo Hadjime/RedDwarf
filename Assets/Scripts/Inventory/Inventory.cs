@@ -30,7 +30,16 @@ public class Inventory : ScriptableObject
             EventManager.TriggerEvent("MoneyChange");
         }
     }
-    public int amountPickAxe;
+    private int amountPickAxe;
+    public int AmountPickAxe
+    {
+        get => amountPickAxe;
+        set
+        {
+            amountPickAxe = value;
+            EventManager.TriggerEvent("PickAxeChange");
+        }
+    }
     public List<InventoryItem> items;
 
     public void ApplyDamage(int damage)

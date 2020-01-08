@@ -385,7 +385,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 542356025077908117}
   m_HandleRect: {fileID: 542356025077908118}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -428,7 +428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 376.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &542356024966732587
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
-  prefab: {fileID: 265165763639172309, guid: 7c4a30812db50764bb31c9be8aed63a7, type: 3}
+  prefab: {fileID: 265165763639172309, guid: 52a01e370b0409748bef550d3878c08e, type: 3}
   content: {fileID: 542356024966732580}
 --- !u!114 &542356024966732584
 MonoBehaviour:
@@ -462,7 +462,7 @@ MonoBehaviour:
   returnSpeed: 15
   scaleOffset: 8
   scaleSpeed: 20
-  panPrefab: {fileID: 7024531085133631270, guid: 7c4a30812db50764bb31c9be8aed63a7,
+  panPrefab: {fileID: 7024531085133631270, guid: 52a01e370b0409748bef550d3878c08e,
     type: 3}
   scrollRect: {fileID: 542356025397554422}
 --- !u!114 &542356024966732585
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 0.19607843}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

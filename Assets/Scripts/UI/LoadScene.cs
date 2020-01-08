@@ -1,15 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-public class LoadScene : MonoBehaviour
+
+namespace UI
 {
-    [SerializeField]    private string sceneName;
-    // Start is called before the first frame update
-    public void Load(string name)
+    public class LoadScene : MonoBehaviour
     {
-        SceneManager.LoadScene(name);
+        public void Load(string nameScene)
+        {
+            
+            SceneManager.LoadScene(nameScene);
+        }
+
+
     }
-
-
 }
