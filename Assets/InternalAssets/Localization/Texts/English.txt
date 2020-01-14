@@ -1,4 +1,4 @@
-﻿TitleInSceneMenu = "Красный карлик"
+﻿TitleInSceneMenu = "Red Dwarf"
 Weapon shop = Оружейный \n магазин 
 Player = Игрок
 Title2 = Привет \n Английский

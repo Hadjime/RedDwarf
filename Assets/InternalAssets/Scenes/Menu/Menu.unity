@@ -201,7 +201,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &119506458
 GameObject:
@@ -269,6 +269,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &121436555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 121436556}
+  - component: {fileID: 121436557}
+  m_Layer: 0
+  m_Name: LeanLocalization
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &121436556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121436555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1886880742}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &121436557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121436555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultLanguage: 
+  DetectLanguage: 1
+  SaveLanguage: 1
+  languages:
+  - name: Russian
+    cultures:
+    - ru
+    - ru-RU
+  - name: English
+    cultures:
+    - en
+    - en-GB
+    - en-US
+    - en-AU
+    - en-CA
+    - en-NZ
+    - en-IE
+    - en-ZA
+    - en-JM
+    - en-en029
+    - en-BZ
+    - en-BZ
+    - en-TT
+    - en-ZW
+    - en-PH
+  prefabs: []
 --- !u!1 &324266022
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +422,7 @@ GameObject:
   - component: {fileID: 393715082}
   - component: {fileID: 393715084}
   - component: {fileID: 393715083}
+  - component: {fileID: 393715085}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -377,8 +447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1055.6, y: 79}
+  m_AnchoredPosition: {x: 0, y: -52}
+  m_SizeDelta: {x: 1055.6, y: 138.1}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &393715083
 MonoBehaviour:
@@ -444,7 +514,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -465,7 +535,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -262.31183, w: 0}
   m_textInfo:
     textComponent: {fileID: 393715083}
     characterCount: 11
@@ -499,6 +569,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393715081}
   m_CullTransparentMesh: 0
+--- !u!114 &393715085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393715081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14cd65242977e4198a4c25a2072917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: TitleInSceneMenu
+  FallbackText: '"Red Dwarf"'
 --- !u!1 &552601909
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +614,134 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &621165157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621165158}
+  m_Layer: 0
+  m_Name: '----- UI -----'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621165158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621165157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 191.62062, y: -23.513788, z: -137.22423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &930162111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930162112}
+  - component: {fileID: 930162113}
+  m_Layer: 0
+  m_Name: LeanLanguageCSV (English)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &930162112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930162111}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1233778, y: 0.08338618, z: -90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1886880742}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &930162113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930162111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086ae75064fca9f46b315403da7f5d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 4900000, guid: 8f5157cf11430f346b42f23f3ee587ad, type: 3}
+  Language: English
+  Separator: ' = '
+  NewLine: \n
+  Comment: ' // '
+  Cache: 0
+  entries:
+  - Name: TitleInSceneMenu
+    Text: '"Red Dwarf"'
+  - Name: Weapon shop
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title2
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop2
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player2
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title3
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop3
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player3
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title4
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop4
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player4
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title5
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop5
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player5
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title6
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop6
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player6
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title7
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop7
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player7
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title8
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop8
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player8
+    Text: "\u0418\u0433\u0440\u043E\u043A"
 --- !u!1 &1165150645
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,13 +837,43 @@ RectTransform:
   - {fileID: 393715082}
   - {fileID: 1767081262}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1204525474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204525475}
+  m_Layer: 0
+  m_Name: '----- Systems -----'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1204525475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204525474}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 191.62062, y: -23.513788, z: -137.22423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1226867575
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,7 +1156,7 @@ GameObject:
   - component: {fileID: 1594067062}
   - component: {fileID: 1594067061}
   m_Layer: 5
-  m_Name: Cave
+  m_Name: CaveImg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,3 +1346,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767081261}
   m_CullTransparentMesh: 1
+--- !u!1 &1886880741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1886880742}
+  m_Layer: 0
+  m_Name: Localizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1886880742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886880741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1233778, y: -0.08338618, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 121436556}
+  - {fileID: 930162112}
+  - {fileID: 1958905841}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1958905840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1958905841}
+  - component: {fileID: 1958905842}
+  m_Layer: 0
+  m_Name: LeanLanguageCSV (Russia)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1958905841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958905840}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1233778, y: 0.08338618, z: -90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1886880742}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958905842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958905840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086ae75064fca9f46b315403da7f5d20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 4900000, guid: 4694355e37c3166418760386bd9d17c4, type: 3}
+  Language: Russian
+  Separator: ' = '
+  NewLine: \n
+  Comment: ' // '
+  Cache: 0
+  entries:
+  - Name: TitleInSceneMenu
+    Text: "\"\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u043A\u0430\u0440\u043B\u0438\u043A\""
+  - Name: Weapon shop
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title2
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop2
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player2
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title3
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop3
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player3
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title4
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop4
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player4
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title5
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop5
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player5
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title6
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop6
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player6
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title7
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop7
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player7
+    Text: "\u0418\u0433\u0440\u043E\u043A"
+  - Name: Title8
+    Text: "\u041F\u0440\u0438\u0432\u0435\u0442 \r\n \u0410\u043D\u0433\u043B\u0438\u0439\u0441\u043A\u0438\u0439"
+  - Name: Weapon shop8
+    Text: "\u041E\u0440\u0443\u0436\u0435\u0439\u043D\u044B\u0439 \r\n \u043C\u0430\u0433\u0430\u0437\u0438\u043D"
+  - Name: Player8
+    Text: "\u0418\u0433\u0440\u043E\u043A"
