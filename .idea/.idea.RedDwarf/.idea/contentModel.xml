@@ -24,6 +24,11 @@
             <e p="AiryUICustomAnimationElement.cs" t="Include" />
           </e>
         </e>
+        <e p="BayatGames" t="Include">
+          <e p="Free Platform Game Assets" t="Include">
+            <e p="Readme.txt" t="Include" />
+          </e>
+        </e>
         <e p="Lean" t="Include">
           <e p="Common" t="Include">
             <e p="Examples" t="Include">
@@ -51,6 +56,8 @@
               <e p="Texts" t="Include">
                 <e p="English.txt" t="Include" />
                 <e p="Japanese.txt" t="Include" />
+                <e p="Russian.txt" t="Include" />
+                <e p="Russian_2.txt" t="Include" />
                 <e p="Spanish.txt" t="Include" />
               </e>
             </e>
