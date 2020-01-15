@@ -102,10 +102,10 @@
           <e p="Localization" t="Include">
             <e p="Examples" t="Include">
               <e p="Texts" t="Include">
-                <e p="English.txt" t="Include" />
-                <e p="Japanese.txt" t="Include" />
-                <e p="Russian.txt" t="Include" />
-                <e p="Spanish.txt" t="Include" />
+                <e p="English_examples.txt" t="Include" />
+                <e p="Japanese_examples.txt" t="Include" />
+                <e p="Russian_examples.txt" t="Include" />
+                <e p="Spanish_examples.txt" t="Include" />
               </e>
             </e>
             <e p="Scripts" t="Include">

@@ -25,15 +25,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MonsterEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLocalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Common/Scripts/LeanInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78AFCDD7-A608-4612-8C49-45F03EB135B8/4b/91cbea90/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MonsterEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/LoadScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextFont.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLanguageCSV.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -119,6 +119,7 @@
       <workItem from="1578474798771" duration="7989000" />
       <workItem from="1578813124832" duration="3368000" />
       <workItem from="1579016440340" duration="2277000" />
+      <workItem from="1579089333999" duration="1199000" />
     </task>
     <servers />
   </component>

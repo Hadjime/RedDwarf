@@ -568,6 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
   bar: {fileID: 8689325428992259156}
+  updateSpeedSeconds: 0.2
 --- !u!1 &8689325429317832453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1052,7 @@ GameObject:
   - component: {fileID: 8689325429580223219}
   - component: {fileID: 8689325429580223229}
   - component: {fileID: 8689325429580223228}
+  - component: {fileID: 6407625663139124413}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1074,8 +1076,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31.37, y: 0}
-  m_SizeDelta: {x: 140, y: 50}
+  m_AnchoredPosition: {x: -32, y: -0.99749}
+  m_SizeDelta: {x: 188, y: 38.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8689325429580223229
 CanvasRenderer:
@@ -1103,7 +1105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HEALTH
+  m_text: Health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 95258be9196417142bbcb1374a0f50a3, type: 2}
   m_sharedMaterial: {fileID: -8641096829806265508, guid: 95258be9196417142bbcb1374a0f50a3,
@@ -1132,14 +1134,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 26
+  m_fontSize: 31.9
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1196,6 +1198,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6407625663139124413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8689325429580223218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14cd65242977e4198a4c25a2072917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Health
+  FallbackText: "\u041D\u0435\u0442\u0443 \u0442\u0435\u043A\u0442\u0441\u0430"
 --- !u!1 &8689325430064914466
 GameObject:
   m_ObjectHideFlags: 0
