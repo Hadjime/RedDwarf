@@ -30,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLocalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Common/Scripts/LeanInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78AFCDD7-A608-4612-8C49-45F03EB135B8/4b/91cbea90/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/LevelLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/LoadScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextFont.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,6 +58,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/LoadScene.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MonsterEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/LevelLoader.cs" />
       </list>
     </option>
   </component>
@@ -120,6 +122,7 @@
       <workItem from="1578813124832" duration="3368000" />
       <workItem from="1579016440340" duration="2277000" />
       <workItem from="1579089333999" duration="1199000" />
+      <workItem from="1579183511746" duration="1444000" />
     </task>
     <servers />
   </component>
@@ -158,10 +161,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578817035706" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1578324114977">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1579184200952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1578324114977" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579184200952" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578309964584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
