@@ -65,7 +65,6 @@
                 <e p="PickAxeChangeEvent.cs" t="Include" />
               </e>
               <e p="LoadScene.cs" t="Include" />
-              <e p="LoadSceneManager.cs" t="Include" />
               <e p="ShopManager.cs" t="Include" />
               <e p="SnapScrolling.cs" t="Include" />
               <e p="Test" t="Include">

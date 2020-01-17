@@ -20,3 +20,6 @@ UI/Weapon/SmallPickAxe = Small Pick Axe
 UI/Weapon/BigPickAxe = Big Pick Axe
 UI/Shop/Price = Price:
 UI/Shop/Amount = Amount:
+UI/Menu/NewGame = New Game
+UI/Menu/Settings = Settings
+UI/Menu/Return = Return

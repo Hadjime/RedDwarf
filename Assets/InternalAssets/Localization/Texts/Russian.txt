@@ -20,3 +20,6 @@ UI/Weapon/SmallPickAxe = Малая кирка
 UI/Weapon/BigPickAxe = Большая кирка
 UI/Shop/Price = Цена:
 UI/Shop/Amount = Кол-во:
+UI/Menu/NewGame = Новая игра
+UI/Menu/Settings = Настройки
+UI/Menu/Return = Назад
