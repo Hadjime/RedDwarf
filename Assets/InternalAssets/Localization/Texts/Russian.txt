@@ -23,3 +23,5 @@ UI/Shop/Amount = Кол-во:
 UI/Menu/NewGame = Новая игра
 UI/Menu/Settings = Настройки
 UI/Menu/Return = Назад
+UI/Menu/Rus = Рус.
+UI/Menu/Eng = Анг.

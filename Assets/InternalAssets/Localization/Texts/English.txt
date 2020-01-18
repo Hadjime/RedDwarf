@@ -23,3 +23,5 @@ UI/Shop/Amount = Amount:
 UI/Menu/NewGame = New Game
 UI/Menu/Settings = Settings
 UI/Menu/Return = Return
+UI/Menu/Rus = Rus
+UI/Menu/Eng = Eng
