@@ -76,7 +76,6 @@
           <e p="Scripts" t="Include">
             <e p="_temp" t="Include">
               <e p="CheckDropdownTextMeshPro.cs" t="Include" />
-              <e p="LevelLoader.cs" t="Include" />
               <e p="MonsterEditor.cs" t="Include" />
               <e p="MoveMenu.cs" t="Include" />
             </e>
@@ -91,13 +90,13 @@
               <e p="Moving_2.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
+              <e p="BtnManager.cs" t="Include" />
               <e p="ChangeLanguage.cs" t="Include" />
               <e p="Event" t="Include">
                 <e p="HPChangeEvent.cs" t="Include" />
                 <e p="MoneyChangeEvent.cs" t="Include" />
                 <e p="PickAxeChangeEvent.cs" t="Include" />
               </e>
-              <e p="LoadScene.cs" t="Include" />
               <e p="ShopManager.cs" t="Include" />
               <e p="SnapScrolling.cs" t="Include" />
               <e p="Test" t="Include">
