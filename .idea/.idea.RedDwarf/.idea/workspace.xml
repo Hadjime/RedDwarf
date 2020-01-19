@@ -76,10 +76,10 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CheckDropdownTextMeshPro.cs" />
         <option value="$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLocalization.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ChangeLanguage.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/LevelLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" />
       </list>
     </option>
   </component>
@@ -149,7 +149,8 @@
       <workItem from="1579269207293" duration="410000" />
       <workItem from="1579323177498" duration="634000" />
       <workItem from="1579335301389" duration="12274000" />
-      <workItem from="1579413622395" duration="3939000" />
+      <workItem from="1579413622395" duration="4366000" />
+      <workItem from="1579433507221" duration="3559000" />
     </task>
     <servers />
   </component>

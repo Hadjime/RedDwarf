@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class BtnManager : MonoBehaviour
 {
-    [Header("Загрузка уровня с переходом")]
+    [Header("---Загрузка уровня с переходом---")]
     public Animator transitionAnimator;
     public float transitionTime = 1f;
     
