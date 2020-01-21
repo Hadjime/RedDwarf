@@ -25,3 +25,4 @@ UI/Menu/Settings = Настройки
 UI/Menu/Return = Назад
 UI/Menu/Rus = Рус.
 UI/Menu/Eng = Анг.
+UI/Menu/Language = Язык:
