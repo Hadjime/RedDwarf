@@ -43,7 +43,8 @@ public class DownloadItemInShop : MonoBehaviour
         itemIcon.GetComponent<Image>().sprite = item.icon;
 
         Transform itemPrice = viewGameObject.transform.Find("ItemPrice").transform.Find("Text");
-        itemPrice.GetComponent<TextMeshProUGUI>().text = item.price.ToString() + " $";
+        //itemPrice.GetComponent<TextMeshProUGUI>().text = item.price.ToString() + " $";  //$ после цифр
+        itemPrice.GetComponent<TextMeshProUGUI>().text =  "$" + item.price.ToString();    //$ перед цифр
 
         Transform itemAmount = viewGameObject.transform.Find("ItemAmount").transform.Find("Text");
         itemAmount.GetComponent<TextMeshProUGUI>().text = item.amount.ToString();
