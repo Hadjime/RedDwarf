@@ -27,10 +27,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HpChangeEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CheckDropdownTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Common/Scripts/LeanInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/47B3FEC5-F420-47E6-A737-8D0F615D9F0C/a9/fdebd903/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MonsterEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F5AF4D04-EB93-4AA3-96DB-58DDF97DD06C/2c/1d103480/InspectorElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Follow.cs" root0="FORCE_HIGHLIGHTING" />
@@ -86,6 +88,9 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/CkickSelectedController.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" />
       </list>
     </option>
   </component>
@@ -159,6 +164,7 @@
       <workItem from="1579433507221" duration="3559000" />
       <workItem from="1579525057829" duration="977000" />
       <workItem from="1579702325861" duration="1978000" />
+      <workItem from="1579784482630" duration="2823000" />
     </task>
     <servers />
   </component>
@@ -249,10 +255,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1171" y="248" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578323251015" />
-    <state x="461" y="163" key="SettingsEditor" timestamp="1578394296151">
+    <state x="461" y="163" key="SettingsEditor" timestamp="1579784868307">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1578394296151" />
+    <state x="461" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579784868307" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1579340188981">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
