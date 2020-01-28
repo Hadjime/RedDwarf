@@ -94,7 +94,8 @@
               <e p="ChangeLanguage.cs" t="Include" />
               <e p="ClickSelectController.cs" t="Include" />
               <e p="Event" t="Include">
-                <e p="HPChangeEvent.cs" t="Include" />
+                <e p="HealthPanel.cs" t="Include" />
+                <e p="HpChangeEvent1.cs" t="Include" />
                 <e p="MoneyChangeEvent.cs" t="Include" />
                 <e p="PickAxeChangeEvent.cs" t="Include" />
               </e>

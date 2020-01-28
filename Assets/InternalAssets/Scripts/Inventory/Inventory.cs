@@ -15,7 +15,7 @@ public class Inventory : ScriptableObject
         set
         {
             amountHp = value <= 0 ? 0 : value;
-            EventManager.TriggerEvent("HPChange");
+            EventManager.TriggerEvent("OnHPChange");
         }
     }
 
@@ -27,7 +27,7 @@ public class Inventory : ScriptableObject
         set
         {
             amountMoney = value;
-            EventManager.TriggerEvent("MoneyChange");
+            EventManager.TriggerEvent("OnMoneyChange");
         }
     }
     private int amountPickAxe;
@@ -37,7 +37,7 @@ public class Inventory : ScriptableObject
         set
         {
             amountPickAxe = value;
-            EventManager.TriggerEvent("PickAxeChange");
+            EventManager.TriggerEvent("OnPickAxeChange");
         }
     }
     public List<InventoryItem> items;

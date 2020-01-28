@@ -16,26 +16,26 @@ namespace UI.Event
         {
             inventory.AmountHp = 100;
             //HpChange();
-            HpChangePct();
+            HandleHpChangePct();
         }
 
         private void OnEnable()
         {
             //EventManager.StartListening("HPChange", HpChange);
-            EventManager.StartListening("HPChange", HpChangePct);
+            EventManager.StartListening("OnHPChange", HandleHpChangePct);
         }
 
         private void OnDisable()
         {
             //EventManager.StopListening("HPChange", HpChange);
-            EventManager.StopListening("HPChange", HpChangePct);
+            EventManager.StopListening("OnHPChange", HandleHpChangePct);
         }
 
         private void HpChange()
         {
             bar.fillAmount = inventory.AmountHp / 100f;
         }
-        private void HpChangePct()
+        private void HandleHpChangePct()
         {
             StartCoroutine(ChangeToPct(inventory.AmountHp / 100f));
         }

@@ -17,15 +17,15 @@ namespace UI.Event
 
         private void OnEnable()
         {
-            EventManager.StartListening("MoneyChange", MoneyChange);
+            EventManager.StartListening("OnMoneyChange", HandleMoneyChange);
         }
 
         private void OnDisable()
         {
-            EventManager.StopListening("MoneyChange", MoneyChange);
+            EventManager.StopListening("OnMoneyChange", HandleMoneyChange);
         }
 
-        private void MoneyChange()
+        private void HandleMoneyChange()
         {
             moneyTextMeshProUgui.text = inventory.AmountMoney.ToString();
         }

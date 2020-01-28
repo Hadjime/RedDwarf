@@ -9,10 +9,18 @@ public class UpdateItemInShop : MonoBehaviour
     public RectTransform content;
 
     private List<GameObject> items;
+
+    private DownloadItemInShop downloadItemInShop;
+
     // Update is called once per frame
+    private void Start()
+    {
+        downloadItemInShop = content.GetComponent<DownloadItemInShop>();
+    }
+
     void Update()
     {
-        items = content.GetComponent<DownloadItemInShop>().GetWeaponCards();
+        items = downloadItemInShop.GetWeaponCards();
     }
     public void UpdateItemsInShop()
     {

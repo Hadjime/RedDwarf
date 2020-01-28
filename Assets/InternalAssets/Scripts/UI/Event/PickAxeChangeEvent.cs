@@ -17,15 +17,15 @@ namespace UI.Event
 
         private void OnEnable()
         {
-            EventManager.StartListening("PickAxeChange", PickAxeChange);
+            EventManager.StartListening("OnPickAxeChange", HandlePickAxeChange);
         }
 
         private void OnDisable()
         {
-            EventManager.StopListening("PickAxeChange", PickAxeChange);
+            EventManager.StopListening("OnPickAxeChange", HandlePickAxeChange);
         }
 
-        private void PickAxeChange()
+        private void HandlePickAxeChange()
         {
             pickAxeTextMeshProUgui.text = inventory.AmountPickAxe.ToString();
         }
