@@ -1,41 +1,42 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using Lean.Localization;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 
-public class BtnManager : MonoBehaviour
+namespace InternalAssets.Scripts.UI
 {
-    [Header("---Загрузка уровня с переходом---")]
-    public Animator transitionAnimator;
-    public float transitionTime = 1f;
-    
-    public void LoadNextLevelWithTransition(string nameScene)
+    public class BtnManager : MonoBehaviour
     {
-        StartCoroutine(LoadLevel(nameScene));
-    }
+        [Header("---Загрузка уровня с переходом---")]
+        public Animator transitionAnimator;
+        public float transitionTime = 1f;
     
-    
-    public void SetLanguageIndex(int indexLanguage)
-    {
-        switch (indexLanguage)
+        public void LoadNextLevelWithTransition(string nameScene)
         {
-            case 0:
-                LeanLocalization.CurrentLanguage = "Russian";
-                break;
-            case 1:
-                LeanLocalization.CurrentLanguage = "English";
-                break;
-            default:
-                break;
+            StartCoroutine(LoadLevel(nameScene));
         }
-    }
     
-    IEnumerator LoadLevel(string nameScene)
-    {
-        transitionAnimator.SetTrigger("Start");
-        yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(nameScene);
+    
+        public void SetLanguageIndex(int indexLanguage)
+        {
+            switch (indexLanguage)
+            {
+                case 0:
+                    LeanLocalization.CurrentLanguage = "Russian";
+                    break;
+                case 1:
+                    LeanLocalization.CurrentLanguage = "English";
+                    break;
+                default:
+                    break;
+            }
+        }
+    
+        IEnumerator LoadLevel(string nameScene)
+        {
+            transitionAnimator.SetTrigger("Start");
+            yield return new WaitForSeconds(transitionTime);
+            SceneManager.LoadScene(nameScene);
+        }
     }
 }

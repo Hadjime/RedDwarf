@@ -1,18 +1,19 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace UI.Event
+namespace InternalAssets.Scripts.UI.Event
 {
-    [RequireComponent(typeof(TextMeshProUGUI))]
-    public class PickAxeChangeEvent : MonoBehaviour
+    //[RequireComponent(typeof(TextMeshProUGUI))]
+    public class PickAxePanel : MonoBehaviour
     {
         public Inventory inventory;
         
-        private TextMeshProUGUI pickAxeTextMeshProUgui;
+        public TextMeshProUGUI pickAxeTextMeshProUgui;
         private void Awake()
         {
-            pickAxeTextMeshProUgui = GetComponent<TextMeshProUGUI>();
-            pickAxeTextMeshProUgui.text = inventory.AmountPickAxe.ToString();
+            //pickAxeTextMeshProUgui = GetComponent<TextMeshProUGUI>();
+            //pickAxeTextMeshProUgui.text = inventory.AmountPickAxe.ToString();
+            HandlePickAxeChange();
         }
 
         private void OnEnable()

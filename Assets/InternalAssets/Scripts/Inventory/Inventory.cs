@@ -30,6 +30,7 @@ public class Inventory : ScriptableObject
             EventManager.TriggerEvent("OnMoneyChange");
         }
     }
+    [SerializeField]
     private int amountPickAxe;
     public int AmountPickAxe
     {
@@ -45,6 +46,15 @@ public class Inventory : ScriptableObject
     public void ApplyDamage(int damage)
     {
         AmountHp -= damage;
+    }
+    public void AddCoin(int coin)
+    {
+        AmountMoney += coin;
+    }
+
+    public void AddPickAxe(int number)
+    {
+        AmountPickAxe += number;
     }
 }
 

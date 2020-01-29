@@ -96,8 +96,8 @@
               <e p="Event" t="Include">
                 <e p="HealthPanel.cs" t="Include" />
                 <e p="HpChangeEvent1.cs" t="Include" />
-                <e p="MoneyChangeEvent.cs" t="Include" />
-                <e p="PickAxeChangeEvent.cs" t="Include" />
+                <e p="MoneyPanel.cs" t="Include" />
+                <e p="PickAxePanel.cs" t="Include" />
               </e>
               <e p="ShopManager.cs" t="Include" />
               <e p="SnapScrolling.cs" t="Include" />

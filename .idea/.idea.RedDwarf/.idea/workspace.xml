@@ -25,8 +25,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxeChangeEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyChangeEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CheckDropdownTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
@@ -43,7 +43,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A278EBD4-4AB0-472B-B8E6-38263E06CD61/0a/7060c394/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLanguageCSV.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLocalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/UGUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Example Assets/DragTarget.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,7 +51,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78AFCDD7-A608-4612-8C49-45F03EB135B8/4b/91cbea90/Int32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Basics.cs" root0="FORCE_HIGHLIGHTING" />
@@ -62,7 +60,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ChangeLanguage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -90,7 +87,6 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ChangeLanguage.cs" />
         <option value="$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/LevelLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/CkickSelectedController.cs" />
@@ -98,10 +94,13 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HpChangeEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyChangeEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxeChangeEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyChangeEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
       </list>
     </option>
@@ -178,6 +177,7 @@
       <workItem from="1579702325861" duration="1978000" />
       <workItem from="1579784482630" duration="2823000" />
       <workItem from="1580214160556" duration="5878000" />
+      <workItem from="1580303632843" duration="4358000" />
     </task>
     <servers />
   </component>
