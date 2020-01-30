@@ -29,6 +29,11 @@
             <e p="Readme.txt" t="Include" />
           </e>
         </e>
+        <e p="CircularScrollingList" t="Include">
+          <e p="ListBank.cs" t="Include" />
+          <e p="ListBox.cs" t="Include" />
+          <e p="ListPositionCtrl.cs" t="Include" />
+        </e>
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -78,6 +83,7 @@
               <e p="CheckDropdownTextMeshPro.cs" t="Include" />
               <e p="MonsterEditor.cs" t="Include" />
               <e p="MoveMenu.cs" t="Include" />
+              <e p="MyListBox.cs" t="Include" />
             </e>
             <e p="EventManager.cs" t="Include" />
             <e p="Inventory" t="Include">
