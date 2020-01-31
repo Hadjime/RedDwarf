@@ -81,6 +81,7 @@
           <e p="Scripts" t="Include">
             <e p="_temp" t="Include">
               <e p="CheckDropdownTextMeshPro.cs" t="Include" />
+              <e p="CuberController.cs" t="Include" />
               <e p="MonsterEditor.cs" t="Include" />
               <e p="MoveMenu.cs" t="Include" />
               <e p="MyListBox.cs" t="Include" />
