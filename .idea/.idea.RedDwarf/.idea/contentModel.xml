@@ -65,6 +65,10 @@
           <e p="UGUI.cs" t="Include" />
         </e>
         <e p="InternalAssets" t="Include">
+          <e p="InputSystem" t="Include">
+            <e p="CubeInput.cs" t="Include" />
+            <e p="InputSystem.cs" t="Include" />
+          </e>
           <e p="Localization" t="Include">
             <e p="Texts" t="Include">
               <e p="English.txt" t="Include" />
@@ -93,6 +97,7 @@
               <e p="PlayerInventory.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
+              <e p="MoveNewInputSystem.cs" t="Include" />
               <e p="Moving.cs" t="Include" />
               <e p="Moving_2.cs" t="Include" />
             </e>
