@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
+  pickAxeTextMeshProUgui: {fileID: 0}
 --- !u!1 &8689325428992259146
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda43f7ba55042879b2824f8457054f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
+  playerInventory: {fileID: 0}
+  textMeshProUgui: {fileID: 0}
 --- !u!1 &8689325429412043202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health
+  m_text: "\u041D\u0435\u0442\u0443 \u0442\u0435\u043A\u0442\u0441\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 95258be9196417142bbcb1374a0f50a3, type: 2}
   m_sharedMaterial: {fileID: -8641096829806265508, guid: 95258be9196417142bbcb1374a0f50a3,
@@ -1134,7 +1136,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 31.9
+  m_fontSize: 22.3
   m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1175,10 +1177,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8689325429580223228}
-    characterCount: 6
+    characterCount: 11
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1

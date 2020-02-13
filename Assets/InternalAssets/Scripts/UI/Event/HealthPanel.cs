@@ -21,13 +21,11 @@ namespace UI.Event
 
         private void OnEnable()
         {
-            //EventManager.StartListening("HPChange", HpChange);
             EventManager.StartListening("OnHPChange", HandleHpChangePct);
         }
 
         private void OnDisable()
         {
-            //EventManager.StopListening("HPChange", HpChange);
             EventManager.StopListening("OnHPChange", HandleHpChangePct);
         }
 

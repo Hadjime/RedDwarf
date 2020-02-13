@@ -111,6 +111,7 @@
                 <e p="MoneyPanel.cs" t="Include" />
                 <e p="PickAxePanel.cs" t="Include" />
               </e>
+              <e p="HealthBar.cs" t="Include" />
               <e p="ShopManager.cs" t="Include" />
               <e p="SnapScrolling.cs" t="Include" />
               <e p="Test" t="Include">

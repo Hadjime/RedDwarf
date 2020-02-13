@@ -33,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Common/Scripts/LeanInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scenes/TestScene/MoveTransformCashed.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/47B3FEC5-F420-47E6-A737-8D0F615D9F0C/a9/fdebd903/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CuberController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MonsterEditor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -103,17 +104,18 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HpChangeEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxeChangeEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyChangeEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
         <option value="$PROJECT_DIR$/Assets/CircularScrollingList/ListBox.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MyListBox.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CuberController.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
       </list>
     </option>
   </component>
@@ -196,6 +198,8 @@
       <workItem from="1580480642734" duration="1637000" />
       <workItem from="1580997449990" duration="1550000" />
       <workItem from="1581001031053" duration="350000" />
+      <workItem from="1581591204873" duration="1845000" />
+      <workItem from="1581594032822" duration="1347000" />
     </task>
     <servers />
   </component>

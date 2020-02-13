@@ -25,7 +25,8 @@ namespace InternalAssets.Scripts.UI
         {
             if (SceneManager.GetSceneByName("UIIndicators").isLoaded == false)
             {
-                SceneManager.LoadSceneAsync("UIIndicators", LoadSceneMode.Additive).completed += HandleSetActiveScene;
+                //SceneManager.LoadSceneAsync("UIIndicators", LoadSceneMode.Additive).completed += HandleSetActiveScene;
+                SceneManager.LoadSceneAsync("UIIndicators", LoadSceneMode.Additive);
             }
             else
             {
