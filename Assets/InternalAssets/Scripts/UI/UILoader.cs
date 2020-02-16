@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 namespace InternalAssets.Scripts.UI
 {
     public class UILoader : MonoBehaviour
     {
+        private Keyboard keyboard;
         private void Start()
         {
+            keyboard = Keyboard.current;
             LoadUIIndicators();
         }
 
@@ -15,7 +18,12 @@ namespace InternalAssets.Scripts.UI
         //</summary>
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F1))
+            /*if (Input.GetKeyDown(KeyCode.F1))
+            {
+                LoadUIIndicators();
+            }*/
+
+            if (keyboard.f1Key.wasPressedThisFrame)
             {
                 LoadUIIndicators();
             }
