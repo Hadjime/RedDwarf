@@ -97,6 +97,7 @@
               <e p="PlayerInventory.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
+              <e p="DestroyFogOfWar.cs" t="Include" />
               <e p="MoveNewInputSystem.cs" t="Include" />
               <e p="Moving.cs" t="Include" />
               <e p="Moving_2.cs" t="Include" />

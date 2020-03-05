@@ -56,6 +56,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/UGUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Follow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,6 +113,7 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" />
       </list>
     </option>
   </component>
@@ -200,6 +202,7 @@
       <workItem from="1581761425734" duration="921000" />
       <workItem from="1581762366960" duration="2882000" />
       <workItem from="1581825954995" duration="1416000" />
+      <workItem from="1583416481442" duration="2048000" />
     </task>
     <servers />
   </component>
