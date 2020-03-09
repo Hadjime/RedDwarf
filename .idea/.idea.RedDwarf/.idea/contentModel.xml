@@ -65,21 +65,18 @@
           <e p="UGUI.cs" t="Include" />
         </e>
         <e p="InternalAssets" t="Include">
+          <e p="Editors" t="Include">
+            <e p="Player" t="Include">
+              <e p="MoveNewInputSystemEditor.cs" t="Include" />
+            </e>
+          </e>
           <e p="InputSystem" t="Include">
-            <e p="CubeInput.cs" t="Include" />
             <e p="InputSystem.cs" t="Include" />
           </e>
           <e p="Localization" t="Include">
             <e p="Texts" t="Include">
               <e p="English.txt" t="Include" />
               <e p="Russian.txt" t="Include" />
-            </e>
-          </e>
-          <e p="Scenes" t="Include">
-            <e p="TestScene" t="Include">
-              <e p="GenerateObject.cs" t="Include" />
-              <e p="MoveTransformCashed.cs" t="Include" />
-              <e p="MoveTransformNorCash.cs" t="Include" />
             </e>
           </e>
           <e p="Scripts" t="Include">

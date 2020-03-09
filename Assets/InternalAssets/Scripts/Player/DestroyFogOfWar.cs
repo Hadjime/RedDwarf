@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class DestroyFogOfWar : MonoBehaviour
+namespace InternalAssets.Scripts.Player
 {
-    [SerializeField] private Grid grid;
-    [SerializeField] private Tilemap fogOfWar;
-    private void OnCollisionEnter2D(Collision2D other)
+    public class DestroyFogOfWar : MonoBehaviour
     {
-        foreach (var contact in other.contacts)
+        public Grid grid;
+        public Tilemap fogOfWar;
+        private void OnCollisionStay2D(Collision2D other)
         {
-            Vector3Int point = grid.WorldToCell(contact.point);
-            fogOfWar.SetTile(point, null);
+            foreach (var contact in other.contacts)
+            {
+                Vector3Int point = grid.WorldToCell(contact.point);
+                fogOfWar.SetTile(point, null);
+            }
         }
-    }
 
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        foreach (var contact in other.contacts)
+        private void Update()
         {
-            Vector3Int point = grid.WorldToCell(contact.point);
-            fogOfWar.SetTile(point, null);
+        
         }
     }
 }

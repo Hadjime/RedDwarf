@@ -1,21 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ClickSelectController : MonoBehaviour
+namespace InternalAssets.Scripts.UI
 {
-    [SerializeField] private Camera _camer;
-
-    // Update is called once per frame
-    void Update()
+    public class ClickSelectController : MonoBehaviour
     {
-        if (Input.GetButtonDown("Fire1"))
+        public Camera camer;
+
+        // Update is called once per frame
+        void Update()
         {
-            var ray = _camer.ScreenPointToRay(Input.mousePosition);
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
-            if (Physics.Raycast(ray, out var hitInfo))
+            if (Input.GetButtonDown("Fire1"))
             {
-                Debug.Log(hitInfo.transform.name);
+                var ray = camer.ScreenPointToRay(Input.mousePosition);
+                Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 1f);
+                if (Physics.Raycast(ray, out var hitInfo))
+                {
+                    Debug.Log(hitInfo.transform.name);
+                }
             }
         }
     }

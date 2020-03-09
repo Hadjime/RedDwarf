@@ -40,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CuberController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CheckDropdownTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/MoveNewInputSystemEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MyListBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Example Assets/DragTarget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving.cs" root0="FORCE_HIGHLIGHTING" />
@@ -49,6 +50,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/PlayerInventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/e4/9a0ad7c6/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Basics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -60,7 +62,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Follow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scenes/TestScene/MoveTransformCashed.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Airy UI/Scripts/AiryUIAnimatedElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ChangeLanguage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLanguageCSV.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
@@ -96,7 +98,6 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/CkickSelectedController.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HpChangeEvent.cs" />
@@ -110,10 +111,15 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MyListBox.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CuberController.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/customButton.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving_2.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/MoveNewInputSystemEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
       </list>
     </option>
   </component>
@@ -203,6 +209,10 @@
       <workItem from="1581762366960" duration="2882000" />
       <workItem from="1581825954995" duration="1416000" />
       <workItem from="1583416481442" duration="2048000" />
+      <workItem from="1583465622996" duration="624000" />
+      <workItem from="1583480839675" duration="5329000" />
+      <workItem from="1583562237557" duration="8678000" />
+      <workItem from="1583751715676" duration="3608000" />
     </task>
     <servers />
   </component>
@@ -309,10 +319,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1579340188981" />
-    <state x="521" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1580215444219">
+    <state x="521" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1583566431162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="521" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1580215444219" />
+    <state x="521" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1583566431162" />
     <state x="591" y="65" width="737" height="909" key="find.popup" timestamp="1580215428167">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -321,10 +331,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580389438029" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1579184200952">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1583565037519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579184200952" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583565037519" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578309964584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -426,11 +436,6 @@
         </breakpoint>
         <breakpoint type="DotNet Exception Breakpoints">
           <properties exception="UnityEditor.Scripting.ScriptCompilation.ExpressionNotValidException" isInternal="false" displayValue="ExpressionNotValidException" namespaceName="UnityEditor.Scripting.ScriptCompilation">
-            <option name="internal" value="false" />
-          </properties>
-        </breakpoint>
-        <breakpoint type="DotNet Exception Breakpoints">
-          <properties exception="UnityEditor.RestService.RestRequestException" isInternal="false" displayValue="RestRequestException" namespaceName="UnityEditor.RestService">
             <option name="internal" value="false" />
           </properties>
         </breakpoint>
@@ -1521,6 +1526,21 @@
         </breakpoint>
         <breakpoint type="DotNet Exception Breakpoints">
           <properties exception="UnityEditor.Android.CommandInvokationFailure" isInternal="false" displayValue="CommandInvokationFailure" namespaceName="UnityEditor.Android">
+            <option name="internal" value="false" />
+          </properties>
+        </breakpoint>
+        <breakpoint type="DotNet Exception Breakpoints">
+          <properties exception="UnityEditor.TestTools.TestRunner.TestRun.TestRunCanceledException" isInternal="false" displayValue="TestRunCanceledException" namespaceName="UnityEditor.TestTools.TestRunner.TestRun">
+            <option name="internal" value="false" />
+          </properties>
+        </breakpoint>
+        <breakpoint type="DotNet Exception Breakpoints">
+          <properties exception="UnityEngine.UIElements.UQueryExtensions.MissingVisualElementException" isInternal="false" displayValue="UQueryExtensions+MissingVisualElementException" namespaceName="UnityEngine.UIElements">
+            <option name="internal" value="false" />
+          </properties>
+        </breakpoint>
+        <breakpoint type="DotNet Exception Breakpoints">
+          <properties exception="UnityEngine.InputSystem.Layouts.InputControlLayout.LayoutNotFoundException" isInternal="false" displayValue="InputControlLayout+LayoutNotFoundException" namespaceName="UnityEngine.InputSystem.Layouts">
             <option name="internal" value="false" />
           </properties>
         </breakpoint>

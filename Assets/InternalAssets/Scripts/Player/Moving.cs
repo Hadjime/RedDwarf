@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
-public class Moving : MonoBehaviour
+﻿using UnityEngine;
+
+namespace InternalAssets.Scripts.Player
 {
-    public float speed;
+    public class Moving : MonoBehaviour
+    {
+        /*public float speed;
 
     [SerializeField]
     bool isUp;
@@ -60,5 +60,6 @@ public class Moving : MonoBehaviour
             moveVector = new Vector3(-1, 0, 0);
         }    
         controller.Move(moveVector * Time.deltaTime);
+    }*/
     }
 }

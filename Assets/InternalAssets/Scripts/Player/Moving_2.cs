@@ -1,19 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Moving_2 : MonoBehaviour
+namespace InternalAssets.Scripts.Player
 {
-    [SerializeField]
+    public class Moving_2 : MonoBehaviour
+    {
+        /*[SerializeField]
     private float moveSpeed = 5;
-    /*[SerializeField]
+    [SerializeField]
     private bool isMoveUp = false;
     [SerializeField]
     private bool isMoveDown = false;
     [SerializeField]
     private bool isMoveRight = false;
     [SerializeField]
-    private bool isMoveLeft = false;*/
+    private bool isMoveLeft = false;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -50,5 +50,6 @@ public class Moving_2 : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
         
+    }*/
     }
 }

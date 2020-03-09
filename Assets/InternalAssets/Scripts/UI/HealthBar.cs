@@ -7,9 +7,9 @@ namespace InternalAssets.Scripts.UI
     public class HealthBar : MonoBehaviour
     {
         public Inventory inventory;
-        [SerializeField] private Slider slider;
-        [SerializeField] private Image fill;
-        [SerializeField] private Gradient gradient;
+        public Slider slider;
+        public Image fill;
+        public Gradient gradient;
         private float updateSpeedSeconds = 0.2f;
 
         public void Start()
