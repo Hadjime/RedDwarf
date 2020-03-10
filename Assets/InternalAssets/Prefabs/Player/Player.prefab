@@ -247,6 +247,7 @@ MonoBehaviour:
   isDown: 0
   isLeft: 0
   isRight: 0
+  isMoving: 0
 --- !u!50 &1714549926
 Rigidbody2D:
   serializedVersion: 4
