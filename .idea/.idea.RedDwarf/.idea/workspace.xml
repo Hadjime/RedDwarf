@@ -25,50 +25,49 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Follow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ChangeLanguage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/MoveNewInputSystemEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/SnapScrolling.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/ILocalizationHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CircularScrollingList/ListBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CircularScrollingList/ListPositionCtrl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Airy UI/Scripts/AiryUIAnimatedElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMesh.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedText.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextFont.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdown.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLanguageCSV.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLocalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MonsterEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Common/Scripts/LeanInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CuberController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CheckDropdownTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/MoveNewInputSystemEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MyListBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Example Assets/DragTarget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving_2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextFont.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Common/Scripts/LeanInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/PlayerInventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F38C71C8-6AA6-4E29-9D4C-EA9FB7C715E1/e4/9a0ad7c6/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedDropdownMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Basics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/Behaviours/LeanLocalizedTextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/EventManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/ILocalizationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/UGUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Follow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Airy UI/Scripts/AiryUIAnimatedElement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ChangeLanguage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLanguageCSV.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@2.0.1/Scripts/Runtime/TMP_SubMeshUI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/SnapScrolling.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLocalization.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -113,12 +112,12 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/customButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving_2.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/MoveNewInputSystemEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
       </list>
     </option>
@@ -131,7 +130,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.SolutionExplorerActivator" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.3" value="true" />
     <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -214,6 +215,8 @@
       <workItem from="1583562237557" duration="8678000" />
       <workItem from="1583751715676" duration="3608000" />
       <workItem from="1583852225921" duration="636000" />
+      <workItem from="1584247962360" duration="3000" />
+      <workItem from="1584970902860" duration="4265000" />
     </task>
     <servers />
   </component>

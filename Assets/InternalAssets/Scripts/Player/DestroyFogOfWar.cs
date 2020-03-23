@@ -15,6 +15,14 @@ namespace InternalAssets.Scripts.Player
                 fogOfWar.SetTile(point, null);
             }
         }
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            foreach (var contact in other.contacts)
+            {
+                Vector3Int point = grid.WorldToCell(contact.point);
+                fogOfWar.SetTile(point, null);
+            }
+        }
 
         private void Update()
         {
