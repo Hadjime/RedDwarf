@@ -30,8 +30,8 @@ namespace InternalAssets.Scripts.Player
             {
                 //transform.Translate(_direction * (Time.deltaTime * speed));
                 _destinationPoint = _rb.position + _direction;
-                Debug.Log("_destinationpoint = " + _destinationPoint);
-                _rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));
+                //Debug.Log("_destinationpoint = " + _destinationPoint);
+                //_rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));
             }
             
         }
@@ -41,7 +41,7 @@ namespace InternalAssets.Scripts.Player
             if (context.ReadValue<Vector2>().x != 0 || context.ReadValue<Vector2>().y != 0)
             {
                 _direction = new Vector3(context.ReadValue<Vector2>().x, context.ReadValue<Vector2>().y);
-                Debug.Log(context.ReadValue<Vector2>());
+                //Debug.Log(context.ReadValue<Vector2>());
                 isMoving = true;
                 switch (context.action.activeControl.displayName) //визуализация в каком направлении идет персонаж
                 {
@@ -50,29 +50,42 @@ namespace InternalAssets.Scripts.Player
                         isDown = false;
                         isRight = false;
                         isLeft = false;
+                        CheckPoint(Vector2.up);
                         break;
                     case "S":
                         isUp = false;
                         isDown = true;
                         isRight = false;
                         isLeft = false;
+                        CheckPoint(Vector2.down);
                         break;
                     case "A":
                         isUp = false;
                         isDown = false;
                         isRight = false;
                         isLeft = true;
+                        CheckPoint(Vector2.left);
                         break;
                     case "D":
                         isUp = false;
                         isDown = false;
                         isRight = true;
                         isLeft = false;
+                        CheckPoint(Vector2.right);
                         break;
                 }
             }
+        }
 
-            
+        private void CheckPoint(Vector2 point)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, point, 10, 11);
+            Debug.DrawRay(transform.position, point, Color. green);
+            // If it hits something...
+            if (hit.collider != null && hit.collider.name != "Player")
+            {
+                Debug.Log(hit.collider.name);
+            }
         }
     }
 }
