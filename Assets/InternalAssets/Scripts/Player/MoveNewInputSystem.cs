@@ -15,9 +15,12 @@ namespace InternalAssets.Scripts.Player
         private Vector2 _direction;
         private Rigidbody2D _rb;
         private Vector2 _destinationPoint;
+        [SerializeField] private LayerMask _maskForMove;
+        
         private void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
+            _maskForMove = LayerMask.GetMask("Wall");
         }
 
         public void FixedUpdate()
@@ -79,10 +82,10 @@ namespace InternalAssets.Scripts.Player
 
         private void CheckPoint(Vector2 point)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, point, 10, 11);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, point, 1, _maskForMove);
             Debug.DrawRay(transform.position, point, Color. green);
             // If it hits something...
-            if (hit.collider != null && hit.collider.name != "Player")
+            if (hit.collider != null)
             {
                 Debug.Log(hit.collider.name);
             }
