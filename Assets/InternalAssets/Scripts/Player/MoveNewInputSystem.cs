@@ -6,7 +6,7 @@ namespace InternalAssets.Scripts.Player
 {
     public class MoveNewInputSystem : MonoBehaviour
     {
-        [Range(1f,50f)][SerializeField] private float speed = 5;
+        [Range(1f,50f)][SerializeField] private float speed = 2;
         public bool isUp;
         public bool isDown;
         public bool isLeft;
@@ -35,6 +35,7 @@ namespace InternalAssets.Scripts.Player
                 _destinationPoint = _rb.position + _direction;
                 //Debug.Log("_destinationpoint = " + _destinationPoint);
                 //_rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));
+                //_rb.MovePosition(position: _destinationPoint * (Time.deltaTime * speed));
             }
             
         }
@@ -44,51 +45,67 @@ namespace InternalAssets.Scripts.Player
             if (context.ReadValue<Vector2>().x != 0 || context.ReadValue<Vector2>().y != 0)
             {
                 _direction = new Vector3(context.ReadValue<Vector2>().x, context.ReadValue<Vector2>().y);
-                //Debug.Log(context.ReadValue<Vector2>());
-                isMoving = true;
+                _destinationPoint = _rb.position + _direction;
+                _rb.MovePosition(position: _destinationPoint * (Time.deltaTime * speed));
+                Debug.Log(_destinationPoint);
                 switch (context.action.activeControl.displayName) //визуализация в каком направлении идет персонаж
                 {
                     case "W":
-                        isUp = true;
-                        isDown = false;
-                        isRight = false;
-                        isLeft = false;
-                        CheckPoint(Vector2.up);
+                        if (CheckPointForMove(Vector2.up))
+                        {
+                            isUp = true;
+                            isDown = false;
+                            isRight = false;
+                            isLeft = false;  
+                            isMoving = true;
+                        }
                         break;
                     case "S":
-                        isUp = false;
-                        isDown = true;
-                        isRight = false;
-                        isLeft = false;
-                        CheckPoint(Vector2.down);
+                        if (CheckPointForMove(Vector2.down))
+                        {
+                            isUp = false;
+                            isDown = true;
+                            isRight = false;
+                            isLeft = false;
+                            isMoving = true;
+                        }
                         break;
                     case "A":
-                        isUp = false;
-                        isDown = false;
-                        isRight = false;
-                        isLeft = true;
-                        CheckPoint(Vector2.left);
+                        if (CheckPointForMove(Vector2.left))
+                        {
+                            isUp = false;
+                            isDown = false;
+                            isRight = false;
+                            isLeft = true;
+                            isMoving = true;
+                        }
                         break;
                     case "D":
-                        isUp = false;
-                        isDown = false;
-                        isRight = true;
-                        isLeft = false;
-                        CheckPoint(Vector2.right);
+                        if (CheckPointForMove(Vector2.right))
+                        {
+                            isUp = false;
+                            isDown = false;
+                            isRight = true;
+                            isLeft = false;
+                            isMoving = true;
+                        }
                         break;
                 }
             }
         }
 
-        private void CheckPoint(Vector2 point)
+        private bool CheckPointForMove(Vector2 point)
         {
+            bool isCheckPoint = true;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, point, 1, _maskForMove);
             Debug.DrawRay(transform.position, point, Color. green);
             // If it hits something...
             if (hit.collider != null)
             {
-                Debug.Log(hit.collider.name);
+                isCheckPoint = false;
+                //Debug.Log(hit.collider.name);
             }
+            return isCheckPoint;
         }
     }
 }
