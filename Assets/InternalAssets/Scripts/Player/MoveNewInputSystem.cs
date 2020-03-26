@@ -6,7 +6,7 @@ namespace InternalAssets.Scripts.Player
 {
     public class MoveNewInputSystem : MonoBehaviour
     {
-        [Range(1f,50f)][SerializeField] private float speed = 2;
+        [Range(0.1f,50f)][SerializeField] private float speed = 2;
         public bool isUp;
         public bool isDown;
         public bool isLeft;
@@ -15,7 +15,7 @@ namespace InternalAssets.Scripts.Player
         private Vector2 _direction;
         private Rigidbody2D _rb;
         private Vector2 _destinationPoint;
-        [SerializeField] private LayerMask _maskForMove;
+        private LayerMask _maskForMove;
         
         private void Start()
         {
@@ -25,6 +25,20 @@ namespace InternalAssets.Scripts.Player
 
         public void FixedUpdate()
         {
+            if (isUp || isDown || isRight || isLeft)
+            {
+                _rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));
+                if (Vector2.Distance(_rb.position, _destinationPoint) <= 0.01)
+                {
+                    _rb.position = _destinationPoint;
+                    isUp = false;
+                    isDown = false;
+                    isLeft = false;
+                    isRight = false;
+                }
+            }
+            
+            
             if (/*isUp == true ||
                 isDown == true ||
                 isLeft == true ||
@@ -32,7 +46,7 @@ namespace InternalAssets.Scripts.Player
                 isMoving == true)
             {
                 //transform.Translate(_direction * (Time.deltaTime * speed));
-                _destinationPoint = _rb.position + _direction;
+                //_destinationPoint = _rb.position + _direction;
                 //Debug.Log("_destinationpoint = " + _destinationPoint);
                 //_rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));
                 //_rb.MovePosition(position: _destinationPoint * (Time.deltaTime * speed));
@@ -42,12 +56,12 @@ namespace InternalAssets.Scripts.Player
 
         public void Movement(InputAction.CallbackContext context)
         {
-            if (context.ReadValue<Vector2>().x != 0 || context.ReadValue<Vector2>().y != 0)
+            if (context.started)
             {
                 _direction = new Vector3(context.ReadValue<Vector2>().x, context.ReadValue<Vector2>().y);
                 _destinationPoint = _rb.position + _direction;
-                _rb.MovePosition(position: _destinationPoint * (Time.deltaTime * speed));
-                Debug.Log(_destinationPoint);
+                //_rb.MovePosition(position: _destinationPoint);
+                Debug.Log("_destinationPoint = " + _destinationPoint);
                 switch (context.action.activeControl.displayName) //визуализация в каком направлении идет персонаж
                 {
                     case "W":

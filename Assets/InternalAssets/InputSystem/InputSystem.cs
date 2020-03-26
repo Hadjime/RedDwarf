@@ -40,7 +40,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""name"": ""2D Vector"",
                     ""id"": ""f984310f-41f9-41f8-a41b-55dd57eabae2"",
                     ""path"": ""2DVector"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
