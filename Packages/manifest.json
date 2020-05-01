@@ -1,12 +1,15 @@
 {
   "dependencies": {
+    "com.qwerty.circular-scrolling-list": "https://github.com/Hadjime/Circular-Scrolling-List.git",
     "com.unity.2d.pixel-perfect": "2.0.4",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
+    "com.unity.2d.tilemap.extras": "https://github.com/Unity-Technologies/2d-extras.git",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.3.5",
     "com.unity.cinemachine": "2.5.0",
     "com.unity.collab-proxy": "1.2.16",
+    "com.unity.device-simulator": "2.2.2-preview",
     "com.unity.entities": "0.1.1-preview",
     "com.unity.ext.nunit": "1.0.0",
     "com.unity.ide.rider": "1.1.4",
@@ -51,5 +54,15 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+  },
+  "lock": {
+    "com.qwerty.circular-scrolling-list": {
+      "revision": "HEAD",
+      "hash": "db9f3e32a9c9042e1d74a9178e6a0d89fe25b99d"
+    },
+    "com.unity.2d.tilemap.extras": {
+      "revision": "HEAD",
+      "hash": "e9955e7528762a4ba6cd0471215e2c2135436ebe"
+    }
   }
 }

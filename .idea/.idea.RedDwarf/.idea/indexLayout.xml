@@ -3,13 +3,16 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
+      <Path>Library/PackageCache/com.qwerty.circular-scrolling-list@db9f3e32a9c9042e1d74a9178e6a0d89fe25b99d</Path>
       <Path>Library/PackageCache/com.unity.2d.pixel-perfect@2.0.4</Path>
+      <Path>Library/PackageCache/com.unity.2d.tilemap.extras@e9955e7528762a4ba6cd0471215e2c2135436ebe</Path>
       <Path>Library/PackageCache/com.unity.ads@2.0.8</Path>
       <Path>Library/PackageCache/com.unity.analytics@3.3.5</Path>
       <Path>Library/PackageCache/com.unity.burst@1.1.2</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.5.0</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.2.16</Path>
       <Path>Library/PackageCache/com.unity.collections@0.1.1-preview</Path>
+      <Path>Library/PackageCache/com.unity.device-simulator@2.2.2-preview</Path>
       <Path>Library/PackageCache/com.unity.entities@0.1.1-preview</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
@@ -22,6 +25,7 @@
       <Path>Library/PackageCache/com.unity.properties@0.6.2-preview</Path>
       <Path>Library/PackageCache/com.unity.purchasing@2.0.6</Path>
       <Path>Library/PackageCache/com.unity.rendering.hybrid@0.1.1-preview</Path>
+      <Path>Library/PackageCache/com.unity.test-framework.performance@1.2.3-preview</Path>
       <Path>Library/PackageCache/com.unity.test-framework@1.1.9</Path>
       <Path>Library/PackageCache/com.unity.textmeshpro@2.0.1</Path>
       <Path>Library/PackageCache/com.unity.timeline@1.2.10</Path>
@@ -36,7 +40,6 @@
       <Path>Bilds</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
-      <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>

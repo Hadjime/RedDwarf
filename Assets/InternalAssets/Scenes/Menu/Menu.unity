@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7803f020288bea4c8ec6999bdd0df86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camer: {fileID: 91639254}
+  camer: {fileID: 91639254}
 --- !u!1 &119506458
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u043A\u0430\u0440\u043B\u0438\u043A\""
+  m_text: '"Red Dwarf"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 95258be9196417142bbcb1374a0f50a3, type: 2}
   m_sharedMaterial: {fileID: -8641096829806265508, guid: 95258be9196417142bbcb1374a0f50a3,
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -262.31183, w: 0}
   m_textInfo:
     textComponent: {fileID: 393715083}
-    characterCount: 16
+    characterCount: 11
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -1192,6 +1192,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594067059}
   m_CullTransparentMesh: 0
+--- !u!114 &1648343328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1244988419789766015, guid: c99e2c7526fbfb543921d15b44d4f1e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1351138156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc232490474593047a0bd537e5220020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1727188970 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8793802750631046259, guid: 954428db170f8b148ad139df0a7cd7f3,
@@ -1222,7 +1234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886880741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1233778, y: -0.08338618, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 121436556}
@@ -1458,11 +1470,76 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1648343328}
+    - target: {fileID: 4918321386147032784, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevelWithTransition
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321386147032784, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321386147032784, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321386147032784, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321386187453676, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321386306846132, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321386662584418, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321387329374721, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4918321387330961810, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1648343328}
+    - target: {fileID: 4918321387330961810, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Options.m_Options.Array.data[1].m_Image
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321387330961810, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321387330961810, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLanguageIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321387702795074, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918321387767258543, guid: 1afbcbf5c2a8dae41b0349e10f72df9e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1afbcbf5c2a8dae41b0349e10f72df9e, type: 3}
