@@ -29,11 +29,6 @@
             <e p="Readme.txt" t="Include" />
           </e>
         </e>
-        <e p="CircularScrollingList" t="Include">
-          <e p="ListBank.cs" t="Include" />
-          <e p="ListBox.cs" t="Include" />
-          <e p="ListPositionCtrl.cs" t="Include" />
-        </e>
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -65,7 +60,7 @@
           <e p="UGUI.cs" t="Include" />
         </e>
         <e p="InternalAssets" t="Include">
-          <e p="Editors" t="Include">
+          <e p="Editor" t="Include">
             <e p="Player" t="Include">
               <e p="MoveNewInputSystemEditor.cs" t="Include" />
             </e>
@@ -93,15 +88,25 @@
               <e p="Inventory.cs" t="Include" />
               <e p="PlayerInventory.cs" t="Include" />
             </e>
+            <e p="Map" t="Include">
+              <e p="ISelect.cs" t="Include" />
+              <e p="Item.cs" t="Include" />
+              <e p="TileSetting.cs" t="Include" />
+            </e>
             <e p="Player" t="Include">
               <e p="DestroyFogOfWar.cs" t="Include" />
               <e p="MoveNewInputSystem.cs" t="Include" />
               <e p="Moving.cs" t="Include" />
               <e p="Moving_2.cs" t="Include" />
+              <e p="SnapGrid.cs" t="Include" />
+              <e p="TakeItems.cs" t="Include" />
             </e>
             <e p="UI" t="Include">
               <e p="BtnManager.cs" t="Include" />
               <e p="ChangeLanguage.cs" t="Include" />
+              <e p="CircularScrollingList" t="Include">
+                <e p="MyListBox.cs" t="Include" />
+              </e>
               <e p="ClickSelectController.cs" t="Include" />
               <e p="Event" t="Include">
                 <e p="HealthPanel.cs" t="Include" />
@@ -236,7 +241,7 @@
       <e p="RedDwarf.sln" t="IncludeFlat" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\user\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\user\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_RedDwarf.-334385885.00" t="ExcludeRecursive" />
+    <e p="C:\Users\user\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\user\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_RedDwarf.-334385885.00" t="ExcludeRecursive" />
   </component>
 </project>

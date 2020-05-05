@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using InternalAssets.Scripts.Player;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
@@ -6,11 +7,12 @@ namespace InternalAssets.Scripts.UI
 {
     public class UILoader : MonoBehaviour
     {
+        public bool isVisibleUI;
         private Keyboard keyboard;
         private void Start()
         {
             keyboard = Keyboard.current;
-            LoadUIIndicators();
+            if (isVisibleUI) LoadUIIndicators();
         }
 
         //<summary

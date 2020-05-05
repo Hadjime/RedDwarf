@@ -12,7 +12,7 @@ public class MoveMenu : MonoBehaviour
     void Start()
     {
         //transform.DOShakeScale(10);
-        transform.DOShakeRotation(1);
+        //transform.DOShakeRotation(1);
         //
         //transform.DOMove(new Vector3(0, 0, 0), 2, false);
         

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace InternalAssets.Scripts._temp
 {
+    [DefaultExecutionOrder(-1)]
     public class MyListBox : BaseListBank
     {
         private int[] _contents = {
