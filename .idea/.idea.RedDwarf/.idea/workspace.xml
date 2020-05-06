@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4cf2f2d-dacb-44b9-882c-702936876263" name="Default Changelist" comment="" />
+    <list default="true" id="c4cf2f2d-dacb-44b9-882c-702936876263" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/InputSystem/InputSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/InputSystem/InputSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/InputSystem/InputSystem.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/InputSystem/InputSystem.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Lvl/Scene_Test_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Lvl/Scene_Test_1.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -243,6 +251,7 @@
       <workItem from="1588175905058" duration="937000" />
       <workItem from="1588581848805" duration="618000" />
       <workItem from="1588586676437" duration="5578000" />
+      <workItem from="1588776540150" duration="696000" />
     </task>
     <servers />
   </component>

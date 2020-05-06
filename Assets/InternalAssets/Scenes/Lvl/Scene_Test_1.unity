@@ -128600,5 +128600,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8070122549427165206, guid: 7e18849cd3238224e8aa4fc03fb1d780,
+        type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e18849cd3238224e8aa4fc03fb1d780, type: 3}

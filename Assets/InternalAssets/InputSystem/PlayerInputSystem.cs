@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/InternalAssets/InputSystem/InputSystem.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/InternalAssets/InputSystem/PlayerInputSystem.inputactions'
 
 using System;
 using System.Collections;
@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @InputSystem : IInputActionCollection, IDisposable
+public class @PlayerInputSystem : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @InputSystem()
+    public @PlayerInputSystem()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""InputSystem"",
+    ""name"": ""PlayerInputSystem"",
     ""maps"": [
         {
             ""name"": ""Player"",
@@ -37,7 +37,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""WASD Keyboard"",
                     ""id"": ""f984310f-41f9-41f8-a41b-55dd57eabae2"",
                     ""path"": ""2DVector"",
                     ""interactions"": ""Press"",
@@ -53,7 +53,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -64,7 +64,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -75,7 +75,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -86,13 +86,13 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""Android Joystick"",
                     ""id"": ""7516e780-66fd-4850-b086-a40a3bdf7690"",
                     ""path"": ""2DVector"",
                     ""interactions"": ""Press"",
@@ -160,7 +160,19 @@ public class @InputSystem : IInputActionCollection, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Keyboard"",
+            ""bindingGroup"": ""Keyboard"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
@@ -219,8 +231,8 @@ public class @InputSystem : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_CallF1;
     public struct PlayerActions
     {
-        private @InputSystem m_Wrapper;
-        public PlayerActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
+        private @PlayerInputSystem m_Wrapper;
+        public PlayerActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @CallF1 => m_Wrapper.m_Player_CallF1;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -252,6 +264,15 @@ public class @InputSystem : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+    private int m_KeyboardSchemeIndex = -1;
+    public InputControlScheme KeyboardScheme
+    {
+        get
+        {
+            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
+            return asset.controlSchemes[m_KeyboardSchemeIndex];
+        }
+    }
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
