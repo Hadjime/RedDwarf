@@ -9,7 +9,7 @@
                     "name": "Movement",
                     "type": "Value",
                     "id": "07b2619f-2875-40f7-84b7-cd1e392907b5",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
@@ -17,6 +17,14 @@
                     "name": "CallF1",
                     "type": "Button",
                     "id": "a2c0dbde-97a7-40ec-96e1-7ea12d551898",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "ca4b5408-71fd-49a8-a634-7ab9443e2764",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
@@ -92,10 +100,10 @@
                 {
                     "name": "up",
                     "id": "d91e040f-aefb-4cb0-9806-3d1b941710ae",
-                    "path": "<AndroidJoystick>/stick/up",
+                    "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Android",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -103,10 +111,10 @@
                 {
                     "name": "down",
                     "id": "fc578841-124a-4325-9611-545a4eb65680",
-                    "path": "<AndroidJoystick>/stick/down",
+                    "path": "<Joystick>/stick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Android",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -114,10 +122,10 @@
                 {
                     "name": "left",
                     "id": "e2da3ab8-1c53-4e90-bcc0-2cb2b07833f2",
-                    "path": "<AndroidJoystick>/stick/left",
+                    "path": "<Joystick>/stick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Android",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -125,10 +133,65 @@
                 {
                     "name": "right",
                     "id": "1ca15a42-4e08-4f4f-b22b-f4f2f944cee0",
-                    "path": "<AndroidJoystick>/stick/right",
+                    "path": "<Joystick>/stick/right",
                     "interactions": "",
                     "processors": "",
+                    "groups": "Android",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "6faf8202-0abf-4af6-a285-a203e41b00a0",
+                    "path": "2DVector",
+                    "interactions": "Press",
+                    "processors": "",
                     "groups": "",
+                    "action": "Movement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "73925398-d639-48dd-82ba-b87eda47c136",
+                    "path": "<Gamepad>/leftStick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b73f370f-fed9-46ad-8a78-6d7947f0fed0",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "c62efa5e-475f-4f24-9a3b-5a53e3df11c2",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "78453f09-9d9d-47b0-ae96-95f3dbcc6640",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -143,6 +206,17 @@
                     "action": "CallF1",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f3c6e10c-6e3c-47d8-8d3f-f75c8415d615",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -154,6 +228,28 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Android",
+            "bindingGroup": "Android",
+            "devices": [
+                {
+                    "devicePath": "<AndroidJoystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Gamepad",
+            "bindingGroup": "Gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
                 }
