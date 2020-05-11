@@ -1234,8 +1234,9 @@ GameObject:
   - component: {fileID: 547096785}
   - component: {fileID: 547096783}
   - component: {fileID: 547096786}
+  - component: {fileID: 547096784}
   m_Layer: 5
-  m_Name: ControlWeaponSelection
+  m_Name: CircleInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1313,6 +1314,21 @@ MonoBehaviour:
   centerBoxScaleRatio: 0.1
   numOfUpperDisabledBoxes: 0
   numOfLowerDisabledBoxes: 0
+--- !u!114 &547096784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547096781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211dede5a602f2e4b9e3137c515b027a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
+  prefab: {fileID: 265165763639172309, guid: 678ba91d61475c248a0c5e2442824eab, type: 3}
+  content: {fileID: 547096782}
 --- !u!222 &547096785
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -29,12 +29,12 @@ public class DownloadItemInShop : MonoBehaviour
             instWeaponCards.Add(instance);
             instance.transform.SetParent(content, false);
             instance.name = "CardWeapon_" + numberCard;
-            InitializeItemFromScriptableObject(instance, item);
+            InitializeCardFromInventory(instance, item);
         }
         Debug.Log("Download item in shop complite.");
     }
     
-    private void InitializeItemFromScriptableObject(GameObject viewGameObject, InventoryItem item)
+    private void InitializeCardFromInventory(GameObject viewGameObject, InventoryItem item)
     {
         Transform itemName = viewGameObject.transform.Find("ItemName");
         itemName.GetComponent<TextMeshProUGUI>().text = item.name;

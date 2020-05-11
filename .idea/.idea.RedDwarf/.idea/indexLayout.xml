@@ -3,10 +3,10 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
-      <Path>Library/PackageCache/com.qwerty.circular-scrolling-list@427f00c164a0df827e21565434c19b10877f6d86</Path>
+      <Path>Library/PackageCache/com.qwerty.circular-scrolling-list@427f00c164</Path>
       <Path>Library/PackageCache/com.unity.2d.pixel-perfect@2.0.4</Path>
-      <Path>Library/PackageCache/com.unity.2d.tilemap.extras@e9955e7528762a4ba6cd0471215e2c2135436ebe</Path>
-      <Path>Library/PackageCache/com.unity.ads@2.0.8</Path>
+      <Path>Library/PackageCache/com.unity.2d.tilemap.extras@e9955e7528</Path>
+      <Path>Library/PackageCache/com.unity.ads@3.4.4</Path>
       <Path>Library/PackageCache/com.unity.analytics@3.3.5</Path>
       <Path>Library/PackageCache/com.unity.burst@1.1.2</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.5.0</Path>
@@ -16,7 +16,7 @@
       <Path>Library/PackageCache/com.unity.entities@0.1.1-preview</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
-      <Path>Library/PackageCache/com.unity.ide.vscode@1.1.4</Path>
+      <Path>Library/PackageCache/com.unity.ide.vscode@1.2.0</Path>
       <Path>Library/PackageCache/com.unity.inputsystem@1.0.0-preview.5</Path>
       <Path>Library/PackageCache/com.unity.jobs@0.1.1-preview</Path>
       <Path>Library/PackageCache/com.unity.mathematics@1.1.0</Path>
@@ -25,10 +25,10 @@
       <Path>Library/PackageCache/com.unity.purchasing@2.0.6</Path>
       <Path>Library/PackageCache/com.unity.rendering.hybrid@0.1.1-preview</Path>
       <Path>Library/PackageCache/com.unity.test-framework.performance@1.2.3-preview</Path>
-      <Path>Library/PackageCache/com.unity.test-framework@1.1.9</Path>
+      <Path>Library/PackageCache/com.unity.test-framework@1.1.13</Path>
       <Path>Library/PackageCache/com.unity.textmeshpro@2.0.1</Path>
       <Path>Library/PackageCache/com.unity.timeline@1.2.10</Path>
-      <Path>Library/PackageCache/com.unity.xr.legacyinputhelpers@2.0.2</Path>
+      <Path>Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.3</Path>
       <Path>Library/PackageCache/nuget.mono-cecil@0.1.6-preview</Path>
       <Path>Packages</Path>
       <Path>ProjectSettings</Path>

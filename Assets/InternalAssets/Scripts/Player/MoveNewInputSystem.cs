@@ -39,6 +39,9 @@ namespace InternalAssets.Scripts.Player
 
         public void FixedUpdate()
         {
+            var temp1 = this.transform.position;
+            var temp2 = this.transform.position;
+            var temp3 = this.transform.position;
             if (isMoving) // если находимся в движении
             {
                 _rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));

@@ -8,7 +8,7 @@ public class UpdateItemInShop : MonoBehaviour
     public Inventory inventory;
     public RectTransform content;
 
-    private List<GameObject> items;
+    private List<GameObject> _items;
 
     private DownloadItemInShop downloadItemInShop;
 
@@ -20,11 +20,11 @@ public class UpdateItemInShop : MonoBehaviour
 
     void Update()
     {
-        items = downloadItemInShop.GetWeaponCards();
+        _items = downloadItemInShop.GetWeaponCards();
     }
     public void UpdateItemsInShop()
     {
-        for (int i = 0; i < items.Count; i++)
+        for (int i = 0; i < _items.Count; i++)
         {
             //items[i].transform.Find("ItemName").GetComponent<TextMeshProUGUI>().text = inventory.items[i].name;
 
@@ -32,7 +32,7 @@ public class UpdateItemInShop : MonoBehaviour
 
             //items[i].transform.Find("ItemPrice").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = inventory.items[i].price.ToString() + " $";
 
-            items[i].transform.Find("ItemAmount").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = inventory.items[i].amount.ToString();
+            _items[i].transform.Find("ItemAmount").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = inventory.items[i].amount.ToString();
         }
 
         Debug.Log("Update item in shop complite.");

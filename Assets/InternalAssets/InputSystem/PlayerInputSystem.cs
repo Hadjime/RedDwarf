@@ -155,7 +155,7 @@ public class @PlayerInputSystem : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""Gamepad"",
                     ""id"": ""6faf8202-0abf-4af6-a285-a203e41b00a0"",
                     ""path"": ""2DVector"",
                     ""interactions"": ""Press"",
