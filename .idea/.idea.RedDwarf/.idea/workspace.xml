@@ -2,10 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4cf2f2d-dacb-44b9-882c-702936876263" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Lvl/Scene_Test_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Lvl/Scene_Test_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersRuleset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/RainbowAssets/RainbowFolders/Editor/Data/RainbowFoldersRuleset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/HealthBar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/HealthBar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/Inventory/Indicators.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/Inventory/Indicators.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/Inventory/ItemCardSimple.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/Inventory/ItemCardSimple.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/Inventory/ListItem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Prefabs/UI/Inventory/ListItem.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Shop/Shop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Shop/Shop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/UI/UIIndicators.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/UI/UIIndicators.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HpChangeEvent1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HpChangeEvent1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ShopManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ShopManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/SnapScrolling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/SnapScrolling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +55,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/ILocalizationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DOTween Examples/Follow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Airy UI/Scripts/AiryUIAnimatedElement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../Program Files/Unity/Hub/Editor/2019.3.12f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLanguageCSV.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lean/Localization/Scripts/LeanLocalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AstarPathfindingProject/Core/AI/AIBase.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Event/HPChangeEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Event/MoneyChangeEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Inventory/Inventory.cs" />
@@ -107,34 +126,35 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HpChangeEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxeChangeEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyChangeEvent.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/BtnManager.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/CuberController.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/customButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/ClickSelectController.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/Moving_2.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/DestroyFogOfWar.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/MoveNewInputSystemEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/ISelect.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/TileSetting.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/Item.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" />
         <option value="$PROJECT_DIR$/Assets/CircularScrollingList/ListBox.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/CircularScrollingList/MyListBox.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.qwerty.circular-scrolling-list@db9f3e32a9c9042e1d74a9178e6a0d89fe25b99d/Scripts/Runtime/ListBox.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/CircularScrollingList/ListPositionCtrl_export.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MyListBox.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/SnapGrid.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/SnapScrolling.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/DownloadItemInShop.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UpdateItemInShop.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/PickAxePanel.cs" />
       </list>
     </option>
   </component>
@@ -254,6 +274,9 @@
       <workItem from="1588917046184" duration="287000" />
       <workItem from="1588917705081" duration="373000" />
       <workItem from="1589170024274" duration="3559000" />
+      <workItem from="1589435973684" duration="352000" />
+      <workItem from="1589474532982" duration="1940000" />
+      <workItem from="1589615060512" duration="9949000" />
     </task>
     <servers />
   </component>
@@ -286,18 +309,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Rider.ProjectTemplateDialog.Size/0.0.1920.1040@0.0.1920.1040" timestamp="1585543252438" />
-    <state x="1171" y="248" key="RiderGenerateDialog" timestamp="1580389414863">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1171" y="248" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580389414863" />
     <state x="539" y="240" key="SettingsEditor" timestamp="1588917972285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="539" y="240" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588917972285" />
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1588917972710">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1589621748908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588917972710" />
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589621748908" />
     <state x="521" y="257" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1583566431162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -310,9 +329,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583565037519" />
-    <state x="740" y="325" key="save.file.as.template.dialog" timestamp="1585835372809">
+    <state x="740" y="325" key="save.file.as.template.dialog" timestamp="1589615503535">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="325" key="save.file.as.template.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585835372809" />
+    <state x="740" y="325" key="save.file.as.template.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589615503535" />
   </component>
 </project>

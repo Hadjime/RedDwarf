@@ -1,11 +1,12 @@
 ﻿using InternalAssets.Scripts.Map;
 using UnityEngine;
+using InternalAssets.Scripts.Inventory;
 
 namespace InternalAssets.Scripts.Player
 {
     public class TakeItems : MonoBehaviour
     {
-        public Inventory inventory;
+        public Inventory.Inventory inventory;
         public void OnTriggerEnter2D(Collider2D other)
         {
 

@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using InternalAssets.Scripts.Inventory;
 
 namespace InternalAssets.Scripts.UI
 {
     public class HealthBar : MonoBehaviour
     {
-        public Inventory inventory;
+        public Inventory.Inventory inventory;
         public Slider slider;
         public Image fill;
         public Gradient gradient;
-        private float updateSpeedSeconds = 0.2f;
+        private float _updateSpeedSeconds = 0.2f;
 
         public void Start()
         {
@@ -54,10 +55,10 @@ namespace InternalAssets.Scripts.UI
             float preChangePct = slider.value;
             float elapsed = 0f;
 
-            while (elapsed < updateSpeedSeconds)
+            while (elapsed < _updateSpeedSeconds)
             {
                 elapsed += Time.deltaTime;
-                slider.value = Mathf.Lerp(preChangePct, pct, elapsed / updateSpeedSeconds);
+                slider.value = Mathf.Lerp(preChangePct, pct, elapsed / _updateSpeedSeconds);
                 fill.color = gradient.Evaluate(slider.normalizedValue);
                 yield return null;
             }

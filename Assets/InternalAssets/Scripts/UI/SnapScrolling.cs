@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using InternalAssets.Scripts.Inventory;
 
 public class SnapScrolling : MonoBehaviour
 {
@@ -18,37 +19,37 @@ public class SnapScrolling : MonoBehaviour
     public GameObject panPrefab;
     public ScrollRect scrollRect;
 
-    private List<GameObject> weaponCards;
-    private int cardCount;
-    private GameObject[] instPans;
-    private RectTransform[] rectTranPanels;
-    private Transform[] transformPanels;
-    private Vector2[] pansScale;
+    private List<GameObject> _weaponCards;
+    private int _cardCount;
+    private GameObject[] _instPans;
+    private RectTransform[] _rectTranPanels;
+    private Transform[] _transformPanels;
+    private Vector2[] _pansScale;
 
-    private RectTransform contentRect;
-    private Vector2 contentVector;
+    private RectTransform _contentRect;
+    private Vector2 _contentVector;
 
-    private int selectedCardID;
-    private bool isScrolling;
+    private int _selectedCardId;
+    private bool _isScrolling;
 
     private void Start()
     {
-        contentRect = GetComponent<RectTransform>();
-        weaponCards = new List<GameObject>();
-        weaponCards = GetComponent<DownloadItemInShop>().GetWeaponCards();
-        cardCount = weaponCards.Count;
+        _contentRect = GetComponent<RectTransform>();
+        _weaponCards = new List<GameObject>();
+        _weaponCards = GetComponent<DownloadItemInShop>().GetListWeaponCards();
+        _cardCount = _weaponCards.Count;
 
-        transformPanels = new Transform[cardCount];
-        rectTranPanels = new RectTransform[cardCount];
+        _transformPanels = new Transform[_cardCount];
+        _rectTranPanels = new RectTransform[_cardCount];
 
-        pansScale = new Vector2[weaponCards.Count];
-        for (int i = 0; i < cardCount; i++)
+        _pansScale = new Vector2[_weaponCards.Count];
+        for (int i = 0; i < _cardCount; i++)
         {
-            transformPanels[i] = weaponCards[i].GetComponent<Transform>();
-            rectTranPanels[i] = weaponCards[i].GetComponent<RectTransform>();
+            _transformPanels[i] = _weaponCards[i].GetComponent<Transform>();
+            _rectTranPanels[i] = _weaponCards[i].GetComponent<RectTransform>();
         }
-        Vector2 pos = new Vector2(0, rectTranPanels[0].sizeDelta.y / 2);
-        contentRect.anchoredPosition = pos;
+        Vector2 pos = new Vector2(0, _rectTranPanels[0].sizeDelta.y / 2);
+        _contentRect.anchoredPosition = pos;
     }
 
     private void FixedUpdate()
@@ -57,9 +58,9 @@ public class SnapScrolling : MonoBehaviour
         //MyVariantScrollHorizontal();
         ScrollAxisVertical();
     }
-    public int GetSelectedCardID()
+    public int GetSelectedCardId()
     {
-        return selectedCardID;
+        return _selectedCardId;
     }
     private void ScrollAxisVertical()
     {
@@ -67,26 +68,26 @@ public class SnapScrolling : MonoBehaviour
 
         float nearestPos = float.MaxValue;
         var fixedDeltaTime = Time.fixedDeltaTime;
-        for (int i = 0; i < cardCount; i++)
+        for (int i = 0; i < _cardCount; i++)
         {
-            float distance = Mathf.Abs(contentRect.anchoredPosition.y - Mathf.Abs(transformPanels[i].localPosition.y));
+            float distance = Mathf.Abs(_contentRect.anchoredPosition.y - Mathf.Abs(_transformPanels[i].localPosition.y));
             if (distance < nearestPos)
             {
                 nearestPos = distance;
-                selectedCardID = i;
+                _selectedCardId = i;
             }
             //Debug.Log("Select ID = " + selectedPanID);
             //Debug.Log("Local Pos = " + instPans[i].transform.localPosition.y);
             float scale = Mathf.Clamp(1 / (distance / panOffset) * scaleOffset, 0.5f, 1f);
-            pansScale[i].x = Mathf.SmoothStep(transformPanels[i].localScale.x, scale + 0.3f, scaleSpeed * fixedDeltaTime);
-            pansScale[i].y = Mathf.SmoothStep(transformPanels[i].localScale.y, scale + 0.3f, scaleSpeed * fixedDeltaTime);
-            transformPanels[i].localScale = pansScale[i];
+            _pansScale[i].x = Mathf.SmoothStep(_transformPanels[i].localScale.x, scale + 0.3f, scaleSpeed * fixedDeltaTime);
+            _pansScale[i].y = Mathf.SmoothStep(_transformPanels[i].localScale.y, scale + 0.3f, scaleSpeed * fixedDeltaTime);
+            _transformPanels[i].localScale = _pansScale[i];
         }
         float scrollVelocity = Mathf.Abs(scrollRect.velocity.y);
-        if (scrollVelocity < 400 && !isScrolling) scrollRect.inertia = false;
-        if (isScrolling || scrollVelocity > 400) return;
-        contentVector.y = Mathf.SmoothStep(contentRect.anchoredPosition.y, Mathf.Abs(transformPanels[selectedCardID].localPosition.y), returnSpeed * fixedDeltaTime);
-        contentRect.anchoredPosition = contentVector;
+        if (scrollVelocity < 400 && !_isScrolling) scrollRect.inertia = false;
+        if (_isScrolling || scrollVelocity > 400) return;
+        _contentVector.y = Mathf.SmoothStep(_contentRect.anchoredPosition.y, Mathf.Abs(_transformPanels[_selectedCardId].localPosition.y), returnSpeed * fixedDeltaTime);
+        _contentRect.anchoredPosition = _contentVector;
     }
 
     private void ScrollAxisHorizontal()
@@ -95,31 +96,31 @@ public class SnapScrolling : MonoBehaviour
 
         float nearestPos = float.MaxValue;
         var fixedDeltaTime = Time.fixedDeltaTime;
-        for (int i = 0; i < cardCount; i++)
+        for (int i = 0; i < _cardCount; i++)
         {
-            float distance = Mathf.Abs(contentRect.anchoredPosition.y - Mathf.Abs(transformPanels[i].localPosition.y));
+            float distance = Mathf.Abs(_contentRect.anchoredPosition.y - Mathf.Abs(_transformPanels[i].localPosition.y));
             if (distance < nearestPos)
             {
                 nearestPos = distance;
-                selectedCardID = i;
+                _selectedCardId = i;
             }
             //Debug.Log("Select ID = " + selectedPanID);
             //Debug.Log("Local Pos = " + -instPans[selectedPanID].transform.localPosition.x);
             float scale = Mathf.Clamp(1 / (distance / panOffset) * scaleOffset, 0.5f, 1f);
-            pansScale[i].x = Mathf.SmoothStep(transformPanels[i].localScale.x, scale + 0.3f, scaleSpeed * fixedDeltaTime);
-            pansScale[i].y = Mathf.SmoothStep(transformPanels[i].localScale.y, scale + 0.3f, scaleSpeed * fixedDeltaTime);
-            transformPanels[i].localScale = pansScale[i];
+            _pansScale[i].x = Mathf.SmoothStep(_transformPanels[i].localScale.x, scale + 0.3f, scaleSpeed * fixedDeltaTime);
+            _pansScale[i].y = Mathf.SmoothStep(_transformPanels[i].localScale.y, scale + 0.3f, scaleSpeed * fixedDeltaTime);
+            _transformPanels[i].localScale = _pansScale[i];
         }
         float scrollVelocity = Mathf.Abs(scrollRect.velocity.x);
-        if (scrollVelocity < 400 && !isScrolling) scrollRect.inertia = false;
-        if (isScrolling || scrollVelocity > 400) return;
-        contentVector.x = Mathf.SmoothStep(contentRect.anchoredPosition.x, -transformPanels[selectedCardID].localPosition.x, returnSpeed * fixedDeltaTime);
-        contentRect.anchoredPosition = contentVector;
+        if (scrollVelocity < 400 && !_isScrolling) scrollRect.inertia = false;
+        if (_isScrolling || scrollVelocity > 400) return;
+        _contentVector.x = Mathf.SmoothStep(_contentRect.anchoredPosition.x, -_transformPanels[_selectedCardId].localPosition.x, returnSpeed * fixedDeltaTime);
+        _contentRect.anchoredPosition = _contentVector;
     }
 
     public void Scrolling(bool scroll)
     {
-        isScrolling = scroll;
+        _isScrolling = scroll;
         if (scroll) scrollRect.inertia = true;
     }
 }

@@ -1,19 +1,17 @@
 ﻿using TMPro;
 using UnityEngine;
+using InternalAssets.Scripts.Inventory;
 
 namespace InternalAssets.Scripts.UI.Event
 {
     //[RequireComponent(typeof(TextMeshProUGUI))]
     public class MoneyPanel : MonoBehaviour
     {
-        public Inventory playerInventory;
-        public TextMeshProUGUI textMeshProUgui;
+        public Inventory.Inventory playerInventory;
+        public TextMeshProUGUI goldTMPtext;
         
-        private TextMeshProUGUI moneyTextMeshProUgui;
         private void Awake()
         {
-            //moneyTextMeshProUgui = GetComponent<TextMeshProUGUI>();
-            //moneyTextMeshProUgui.text = playerInventory.AmountMoney.ToString();
             HandleMoneyChange();
         }
 
@@ -29,7 +27,7 @@ namespace InternalAssets.Scripts.UI.Event
 
         private void HandleMoneyChange()
         {
-            textMeshProUgui.text = playerInventory.AmountMoney.ToString();
+            goldTMPtext.text = playerInventory.AmountMoney.ToString();
         }
     }
 }

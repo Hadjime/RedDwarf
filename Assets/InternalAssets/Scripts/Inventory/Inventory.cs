@@ -3,70 +3,71 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-[CreateAssetMenu(fileName = "New Inventory", menuName = "Scriptable Object/New Inventory", order = 51)]
-public class Inventory : ScriptableObject
+namespace InternalAssets.Scripts.Inventory
 {
-    public string namePlayer;
-    [SerializeField]
-    private int amountHp;
-    public int AmountHp
+    [CreateAssetMenu(fileName = "New Inventory", menuName = "Scriptable Object/New Inventory", order = 51)]
+    public class Inventory : ScriptableObject
     {
-        get => amountHp;
-        set
+        public string namePlayer;
+        [SerializeField]
+        private int amountHp;
+        public int AmountHp
         {
-            amountHp = value <= 0 ? 0 : value;
-            EventManager.TriggerEvent("OnHPChange");
+            get => amountHp;
+            set
+            {
+                amountHp = value <= 0 ? 0 : value;
+                EventManager.TriggerEvent("OnHPChange");
+            }
+        }
+
+        [SerializeField]
+        private int amountMoney;
+        public int AmountMoney
+        {
+            get => amountMoney;
+            set
+            {
+                amountMoney = value;
+                EventManager.TriggerEvent("OnMoneyChange");
+            }
+        }
+        [SerializeField]
+        private int amountPickAxe;
+        public int AmountPickAxe
+        {
+            get => amountPickAxe;
+            set
+            {
+                amountPickAxe = value;
+                EventManager.TriggerEvent("OnPickAxeChange");
+            }
+        }
+        public List<InventoryItem> items;
+
+        public void ApplyDamage(int damage)
+        {
+            AmountHp -= damage;
+        }
+        public void AddCoin(int coin)
+        {
+            AmountMoney += coin;
+        }
+
+        public void AddPickAxe(int number)
+        {
+            AmountPickAxe += number;
         }
     }
 
-    [SerializeField]
-    private int amountMoney;
-    public int AmountMoney
+    [System.Serializable]
+    public class InventoryItem
     {
-        get => amountMoney;
-        set
-        {
-            amountMoney = value;
-            EventManager.TriggerEvent("OnMoneyChange");
-        }
-    }
-    [SerializeField]
-    private int amountPickAxe;
-    public int AmountPickAxe
-    {
-        get => amountPickAxe;
-        set
-        {
-            amountPickAxe = value;
-            EventManager.TriggerEvent("OnPickAxeChange");
-        }
-    }
-    public List<InventoryItem> items;
-
-    public void ApplyDamage(int damage)
-    {
-        AmountHp -= damage;
-    }
-    public void AddCoin(int coin)
-    {
-        AmountMoney += coin;
-    }
-
-    public void AddPickAxe(int number)
-    {
-        AmountPickAxe += number;
+        public string name;
+        public Sprite icon;
+        public int price;
+        public int attackDamage;
+        public int protection;
+        public int amount;
     }
 }
-
-[System.Serializable]
-public class InventoryItem
-{
-    public string name;
-    public Sprite icon;
-    public int price;
-    public int attackDamage;
-    public int protection;
-    public int amount;
-}
-
-

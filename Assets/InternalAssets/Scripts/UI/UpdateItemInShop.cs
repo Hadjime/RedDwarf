@@ -1,40 +1,44 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
+using InternalAssets.Scripts.Inventory;
 using TMPro;
-using UnityEngine.UI;
-public class UpdateItemInShop : MonoBehaviour
+using UnityEngine;
+
+namespace InternalAssets.Scripts.UI
 {
-    public Inventory inventory;
-    public RectTransform content;
-
-    private List<GameObject> _items;
-
-    private DownloadItemInShop downloadItemInShop;
-
-    // Update is called once per frame
-    private void Start()
+    public class UpdateItemInShop : MonoBehaviour
     {
-        downloadItemInShop = content.GetComponent<DownloadItemInShop>();
-    }
+        public Inventory.Inventory inventory;
+        public RectTransform content;
 
-    void Update()
-    {
-        _items = downloadItemInShop.GetWeaponCards();
-    }
-    public void UpdateItemsInShop()
-    {
-        for (int i = 0; i < _items.Count; i++)
+        private List<GameObject> _items;
+
+        private DownloadItemInShop _downloadItemInShop;
+
+        // Update is called once per frame
+        private void Start()
         {
-            //items[i].transform.Find("ItemName").GetComponent<TextMeshProUGUI>().text = inventory.items[i].name;
-
-            //items[i].transform.Find("ItemIcon").GetComponent<Image>().sprite = inventory.items[i].icon;
-
-            //items[i].transform.Find("ItemPrice").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = inventory.items[i].price.ToString() + " $";
-
-            _items[i].transform.Find("ItemAmount").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = inventory.items[i].amount.ToString();
+            _downloadItemInShop = content.GetComponent<DownloadItemInShop>();
+            _items = _downloadItemInShop.GetListWeaponCards();
         }
 
-        Debug.Log("Update item in shop complite.");
+        private void Update()
+        {
+            
+        }
+        public void UpdateItemsData()
+        {
+            for (int i = 0; i < _items.Count; i++)
+            {
+                //items[i].transform.Find("ItemName").GetComponent<TextMeshProUGUI>().text = inventory.items[i].name;
+
+                //items[i].transform.Find("ItemIcon").GetComponent<Image>().sprite = inventory.items[i].icon;
+
+                //items[i].transform.Find("ItemPrice").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = inventory.items[i].price.ToString() + " $";
+
+                _items[i].transform.Find("ItemAmount").transform.Find("Text").GetComponent<TextMeshProUGUI>().text = inventory.items[i].amount.ToString();
+            }
+
+            Debug.Log("Update item in shop complite.");
+        }
     }
 }

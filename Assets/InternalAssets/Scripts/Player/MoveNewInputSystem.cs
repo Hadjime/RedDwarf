@@ -25,10 +25,9 @@ namespace InternalAssets.Scripts.Player
         private const float TimeoutAttack = 1f;
         private float currentTime;
         private static readonly int IsDigging = Animator.StringToHash("isDigging"); 
-        private static readonly int IsRun = Animator.StringToHash("isRun"); 
-        
+        private static readonly int IsRun = Animator.StringToHash("isRun");
 
-        private void Start()
+        private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             _startPosition = _rb.position;
@@ -37,11 +36,15 @@ namespace InternalAssets.Scripts.Player
             _animator = GetComponent<Animator>();
         }
 
+        private void Start()
+        {
+            
+            
+            
+        }
+
         public void FixedUpdate()
         {
-            var temp1 = this.transform.position;
-            var temp2 = this.transform.position;
-            var temp3 = this.transform.position;
             if (isMoving) // если находимся в движении
             {
                 _rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using InternalAssets.Scripts.Inventory;
 using UI;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ public class ShopManager : MonoBehaviour
     }
     public void Buy()
     {
-        selectCardId = snapScrolling.GetSelectedCardID();
+        selectCardId = snapScrolling.GetSelectedCardId();
         if (inventory.AmountMoney >= inventory.items[selectCardId].price)
         {
             inventory.AmountMoney -= inventory.items[selectCardId].price;
@@ -28,7 +29,7 @@ public class ShopManager : MonoBehaviour
     }
     public void Sell()
     {
-        selectCardId = snapScrolling.GetSelectedCardID();
+        selectCardId = snapScrolling.GetSelectedCardId();
         if (inventory.items[selectCardId].amount > 0)
         {
             inventory.AmountMoney += inventory.items[selectCardId].price;

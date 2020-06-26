@@ -6,13 +6,11 @@ namespace InternalAssets.Scripts.UI.Event
     //[RequireComponent(typeof(TextMeshProUGUI))]
     public class PickAxePanel : MonoBehaviour
     {
-        public Inventory inventory;
+        public Inventory.Inventory inventory;
         
-        public TextMeshProUGUI pickAxeTextMeshProUgui;
-        private void Awake()
+        public TextMeshProUGUI pickAxeTMPtext;
+        private void Start()
         {
-            //pickAxeTextMeshProUgui = GetComponent<TextMeshProUGUI>();
-            //pickAxeTextMeshProUgui.text = inventory.AmountPickAxe.ToString();
             HandlePickAxeChange();
         }
 
@@ -28,7 +26,7 @@ namespace InternalAssets.Scripts.UI.Event
 
         private void HandlePickAxeChange()
         {
-            pickAxeTextMeshProUgui.text = inventory.AmountPickAxe.ToString();
+            pickAxeTMPtext.text = inventory.AmountPickAxe.ToString();
         }
     }
 }

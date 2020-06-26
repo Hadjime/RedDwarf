@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections;
-using TMPro;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Event
+namespace InternalAssets.Scripts.UI.Event
 {
     public class HealthPanel : MonoBehaviour
     {
-        public Inventory inventory;
+        public Inventory.Inventory inventory;
         public Image bar;
 
         [SerializeField] private float updateSpeedSeconds = 0.2f;
-        private void Awake()
+        private void Start()
         {
             inventory.AmountHp = 100;
-            //HpChange();
             HandleHpChangePct();
         }
 
@@ -29,13 +26,17 @@ namespace UI.Event
             EventManager.StopListening("OnHPChange", HandleHpChangePct);
         }
 
+        // Instantly changing HP
         private void HpChange()
         {
             bar.fillAmount = inventory.AmountHp / 100f;
         }
+        
+        //Gradually changing GP
         private void HandleHpChangePct()
         {
-            StartCoroutine(ChangeToPct(inventory.AmountHp / 100f));
+            var hpPct = inventory.AmountHp / 100f;
+            StartCoroutine(ChangeToPct(hpPct));
         }
 
         private IEnumerator ChangeToPct(float pct)
