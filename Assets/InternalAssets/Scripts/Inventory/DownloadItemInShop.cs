@@ -18,7 +18,7 @@ namespace InternalAssets.Scripts.Inventory
             return listWeaponCards;
         }
     
-        private void Start()
+        private void Awake()
         {
             DownloadItemsInShop();
         }

@@ -760,6 +760,8 @@ GameObject:
   - component: {fileID: 265165763639172309}
   - component: {fileID: 7790328900356722950}
   - component: {fileID: 6202542647033273807}
+  - component: {fileID: 2069275776332312294}
+  - component: {fileID: 3733012046857264183}
   m_Layer: 5
   m_Name: ItemCardForChangeWeapon
   m_TagString: Untagged
@@ -827,6 +829,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2069275776332312294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024531085133631270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca198074938eca645a2ee7833dffdee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3733012046857264183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024531085133631270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3104aff7b86aed4e852d4de34c18289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 7852686769579122703}
+  listBoxID: 0
+  lastListBox: {fileID: 0}
+  nextListBox: {fileID: 0}
 --- !u!1 &7026662862442355831
 GameObject:
   m_ObjectHideFlags: 0
