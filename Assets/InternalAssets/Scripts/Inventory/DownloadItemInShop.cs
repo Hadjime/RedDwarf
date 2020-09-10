@@ -32,6 +32,7 @@ namespace InternalAssets.Scripts.Inventory
                 GameObject instance = Instantiate(prefab.gameObject, content, false);
                 listWeaponCards.Add(instance);
                 instance.name = "CardWeapon_" + numberCard;
+                instance.transform.rotation = Quaternion.Euler(0f, -45f, 0f);
                 InitializeCardFromInventory(instance, item);
             }
             Debug.Log("Download item in shop complite.");
