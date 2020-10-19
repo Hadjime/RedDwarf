@@ -285,9 +285,17 @@
             </e>
             <e p="EventManager.cs" t="Include" />
             <e p="Inventory" t="Include">
-              <e p="DownloadItemInShop.cs" t="Include" />
+              <e p="AInventory.cs" t="Include" />
+              <e p="DownloadItemFromInventoryToShop.cs" t="Include" />
+              <e p="DownloadItemFromInventoryToUIConytol.cs" t="Include" />
+              <e p="DownloadItemInBase.cs" t="Include" />
+              <e p="IInventory.cs" t="Include" />
               <e p="Inventory.cs" t="Include" />
-              <e p="PlayerInventory.cs" t="Include" />
+              <e p="Item" t="Include">
+                <e p="IItem.cs" t="Include" />
+                <e p="InventoryItem.cs" t="Include" />
+                <e p="Item.cs" t="Include" />
+              </e>
             </e>
             <e p="Map" t="Include">
               <e p="ISelect.cs" t="Include" />
@@ -325,7 +333,6 @@
                 <e p="RectSizeDelta.cs" t="Include" />
               </e>
               <e p="UILoader.cs" t="Include" />
-              <e p="UpdateItemInShop.cs" t="Include" />
             </e>
           </e>
         </e>

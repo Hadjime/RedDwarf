@@ -36,7 +36,7 @@ public class SnapScrolling : MonoBehaviour
     {
         _contentRect = GetComponent<RectTransform>();
         _weaponCards = new List<GameObject>();
-        _weaponCards = GetComponent<DownloadItemInShop>().GetListWeaponCards();
+        _weaponCards = GetComponent<DownloadItemInBase>().GetListWeaponCards();
         _cardCount = _weaponCards.Count;
 
         _transformPanels = new Transform[_cardCount];

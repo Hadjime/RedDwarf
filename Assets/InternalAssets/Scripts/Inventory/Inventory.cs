@@ -6,11 +6,16 @@ using UnityEngine.Serialization;
 namespace InternalAssets.Scripts.Inventory
 {
     [CreateAssetMenu(fileName = "New Inventory", menuName = "Scriptable Object/New Inventory", order = 51)]
-    public class Inventory : ScriptableObject
+    public class Inventory : UnityEngine.ScriptableObject, IInventory
     {
-        public string namePlayer;
-        [SerializeField]
-        private int amountHp;
+        [SerializeField] private string namePlayer;
+        [SerializeField] private int amountHp;
+        [SerializeField] private int amountMoney;
+        [SerializeField] private int amountPickAxe;
+        [SerializeField] private List<Item.Item> items;
+
+        public string NamePlayer { get; set; }
+
         public int AmountHp
         {
             get => amountHp;
@@ -20,9 +25,6 @@ namespace InternalAssets.Scripts.Inventory
                 EventManager.TriggerEvent("OnHPChange");
             }
         }
-
-        [SerializeField]
-        private int amountMoney;
         public int AmountMoney
         {
             get => amountMoney;
@@ -32,8 +34,6 @@ namespace InternalAssets.Scripts.Inventory
                 EventManager.TriggerEvent("OnMoneyChange");
             }
         }
-        [SerializeField]
-        private int amountPickAxe;
         public int AmountPickAxe
         {
             get => amountPickAxe;
@@ -43,7 +43,12 @@ namespace InternalAssets.Scripts.Inventory
                 EventManager.TriggerEvent("OnPickAxeChange");
             }
         }
-        public List<InventoryItem> items;
+        public List<Item.Item> Items
+        {
+            get => items;
+            set => items = value;
+        }
+
 
         public void ApplyDamage(int damage)
         {
@@ -58,16 +63,5 @@ namespace InternalAssets.Scripts.Inventory
         {
             AmountPickAxe += number;
         }
-    }
-
-    [System.Serializable]
-    public class InventoryItem
-    {
-        public string name;
-        public Sprite icon;
-        public int price;
-        public int attackDamage;
-        public int protection;
-        public int amount;
     }
 }
