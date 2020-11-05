@@ -294,6 +294,7 @@
               <e p="Item" t="Include">
                 <e p="IItem.cs" t="Include" />
                 <e p="Item.cs" t="Include" />
+                <e p="SmallBomb.cs" t="Include" />
               </e>
             </e>
             <e p="Map" t="Include">

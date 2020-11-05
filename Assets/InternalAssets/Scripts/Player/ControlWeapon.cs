@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using InternalAssets.Scripts.Inventory.Item;
 using UnityEngine;
 
@@ -9,11 +10,12 @@ namespace InternalAssets.Scripts.Player
     {
         [SerializeField] private Inventory.Inventory inventory;
         [SerializeField] private Item currentWeapon;
-        private Action AttackAction;
+        [SerializeField] private int currentIdWeapon;
+        private Action<int> AttackAction;
 
         private void Start()
         {
-            AttackAction = AttackSmallBomb;
+            AttackAction = AttackCurrentWeapon;
         }
 
         private void OnEnable()
@@ -30,19 +32,22 @@ namespace InternalAssets.Scripts.Player
         {
             if (Input.GetKeyDown(KeyCode.LeftControl))
             {
-                AttackAction();
+                AttackAction(currentIdWeapon);
             }
         }
 
         private void HandleChangingCurrentWeapon(int weaponID)
         {
             currentWeapon = inventory.Items[weaponID];
-        }
+            currentIdWeapon = weaponID;
         
-        public void AttackSmallBomb()
+        }
+        public void AttackCurrentWeapon(int weaponID)
         {
-            inventory.Items[0].Amount -= 1; 
-            Instantiate(inventory.Items[0].Prefab, SnapPos(), Quaternion.identity);
+            if (inventory.Items[weaponID].Amount <= 0) return;
+            
+            inventory.Items[weaponID].Amount -= 1; 
+            Instantiate(inventory.Items[weaponID].Prefab, SnapPos(), Quaternion.identity);
         }
     }
 }

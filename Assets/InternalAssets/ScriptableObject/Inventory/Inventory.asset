@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventory_2
   namePlayer: 
   amountHp: 100
-  amountMoney: 926
+  amountMoney: 1096
   amountPickAxe: 0
   items:
-  - {fileID: 11400000, guid: ba32db1485c103744a65a8bc84be3cb5, type: 2}
-  - {fileID: 11400000, guid: 7c46df766cbeae7458f42b88a313bcb9, type: 2}
-  - {fileID: 11400000, guid: c7ef0354642426448ad91a514869c944, type: 2}
-  - {fileID: 11400000, guid: a2bb95f01022db94f89421a740b4e138, type: 2}
-  - {fileID: 11400000, guid: 75aef9dc1a7ec1440850aeeaba5f1393, type: 2}
-  - {fileID: 11400000, guid: 0a00ec0a107782f469df67b9a75556f9, type: 2}
   - {fileID: 11400000, guid: b8f9677d2357a5b4f8e29866f1c74526, type: 2}
+  - {fileID: 11400000, guid: 75aef9dc1a7ec1440850aeeaba5f1393, type: 2}
+  - {fileID: 11400000, guid: 7c46df766cbeae7458f42b88a313bcb9, type: 2}
+  - {fileID: 11400000, guid: a2bb95f01022db94f89421a740b4e138, type: 2}
+  - {fileID: 11400000, guid: c7ef0354642426448ad91a514869c944, type: 2}
+  - {fileID: 11400000, guid: 0a00ec0a107782f469df67b9a75556f9, type: 2}
+  - {fileID: 11400000, guid: ba32db1485c103744a65a8bc84be3cb5, type: 2}
   - {fileID: 11400000, guid: ac7b72529bc14fc4fb93d62f6d60db9a, type: 2}
+  currentWeapon: {fileID: 0}
