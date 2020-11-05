@@ -11,18 +11,18 @@ namespace InternalAssets.Scripts.Player
 #if UNITY_EDITOR
         void Update () {
             if(!Application.isPlaying){
-                SnapPos();
+                transform.position = SnapPos();
             }
         }
 #endif
   
-        private void SnapPos(){
+        public Vector3 SnapPos(){
             var position = transform.position;
             int clampedX = Mathf.RoundToInt (position.x) / xStep;
             int clampedY = Mathf.RoundToInt (position.y) / yStep;
             int clampedZ = Mathf.RoundToInt (position.z) / zStep;
             position = new Vector3 (clampedX*xStep, clampedY*yStep, clampedZ*zStep);
-            transform.position = position;
+            return position;
         }
 
     }

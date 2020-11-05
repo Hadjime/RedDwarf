@@ -293,7 +293,6 @@
               <e p="Inventory.cs" t="Include" />
               <e p="Item" t="Include">
                 <e p="IItem.cs" t="Include" />
-                <e p="InventoryItem.cs" t="Include" />
                 <e p="Item.cs" t="Include" />
               </e>
             </e>
@@ -303,6 +302,7 @@
               <e p="TileSetting.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
+              <e p="ControlWeapon.cs" t="Include" />
               <e p="DestroyFogOfWar.cs" t="Include" />
               <e p="MoveNewInputSystem.cs" t="Include" />
               <e p="Moving.cs" t="Include" />
@@ -315,15 +315,13 @@
               <e p="ChangeLanguage.cs" t="Include" />
               <e p="CircularScrollingList" t="Include">
                 <e p="MyListBox.cs" t="Include" />
+                <e p="UpdateData.cs" t="Include" />
               </e>
               <e p="ClickSelectController.cs" t="Include" />
-              <e p="Event" t="Include">
-                <e p="HealthPanel.cs" t="Include" />
-                <e p="HpChangeEvent1.cs" t="Include" />
-                <e p="MoneyPanel.cs" t="Include" />
-                <e p="PickAxePanel.cs" t="Include" />
-              </e>
               <e p="HealthBar.cs" t="Include" />
+              <e p="RightPanelChangingWeapon" t="Include">
+                <e p="SelectCurrentWeapon.cs" t="Include" />
+              </e>
               <e p="ShopManager.cs" t="Include" />
               <e p="SnapScrolling.cs" t="Include" />
               <e p="Test" t="Include">
@@ -331,6 +329,17 @@
                 <e p="HowManyAnchors.cs" t="Include" />
                 <e p="OnMousOver.cs" t="Include" />
                 <e p="RectSizeDelta.cs" t="Include" />
+              </e>
+              <e p="TopPanel" t="Include">
+                <e p="Btn" t="Include">
+                  <e p="BtnSwitchFogOfWar.cs" t="Include" />
+                  <e p="HandlerBtnListPosition.cs" t="Include" />
+                </e>
+                <e p="HealthPanel.cs" t="Include" />
+                <e p="HpChangeEvent1.cs" t="Include" />
+                <e p="MoneyPanel.cs" t="Include" />
+                <e p="PickAxePanel.cs" t="Include" />
+                <e p="SwitchFogOfWar.cs" t="Include" />
               </e>
               <e p="UILoader.cs" t="Include" />
             </e>

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,16 +15,33 @@ namespace InternalAssets.Scripts.Inventory
         [SerializeField] private int amountMoney;
         [SerializeField] private int amountPickAxe;
         [SerializeField] private List<Item.Item> items;
-
+        [SerializeField] private Item.Item currentWeapon;
+        
+        public Item.Item CurrentWeapon { get => currentWeapon; }
+        
         public string NamePlayer { get; set; }
 
+        private void OnEnable()
+        {
+            EventManager.StartListeningWithOneParametr("ChangingCurrentWeapon", HandleChangingCurrentWeapon);
+        }
+
+        private void OnDisable()
+        {
+            EventManager.StopListeningWithOneParametr("ChangingCurrentWeapon", HandleChangingCurrentWeapon);
+        }
+
+        private void HandleChangingCurrentWeapon(int weaponID)
+        {
+            currentWeapon = items[weaponID];
+        }
         public int AmountHp
         {
             get => amountHp;
             set
             {
                 amountHp = value <= 0 ? 0 : value;
-                EventManager.TriggerEvent("OnHPChange");
+                EventManager.StartEvent("OnHPChange");
             }
         }
         public int AmountMoney
@@ -31,7 +50,7 @@ namespace InternalAssets.Scripts.Inventory
             set
             {
                 amountMoney = value;
-                EventManager.TriggerEvent("OnMoneyChange");
+                EventManager.StartEvent("OnMoneyChange");
             }
         }
         public int AmountPickAxe
@@ -40,7 +59,7 @@ namespace InternalAssets.Scripts.Inventory
             set
             {
                 amountPickAxe = value;
-                EventManager.TriggerEvent("OnPickAxeChange");
+                EventManager.StartEvent("OnPickAxeChange");
             }
         }
         public List<Item.Item> Items

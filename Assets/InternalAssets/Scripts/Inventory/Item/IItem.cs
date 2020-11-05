@@ -10,5 +10,6 @@ namespace InternalAssets.Scripts.Inventory.Item
         int AttackDamage { get; }
         int Protection { get; }
         int Amount { get; set; }
+        GameObject Prefab { get; }
     }
 }

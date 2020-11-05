@@ -10,7 +10,6 @@ namespace InternalAssets.Scripts.Inventory
     {
         public Inventory inventory;
         public RectTransform prefabCard;
-        public RectTransform content;
 
         private List<GameObject> listWeaponCards = new List<GameObject>();
         private int _numberCard;
@@ -22,30 +21,30 @@ namespace InternalAssets.Scripts.Inventory
     
         private void Awake()
         {
-            DownloadItemsInShop();
+            DownloadItems();
         }
         private void Update()
         {
             
         }
-        private void DownloadItemsInShop()
+        private void DownloadItems()
         {
             _numberCard = 0;
             foreach(var item in inventory.Items)
             {
-                var instance = CreateAndSetNamePrefab();
+                var instance = CreateAndSetNamePrefab(_numberCard);
+                listWeaponCards.Add(instance);
                 RotateCardItem(instance);
                 InitializeCardFromInventory(instance, item);
+                _numberCard++;
             }
             Debug.Log("Download item in shop complite.");
         }
 
-        private GameObject CreateAndSetNamePrefab()
+        private GameObject CreateAndSetNamePrefab(int numberCard)
         {
-            _numberCard++;
-            GameObject instance = Instantiate(prefabCard.gameObject, content, false);
-            listWeaponCards.Add(instance);
-            instance.name = "CardWeapon_" + _numberCard;
+            GameObject instance = Instantiate(prefabCard.gameObject, this.transform, false);
+            instance.name = "CardWeapon_" + numberCard;
             return instance;
         }
 

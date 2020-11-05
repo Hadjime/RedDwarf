@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using InternalAssets.Scripts.Player;
+using UnityEngine;
 
 namespace InternalAssets.Scripts.Map
 {
