@@ -7,7 +7,7 @@ namespace InternalAssets.Scripts.Map
     {
         [SerializeField] private int maxHp;
         [SerializeField, Range(0,100)] private int hpTile;
-        public int HpTile
+        private int HpTile
         {
             get => hpTile;
             set
@@ -35,6 +35,11 @@ namespace InternalAssets.Scripts.Map
                 }
             }
 
+        }
+
+        public void DamageTile(int damage)
+        {
+            HpTile -= damage;
         }
 
         public List<Sprite> listSpritesForVisualisationHealth;

@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Inventory.Item
@@ -6,24 +7,35 @@ namespace InternalAssets.Scripts.Inventory.Item
     public class SmallBomb : MonoBehaviour
     {
         [SerializeField, Range(0, 10)] private int delay;
-        private float timeRemaining;
+        [SerializeField] private GameObject cellExplosion;
+        private float _timeRemaining;
+        private bool once;
         
         private void Start()
         {
-            timeRemaining = delay;
+            _timeRemaining = delay;
         }
         private void Update()
         {
-            timeRemaining -= Time.deltaTime;
-            if (timeRemaining <= 0)
+            _timeRemaining -= Time.deltaTime;
+            if (_timeRemaining <= 0)
             {
-                Babah();
+                BabahOnce();
             }
         }
 
-        private void Babah()
+        public void BabahOnce()
         {
-            throw new NotImplementedException();
+            if (!once)
+            {
+                Instantiate(cellExplosion, transform.position, quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.down, quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.up, quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.left, quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.right, quaternion.identity);
+                Destroy(this.gameObject);
+                once = true;
+            }
         }
     }
 }

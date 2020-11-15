@@ -9,12 +9,7 @@ namespace InternalAssets.Scripts.Player
     public class MoveNewInputSystem : MonoBehaviour
     {
         [Range(0.1f,50f)][SerializeField] private float speed = 2;
-        public bool isUp;
-        public bool isDown;
-        public bool isLeft;
-        public bool isRight;
-        public bool isMoving;
-        public bool isAttack;
+        [Range(0.1f,50f)][SerializeField] private int handAttack = 2;
         private Vector2 _direction;
         private Rigidbody2D _rb;
         private Vector2 _startPosition;
@@ -26,6 +21,13 @@ namespace InternalAssets.Scripts.Player
         private float currentTime;
         private static readonly int IsDigging = Animator.StringToHash("isDigging"); 
         private static readonly int IsRun = Animator.StringToHash("isRun");
+        
+        [SerializeField] private bool isUp;
+        [SerializeField] private bool isDown;
+        [SerializeField] private bool isLeft;
+        [SerializeField] private bool isRight;
+        [SerializeField] private bool isMoving;
+        [SerializeField] private bool isAttack;
 
         private void Awake()
         {
@@ -135,7 +137,7 @@ namespace InternalAssets.Scripts.Player
                     if (1 << hit.collider.gameObject.layer == _maskForAttack.value)
                     {
                     
-                        hit.collider.GetComponent<TileSetting>().HpTile += -20;
+                        hit.collider.GetComponent<TileSetting>().DamageTile(handAttack);
                         if (CheckPointForMove(_direction))
                         {
                             isMoving = true;

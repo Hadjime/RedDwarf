@@ -10,10 +10,10 @@ namespace InternalAssets.Scripts.Player
         public void OnTriggerEnter2D(Collider2D other)
         {
 
-            var item2 = other.GetComponent<ISelect>();
-            if (item2 != null)
+            var item = other.GetComponent<ISelect>();
+            if (item != null)
             {
-                inventory.AmountMoney += item2.GetItem();
+                inventory.AmountMoney += item.GetItem();
             }
         }
     }

@@ -344,6 +344,9 @@
               </e>
               <e p="UILoader.cs" t="Include" />
             </e>
+            <e p="Weapon" t="Include">
+              <e p="CellExplosion.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Lean" t="Include">

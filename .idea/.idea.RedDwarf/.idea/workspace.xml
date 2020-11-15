@@ -19,14 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4cf2f2d-dacb-44b9-882c-702936876263" name="Default Changelist" comment="По мелочи причесан код. Добавлена возможность размещения оружия в игре и визуализация количества в интерфейсе.">
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Item/SmallBomb.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Item/SmallBomb.cs.meta" afterDir="false" />
+    <list default="true" id="c4cf2f2d-dacb-44b9-882c-702936876263" name="Default Changelist" comment="Редактирование управлением оружием">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RedDwarf/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Lvl/Scene_Test_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scenes/Lvl/Scene_Test_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/ScriptableObject/Inventory/Inventory.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/ScriptableObject/Inventory/Inventory.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/ControlWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/ControlWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Item/SmallBomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Item/SmallBomb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/TileSetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/TileSetting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,17 +89,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Editors/Player/MoveNewInputSystemEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MoveMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/ISelect.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/TileSetting.cs" />
         <option value="$PROJECT_DIR$/Assets/CircularScrollingList/ListBox.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/UILoader.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.qwerty.circular-scrolling-list@db9f3e32a9c9042e1d74a9178e6a0d89fe25b99d/Scripts/Runtime/ListBox.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/CircularScrollingList/ListPositionCtrl_export.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/_temp/MyListBox.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/HealthPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/Event/MoneyPanel.cs" />
@@ -138,6 +134,11 @@
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/UI/CircularScrollingList/UpdateData.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Item/Item.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/ControlWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Weapon/DeleteExplosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/TakeItems.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Player/MoveNewInputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Map/TileSetting.cs" />
+        <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Weapon/CellExplosion.cs" />
         <option value="$PROJECT_DIR$/Assets/InternalAssets/Scripts/Inventory/Item/SmallBomb.cs" />
       </list>
     </option>
@@ -307,7 +308,11 @@
       <workItem from="1604461235408" duration="3612000" />
       <workItem from="1604486494607" duration="3460000" />
       <workItem from="1604535590248" duration="155000" />
-      <workItem from="1604578146117" duration="4644000" />
+      <workItem from="1604578146117" duration="4750000" />
+      <workItem from="1604725082472" duration="2530000" />
+      <workItem from="1604813979257" duration="67000" />
+      <workItem from="1604814265202" duration="4380000" />
+      <workItem from="1605418231674" duration="7941000" />
     </task>
     <task id="LOCAL-00001" summary="Обновил класс загрузки данных из инвентаря в UI магазина и UI выбора оружия.">
       <created>1603116882205</created>
@@ -323,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604535710329</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Редактирование управлением оружием">
+      <created>1604590310742</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604590310742</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +359,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Обновил класс загрузки данных из инвентаря в UI магазина и UI выбора оружия." />
     <MESSAGE value="По мелочи причесан код. Добавлена возможность размещения оружия в игре и визуализация количества в интерфейсе." />
-    <option name="LAST_COMMIT_MESSAGE" value="По мелочи причесан код. Добавлена возможность размещения оружия в игре и визуализация количества в интерфейсе." />
+    <MESSAGE value="Редактирование управлением оружием" />
+    <option name="LAST_COMMIT_MESSAGE" value="Редактирование управлением оружием" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1599144408152">
@@ -398,10 +411,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603032868324" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604535732214">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604590314843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604535732214" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604590314843" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1603023931680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
