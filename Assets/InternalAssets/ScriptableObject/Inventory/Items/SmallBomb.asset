@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa13e16e2bd67043b2acb049430a130, type: 3}
+  m_Name: SmallBomb
+  m_EditorClassIdentifier: 
+  name: 
+  icon: {fileID: 21300280, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
+  price: 1
+  attackDamage: 0
+  protection: 0
+  amount: 68
+  prefab: {fileID: 9021090884675595381, guid: ba64aaa060a86fe4284b76b69352b5ff, type: 3}
