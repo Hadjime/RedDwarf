@@ -1,14 +1,19 @@
-﻿using UnityEngine;
+﻿using InternalAssets.Scripts.Player.Data;
+using UnityEngine;
 
 namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
 {
     public abstract class PlayerState
     {
-        protected PlayerFSM PlayerFsm;
+        protected Player player;
+        protected PlayerFSM playerFsm;
+        protected PlayerData playerData;
         
-        protected PlayerState(PlayerFSM playerFsm)
+        protected PlayerState(Player player, PlayerFSM playerFsm, PlayerData playerData, string animBoolName)
         {
-            this.PlayerFsm = playerFsm;
+            this.player = player;
+            this.playerFsm = playerFsm;
+            this.playerData = playerData;
         }
 
         public virtual void Enter()
