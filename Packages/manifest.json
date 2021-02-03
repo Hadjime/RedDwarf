@@ -1,28 +1,28 @@
 {
   "dependencies": {
     "com.qwerty.circular-scrolling-list": "https://github.com/Hadjime/Circular-Scrolling-List.git",
-    "com.unity.2d.pixel-perfect": "2.0.4",
+    "com.unity.2d.pixel-perfect": "2.1.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.2d.tilemap.extras": "https://github.com/Unity-Technologies/2d-extras.git",
-    "com.unity.ads": "3.4.5",
+    "com.unity.ads": "3.6.1",
     "com.unity.analytics": "3.3.5",
     "com.unity.cinemachine": "2.5.0",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.device-simulator": "2.2.2-preview",
     "com.unity.entities": "0.1.1-preview",
-    "com.unity.ext.nunit": "1.0.0",
+    "com.unity.ext.nunit": "1.0.6",
     "com.unity.ide.rider": "1.1.4",
-    "com.unity.ide.vscode": "1.2.0",
-    "com.unity.inputsystem": "1.0.0-preview.5",
-    "com.unity.multiplayer-hlapi": "1.0.6",
-    "com.unity.purchasing": "2.0.6",
+    "com.unity.ide.vscode": "1.2.3",
+    "com.unity.inputsystem": "1.0.0",
+    "com.unity.multiplayer-hlapi": "1.0.8",
+    "com.unity.purchasing": "2.2.1",
     "com.unity.rendering.hybrid": "0.1.1-preview",
-    "com.unity.test-framework": "1.1.14",
+    "com.unity.test-framework": "1.1.20",
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.10",
     "com.unity.ugui": "1.0.0",
-    "com.unity.xr.legacyinputhelpers": "2.1.4",
+    "com.unity.xr.legacyinputhelpers": "2.1.7",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -54,15 +54,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.unity.2d.tilemap.extras": {
-      "revision": "HEAD",
-      "hash": "e9955e7528762a4ba6cd0471215e2c2135436ebe"
-    },
-    "com.qwerty.circular-scrolling-list": {
-      "revision": "HEAD",
-      "hash": "427f00c164a0df827e21565434c19b10877f6d86"
-    }
   }
 }
