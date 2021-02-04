@@ -9,9 +9,14 @@ namespace InternalAssets.Scripts.Player.Input
     {
         private PlayerInput _playerInput;
 
-        public Vector2 RawMovementInput { get; private set; };
+        public Vector2 RawMovementInput { get; private set; }
 
-        public void Awake()
+        private void Awake()
+        {
+            RawMovementInput = Vector2.zero;
+        }
+
+        public void Start()
         {
             _playerInput = GetComponent<PlayerInput>();
         }

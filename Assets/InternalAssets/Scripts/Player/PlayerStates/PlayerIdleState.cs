@@ -1,5 +1,6 @@
 ﻿using InternalAssets.Scripts.Player.Data;
 using InternalAssets.Scripts.Player.PlayerFinitStateMachine;
+using UnityEngine;
 
 namespace InternalAssets.Scripts.Player.PlayerStates
 {
@@ -22,6 +23,11 @@ namespace InternalAssets.Scripts.Player.PlayerStates
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+            Debug.Log(player._inputHandler.RawMovementInput);
+            if (player._inputHandler.RawMovementInput != Vector2.zero)
+            {
+                player._playerFSM.ChangeState(player._moveState);
+            }
         }
 
         public override void PhysicsUpdate()
