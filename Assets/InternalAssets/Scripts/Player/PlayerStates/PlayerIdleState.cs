@@ -23,7 +23,6 @@ namespace InternalAssets.Scripts.Player.PlayerStates
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            Debug.Log(player._inputHandler.RawMovementInput);
             if (player._inputHandler.RawMovementInput != Vector2.zero)
             {
                 player._playerFSM.ChangeState(player._moveState);
