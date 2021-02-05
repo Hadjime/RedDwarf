@@ -32,7 +32,6 @@ namespace InternalAssets.Scripts.Player.PlayerStates
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            player._RB2D.MovePosition(position: player._RB2D.position + player._inputHandler.RawMovementInput * (Time.deltaTime * playerData.movementVelocity));
         }
     }
 }
