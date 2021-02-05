@@ -3,6 +3,7 @@ using InternalAssets.Scripts.Player.Data;
 using InternalAssets.Scripts.Player.Input;
 using InternalAssets.Scripts.Player.PlayerStates;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
 {
@@ -13,10 +14,11 @@ namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
         public PlayerFSM _playerFSM { get; private set; }
         public PlayerInputHandler _inputHandler { get; private set; }
 
-        private Rigidbody2D _RB2D;
+        public Rigidbody2D _RB2D;
         
         #region Player States
 
+        public PlayerTestState _testState { get; private set; }
         public PlayerIdleState _idleState { get; private set; }
         public PlayerMoveState _moveState { get; private set; }
         
@@ -25,6 +27,7 @@ namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
         public void Awake()
         {
             _playerFSM = new PlayerFSM();
+            _testState = new PlayerTestState(this, _playerFSM, playerData, "idle");
             _idleState = new PlayerIdleState(this, _playerFSM, playerData, "idle");
             _moveState = new PlayerMoveState(this, _playerFSM, playerData, "move");
         }
@@ -32,6 +35,8 @@ namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
         public void Start()
         {
             _RB2D = GetComponent<Rigidbody2D>();
+            _inputHandler = GetComponent<PlayerInputHandler>();
+            //_playerFSM.Initialize(_testState);
             _playerFSM.Initialize(_idleState);
         }
 
