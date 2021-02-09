@@ -21,9 +21,13 @@ namespace InternalAssets.Scripts.Player.Input
             _playerInput = GetComponent<PlayerInput>();
         }
 
-        public void Move(InputAction.CallbackContext context)
+        public void OnMove(InputAction.CallbackContext context)
         {
-            RawMovementInput = context.ReadValue<Vector2>();
+            if (context.started)
+            {
+                RawMovementInput = context.ReadValue<Vector2>();
+            }
+            
         }
     }
 }
