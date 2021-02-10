@@ -21,7 +21,7 @@ namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
 
         public virtual void Enter()
         {
-            Debug.Log("Enter state " + player._playerFSM.CurrentState.ToString());
+            Debug.Log("Enter state " + player.playerFSM.CurrentState.ToString());
         }
 
         public virtual void Exit()

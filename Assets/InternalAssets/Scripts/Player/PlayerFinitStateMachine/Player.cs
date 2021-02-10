@@ -37,7 +37,7 @@ namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
             testState = new PlayerTestState(this, playerFSM, playerData, "idle");
             idleState = new PlayerIdleState(this, playerFSM, playerData, "idle");
             moveState = new PlayerMoveState(this, playerFSM, playerData, "isRun");
-            digState = new PlayerDigState(this, playerFSM, playerData, "isDiging");
+            digState = new PlayerDigState(this, playerFSM, playerData, "isDigging");
         }
 
         public void Start()

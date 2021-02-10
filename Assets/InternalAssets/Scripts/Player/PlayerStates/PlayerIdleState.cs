@@ -15,13 +15,13 @@ namespace InternalAssets.Scripts.Player.PlayerStates
         public override void Enter()
         {
             base.Enter();
-            player.animator.SetBool(isIdle, true);
+            //player.animator.SetBool(isIdle, true);
         }
 
         public override void Exit()
         {
             base.Exit();
-            player.animator.SetBool(isIdle, false);
+            //player.animator.SetBool(isIdle, false);
         }
 
         public override void LogicUpdate()
