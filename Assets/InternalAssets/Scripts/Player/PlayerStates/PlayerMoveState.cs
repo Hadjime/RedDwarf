@@ -6,33 +6,40 @@ namespace InternalAssets.Scripts.Player.PlayerStates
 {
     public class PlayerMoveState : PlayerState
     {
+        private int isMove;
         public PlayerMoveState(PlayerFinitStateMachine.Player player, PlayerFSM playerFsm, PlayerData playerData, string animBoolName) : base(player, playerFsm, playerData, animBoolName)
         {
+            isMove = Animator.StringToHash(animBoolName);
         }
 
         public override void Enter()
         {
             base.Enter();
+            player.animator.SetBool(isMove, true);
         }
 
         public override void Exit()
         {
             base.Exit();
+            player.animator.SetBool(isMove, false);
         }
 
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            if (player._inputHandler.RawMovementInput == Vector2.zero)
+            
+            
+            
+            if (player.inputHandler.RawMovementInput == Vector2.zero)
             {
-                player._playerFSM.ChangeState(player._idleState);
+                player.playerFSM.ChangeState(player.idleState);
             }
         }
 
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            player._RB2D.MovePosition(position: player._RB2D.position + player._inputHandler.RawMovementInput * (Time.deltaTime * playerData.movementVelocity));
+            player.Movement();
         }
     }
 }
