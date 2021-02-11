@@ -6,22 +6,19 @@ namespace InternalAssets.Scripts.Player.PlayerStates
 {
     public class PlayerIdleState : PlayerState
     {
-        private int isIdle;
-        public PlayerIdleState(PlayerFinitStateMachine.Player player, PlayerFSM playerFsm, PlayerData playerData, string animBoolName) : base(player, playerFsm, playerData, animBoolName)
+        public PlayerIdleState(PlayerFinitStateMachine.Player player, PlayerFSM playerFsm, PlayerData playerData,
+            int animBoolId) : base(player, playerFsm, playerData, animBoolId)
         {
-            isIdle = Animator.StringToHash(animBoolName);
         }
 
         public override void Enter()
         {
             base.Enter();
-            //player.animator.SetBool(isIdle, true);
         }
 
         public override void Exit()
         {
             base.Exit();
-            //player.animator.SetBool(isIdle, false);
         }
 
         public override void LogicUpdate()

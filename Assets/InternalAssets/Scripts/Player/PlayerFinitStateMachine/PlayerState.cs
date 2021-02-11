@@ -8,25 +8,27 @@ namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
         protected Player player;
         protected PlayerFSM playerFsm;
         protected PlayerData playerData;
+        protected int animBoolId;
         
         private string _animBoolName;
         
-        protected PlayerState(Player player, PlayerFSM playerFsm, PlayerData playerData, string animBoolName)
+        protected PlayerState(Player player, PlayerFSM playerFsm, PlayerData playerData, int animBoolId)
         {
             this.player = player;
             this.playerFsm = playerFsm;
             this.playerData = playerData;
-            this._animBoolName = animBoolName;
+            this.animBoolId = animBoolId;
         }
 
         public virtual void Enter()
         {
             Debug.Log("Enter state " + player.playerFSM.CurrentState.ToString());
+            player.animator.SetBool(animBoolId, true);
         }
 
         public virtual void Exit()
         {
-            
+            player.animator.SetBool(animBoolId, false);
         }
 
         public virtual void LogicUpdate()

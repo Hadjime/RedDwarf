@@ -34,10 +34,10 @@ namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
         public void Awake()
         {
             playerFSM = new PlayerFSM();
-            testState = new PlayerTestState(this, playerFSM, playerData, "idle");
-            idleState = new PlayerIdleState(this, playerFSM, playerData, "idle");
-            moveState = new PlayerMoveState(this, playerFSM, playerData, "isRun");
-            digState = new PlayerDigState(this, playerFSM, playerData, "isDigging");
+            testState = new PlayerTestState(this, playerFSM, playerData, Animator.StringToHash("isIdle") );
+            idleState = new PlayerIdleState(this, playerFSM, playerData, Animator.StringToHash("isIdle") );
+            moveState = new PlayerMoveState(this, playerFSM, playerData, Animator.StringToHash("isRun") );
+            digState = new PlayerDigState(this, playerFSM, playerData, Animator.StringToHash("isDigging") );
         }
 
         public void Start()
