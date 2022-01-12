@@ -6,7 +6,8 @@ namespace InternalAssets.Scripts.Player.PlayerStates
 {
     public class PlayerTestState : PlayerState
     {
-        public PlayerTestState(PlayerFinitStateMachine.Player player, PlayerFSM playerFsm, PlayerData playerData, string animBoolName) : base(player, playerFsm, playerData, animBoolName)
+        public PlayerTestState(PlayerFinitStateMachine.Player player, PlayerFSM playerFsm, PlayerData playerData,
+            int animBoolId) : base(player, playerFsm, playerData, animBoolId)
         {
         }
 

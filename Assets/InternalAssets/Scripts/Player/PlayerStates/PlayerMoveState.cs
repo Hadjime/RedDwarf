@@ -6,22 +6,19 @@ namespace InternalAssets.Scripts.Player.PlayerStates
 {
     public class PlayerMoveState : PlayerState
     {
-        private int isMove;
-        public PlayerMoveState(PlayerFinitStateMachine.Player player, PlayerFSM playerFsm, PlayerData playerData, string animBoolName) : base(player, playerFsm, playerData, animBoolName)
+        public PlayerMoveState(PlayerFinitStateMachine.Player player, PlayerFSM playerFsm, PlayerData playerData,
+            int animBoolId) : base(player, playerFsm, playerData, animBoolId)
         {
-            isMove = Animator.StringToHash(animBoolName);
         }
 
         public override void Enter()
         {
             base.Enter();
-            player.animator.SetBool(isMove, true);
         }
 
         public override void Exit()
         {
             base.Exit();
-            player.animator.SetBool(isMove, false);
         }
 
         public override void LogicUpdate()
