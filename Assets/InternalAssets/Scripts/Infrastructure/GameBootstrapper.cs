@@ -1,4 +1,5 @@
 ﻿using System;
+using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Infrastructure
@@ -11,6 +12,7 @@ namespace InternalAssets.Scripts.Infrastructure
         {
             _game = new Game();
             DontDestroyOnLoad(this);
+			CustomDebug.Log($"[Game] Init", Color.grey);
         }
     }
 }
