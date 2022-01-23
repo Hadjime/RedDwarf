@@ -12,7 +12,8 @@ namespace InternalAssets.Scripts.Infrastructure
 
         private void RegisterInputServices()
 		{
-			InputServices = new StandardInputService();
+			InputServices = new NewInputSystemService();
+            (InputServices as NewInputSystemService)?.Init();
 		}
     }
 }

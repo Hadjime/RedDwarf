@@ -10,8 +10,9 @@
                     "type": "Value",
                     "id": "07b2619f-2875-40f7-84b7-cd1e392907b5",
                     "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
+                    "processors": "NormalizeVector2",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "CallF1",
@@ -19,7 +20,8 @@
                     "id": "a2c0dbde-97a7-40ec-96e1-7ea12d551898",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Fire",
@@ -27,7 +29,8 @@
                     "id": "ca4b5408-71fd-49a8-a634-7ab9443e2764",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
