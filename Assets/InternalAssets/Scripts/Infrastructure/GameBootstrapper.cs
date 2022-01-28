@@ -11,6 +11,8 @@ namespace InternalAssets.Scripts.Infrastructure
         private void Awake()
         {
             _game = new Game();
+            _game.StateMachine.Enter<BootstrapState>();
+            
             DontDestroyOnLoad(this);
 			CustomDebug.Log($"[Game] Init", Color.grey);
         }

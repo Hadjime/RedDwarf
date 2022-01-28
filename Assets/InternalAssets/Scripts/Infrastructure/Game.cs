@@ -5,15 +5,13 @@ namespace InternalAssets.Scripts.Infrastructure
     public class Game
     {
         public static IInputService InputServices;
+        public GameStateMachine StateMachine;
+
         public Game()
         {
-            RegisterInputServices();
+            StateMachine = new GameStateMachine();
         }
 
-        private void RegisterInputServices()
-		{
-			InputServices = new NewInputSystemService();
-            (InputServices as NewInputSystemService)?.Init();
-		}
+        
     }
 }

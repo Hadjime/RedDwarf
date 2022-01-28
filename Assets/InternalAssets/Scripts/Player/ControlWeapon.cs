@@ -30,7 +30,7 @@ namespace InternalAssets.Scripts.Player
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (UnityEngine.Input.GetKeyDown(KeyCode.LeftControl))
             {
                 AttackAction(currentIdWeapon);
             }
