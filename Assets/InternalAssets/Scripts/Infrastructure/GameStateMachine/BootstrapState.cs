@@ -1,23 +1,39 @@
-﻿using InternalAssets.Scripts.Services.Input;
+﻿using InternalAssets.Scripts.Infrastructure.Scene;
+using InternalAssets.Scripts.Services.Input;
 
 
 namespace InternalAssets.Scripts.Infrastructure
 {
     public class BootstrapState: IState
     {
+		private const string Initial = "Initial";
+		
+		
         private readonly GameStateMachine _stateMachine;
+		private readonly SceneLoader _sceneLoader;
 
-        public BootstrapState(GameStateMachine stateMachine)
-        {
-            _stateMachine = stateMachine;
-        }
+
+		public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader)
+		{
+			_stateMachine = stateMachine;
+			_sceneLoader = sceneLoader;
+		}
 
         public void Enter()
         {
             RegisterServices();
+			
+			_sceneLoader.Load(Initial, onLoaded: EnterLoadLevel);
         }
 
-        private void RegisterServices()
+
+		private void EnterLoadLevel()
+		{
+			
+		}
+
+
+		private void RegisterServices()
         {
             Game.InputServices = SetupInputServices();
         }

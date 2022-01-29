@@ -1,5 +1,4 @@
-﻿using InternalAssets.Scripts.Infrastructure;
-using InternalAssets.Scripts.Infrastructure.Scene;
+﻿using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ namespace InternalAssets.Scripts.Infrastructure
 
         private void Awake()
         {
-            _game = new Game();
+            _game = new Game(this);
             _game.StateMachine.Enter<BootstrapState>();
             
             DontDestroyOnLoad(this);

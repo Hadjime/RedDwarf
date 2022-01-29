@@ -21,9 +21,15 @@ namespace InternalAssets.Scripts.Infrastructure.Scene
 		}
 		
 		
-		private IEnumerator LoadScene(string name, Action onLoaded = null)
+		private IEnumerator LoadScene(string nextScene, Action onLoaded = null)
 		{
-			AsyncOperation loadSceneAsync = SceneManager.LoadSceneAsync(name);
+			if (SceneManager.GetActiveScene().name == nextScene)
+			{
+				onLoaded?.Invoke();
+				yield break;
+			}
+			
+			AsyncOperation loadSceneAsync = SceneManager.LoadSceneAsync(nextScene);
 
 			while (!loadSceneAsync.isDone)
 				yield return null;

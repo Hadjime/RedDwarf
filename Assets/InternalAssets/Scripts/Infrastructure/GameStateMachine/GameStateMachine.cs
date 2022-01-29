@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using InternalAssets.Scripts.Infrastructure.Scene;
 
 
 namespace InternalAssets.Scripts.Infrastructure
@@ -9,11 +10,11 @@ namespace InternalAssets.Scripts.Infrastructure
         private readonly Dictionary<Type, IState> _states;
         private IState _activeState;
 
-        public GameStateMachine()
+        public GameStateMachine(SceneLoader sceneLoader)
         {
             _states = new Dictionary<Type, IState>()
             {
-                [typeof(BootstrapState)] = new BootstrapState(this),
+                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
             };
         }
         public void Enter<TState>() where TState : IState
