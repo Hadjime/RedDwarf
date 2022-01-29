@@ -1,4 +1,5 @@
 ﻿using System;
+using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure;
 using InternalAssets.Scripts.Map;
 using InternalAssets.Scripts.Services.Input;
