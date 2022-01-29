@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e961ef675a4694bcfe20f21e36285c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  handAttack: 2
+  speed: 5
+  handAttack: 30
   isUp: 0
   isDown: 0
   isLeft: 0
