@@ -1,4 +1,6 @@
-﻿using InternalAssets.Scripts.Services.Input;
+﻿using InternalAssets.Scripts.Infrastructure;
+using InternalAssets.Scripts.Infrastructure.Scene;
+using InternalAssets.Scripts.Services.Input;
 
 namespace InternalAssets.Scripts.Infrastructure
 {

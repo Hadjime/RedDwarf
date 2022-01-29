@@ -1,10 +1,12 @@
-﻿using System;
+﻿using InternalAssets.Scripts.Infrastructure;
+using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 
+
 namespace InternalAssets.Scripts.Infrastructure
 {
-    public class GameBootstrapper : MonoBehaviour
+    public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {
         private Game _game;
 

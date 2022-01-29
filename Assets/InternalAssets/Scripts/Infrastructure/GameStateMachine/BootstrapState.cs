@@ -1,5 +1,6 @@
 ﻿using InternalAssets.Scripts.Services.Input;
 
+
 namespace InternalAssets.Scripts.Infrastructure
 {
     public class BootstrapState: IState
