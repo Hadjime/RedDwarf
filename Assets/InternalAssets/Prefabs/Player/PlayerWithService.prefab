@@ -63,13 +63,12 @@ GameObject:
   - component: {fileID: 5791078214585251869}
   - component: {fileID: 4932424906319952118}
   - component: {fileID: 963529810866956795}
-  - component: {fileID: 4584909920131044526}
   - component: {fileID: 4584909920577510784}
   - component: {fileID: 4584909920577510809}
   - component: {fileID: 7472157605124970461}
   - component: {fileID: 8796420274686480772}
   m_Layer: 8
-  m_Name: PlayerwWithService
+  m_Name: PlayerWithService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,20 +304,6 @@ MonoBehaviour:
   isRight: 0
   isMoving: 0
   isAttack: 0
---- !u!114 &4584909920131044526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178790872919254444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e359d129d14fe4ab639c8c2f93dc53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid: {fileID: 0}
-  fogOfWar: {fileID: 0}
 --- !u!114 &4584909920577510784
 MonoBehaviour:
   m_ObjectHideFlags: 0
