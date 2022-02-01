@@ -1,4 +1,10 @@
-﻿using InternalAssets.Scripts.Infrastructure.Scene;
+﻿using System.Diagnostics;
+using Cinemachine;
+using InternalAssets.Scripts.Infrastructure.Scene;
+using InternalAssets.Scripts.Utils.Log;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace InternalAssets.Scripts.Infrastructure
 {
@@ -23,7 +29,15 @@ namespace InternalAssets.Scripts.Infrastructure
 
         private void OnLoaded()
         {
-            // var playerPrefab = 
+            AsyncOperationHandle<GameObject> asyncOperationHandle = Addressables.InstantiateAsync("PlayerWithService");
+            GameObject player = asyncOperationHandle.WaitForCompletion();
+            SetCameraFollow(player.transform);
+        }
+
+        private void SetCameraFollow(Transform player)
+        {
+            CinemachineVirtualCamera cinemachineVirtualCamera = Camera.main.GetComponentInChildren<CinemachineVirtualCamera>();
+            cinemachineVirtualCamera.Follow = player;
         }
     }
 }
