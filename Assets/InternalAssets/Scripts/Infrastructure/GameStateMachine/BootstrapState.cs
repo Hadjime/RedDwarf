@@ -27,10 +27,8 @@ namespace InternalAssets.Scripts.Infrastructure
         }
 
 
-		private void EnterLoadLevel()
-		{
-			
-		}
+		private void EnterLoadLevel() =>
+			_stateMachine.Enter<LoadLevelState, string>("Main");
 
 
 		private void RegisterServices()
