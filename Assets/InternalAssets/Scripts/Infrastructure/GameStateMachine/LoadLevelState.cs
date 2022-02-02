@@ -10,6 +10,10 @@ namespace InternalAssets.Scripts.Infrastructure
 {
     public class LoadLevelState : IPayloadState<string>
     {
+        private const string INITIAL_POINT_TAG = "InitialPoint";
+        const string PLAYER_WITH_SERVICE = "PlayerWithService";
+        
+        
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
 
@@ -29,7 +33,10 @@ namespace InternalAssets.Scripts.Infrastructure
 
         private void OnLoaded()
         {
-            AsyncOperationHandle<GameObject> asyncOperationHandle = Addressables.InstantiateAsync("PlayerWithService");
+            var initialPoint = GameObject.FindWithTag(INITIAL_POINT_TAG);
+
+            
+            AsyncOperationHandle<GameObject> asyncOperationHandle = Addressables.InstantiateAsync(PLAYER_WITH_SERVICE, initialPoint.transform.position, Quaternion.identity);
             GameObject player = asyncOperationHandle.WaitForCompletion();
             SetCameraFollow(player.transform);
         }
