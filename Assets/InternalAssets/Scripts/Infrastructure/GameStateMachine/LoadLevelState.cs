@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Cinemachine;
+using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;

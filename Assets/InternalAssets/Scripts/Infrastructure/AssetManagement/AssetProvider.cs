@@ -2,25 +2,11 @@
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace InternalAssets.Scripts.Infrastructure
+namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 {
-    public class GameFactory : IGameFactory
+    public class AssetProvider : IAssetProvider
     {
-        private const string PLAYER_WITH_SERVICE_PATH = "PlayerWithService";
-        private const string HUD_CANVAS_PATH = "HUDCanvas";
-
-        public GameObject CreateHero(GameObject at)
-        {
-            var player = Instantiate(PLAYER_WITH_SERVICE_PATH, at: at);
-            return player;
-        }
-
-        public GameObject CreateHud()
-        {
-            return Instantiate(HUD_CANVAS_PATH);
-        }
-
-        private static GameObject Instantiate(string path)
+        public GameObject Instantiate(string path)
         {
             AsyncOperationHandle<GameObject> asyncOperationHandle =
                 Addressables.InstantiateAsync(path);
@@ -28,7 +14,7 @@ namespace InternalAssets.Scripts.Infrastructure
             return player;
         }
 
-        private static GameObject Instantiate(string path, GameObject at)
+        public GameObject Instantiate(string path, GameObject at)
         {
             AsyncOperationHandle<GameObject> asyncOperationHandle =
                 Addressables.InstantiateAsync(path, at.transform.position, Quaternion.identity);
