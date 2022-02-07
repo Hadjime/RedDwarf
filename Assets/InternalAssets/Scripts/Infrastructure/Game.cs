@@ -1,5 +1,6 @@
 ﻿using InternalAssets.Scripts.Infrastructure;
 using InternalAssets.Scripts.Infrastructure.Scene;
+using InternalAssets.Scripts.Services;
 using InternalAssets.Scripts.Services.Input;
 
 namespace InternalAssets.Scripts.Infrastructure
@@ -11,7 +12,7 @@ namespace InternalAssets.Scripts.Infrastructure
 
         public Game(ICoroutineRunner coroutineRunner)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner));
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container);
         }
 
         

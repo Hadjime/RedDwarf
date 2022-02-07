@@ -4,7 +4,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 {
-    public class AssetProvider : IAssetProvider
+    public class AssetsProvider : IAssets
     {
         public GameObject Instantiate(string path)
         {

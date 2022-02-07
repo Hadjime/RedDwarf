@@ -7,17 +7,17 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 {
     public class GameFactory : IGameFactory
     {
-        private readonly IAssetProvider _assetProvider;
+        private readonly IAssets _assets;
 
-        public GameFactory(IAssetProvider assetProvider)
+        public GameFactory(IAssets assets)
         {
-            _assetProvider = assetProvider;
+            _assets = assets;
         }
 
         public GameObject CreateHero(GameObject at) =>
-            _assetProvider.Instantiate(AssetPath.PLAYER_WITH_SERVICE_PATH, at: at);
+            _assets.Instantiate(AssetPath.PLAYER_WITH_SERVICE_PATH, at: at);
 
         public GameObject CreateHud() =>
-                _assetProvider.Instantiate(AssetPath.HUD_CANVAS_PATH);
+                _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);
     }
 }

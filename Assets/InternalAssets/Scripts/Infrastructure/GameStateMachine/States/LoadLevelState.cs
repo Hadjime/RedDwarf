@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace InternalAssets.Scripts.Infrastructure
+namespace InternalAssets.Scripts.Infrastructure.States
 {
     public class LoadLevelState : IPayloadState<string>
     {
@@ -16,12 +16,13 @@ namespace InternalAssets.Scripts.Infrastructure
 
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
-        private GameFactory _gameFactory;
+        private IGameFactory _gameFactory;
 
-        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader)
+        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, IGameFactory gameFactory)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
+            _gameFactory = gameFactory;
         }
 
         public void Enter(string sceneName) => 

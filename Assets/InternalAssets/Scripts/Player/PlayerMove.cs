@@ -2,6 +2,7 @@
 using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure;
 using InternalAssets.Scripts.Map;
+using InternalAssets.Scripts.Services;
 using InternalAssets.Scripts.Services.Input;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
@@ -38,7 +39,7 @@ namespace InternalAssets.Scripts.Player
 
 		private void Awake()
 		{
-			_inputService = Game.InputServices;
+			_inputService = AllServices.Container.Single<IInputService>();
 			_rb = GetComponent<Rigidbody2D>();
 			_maskForMove = LayerMask.GetMask("Wall", "RockAndOther");
 			_maskForAttack = LayerMask.GetMask("RockAndOther");

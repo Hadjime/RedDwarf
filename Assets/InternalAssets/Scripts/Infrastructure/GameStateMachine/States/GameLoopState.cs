@@ -1,6 +1,6 @@
 ﻿using InternalAssets.Scripts.Infrastructure.Scene;
 
-namespace InternalAssets.Scripts.Infrastructure
+namespace InternalAssets.Scripts.Infrastructure.States
 {
     public class GameLoopState : IExitableState
     {
