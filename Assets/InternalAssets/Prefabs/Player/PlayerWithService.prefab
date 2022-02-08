@@ -60,13 +60,12 @@ GameObject:
   - component: {fileID: 7178790872919254450}
   - component: {fileID: 4584909920131044525}
   - component: {fileID: 6881477057009628396}
-  - component: {fileID: 5791078214585251869}
-  - component: {fileID: 4932424906319952118}
   - component: {fileID: 963529810866956795}
   - component: {fileID: 4584909920577510784}
   - component: {fileID: 4584909920577510809}
   - component: {fileID: 7472157605124970461}
   - component: {fileID: 8796420274686480772}
+  - component: {fileID: 9067103324139776466}
   m_Layer: 8
   m_Name: PlayerWithService
   m_TagString: Untagged
@@ -206,84 +205,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &5791078214585251869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178790872919254444}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 90d656a59696dcc4f82103b0ef0ba943,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4930785009072296128, guid: f0aa174dc786f4f43bf2a6df935f4303,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Movement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 07b2619f-2875-40f7-84b7-cd1e392907b5
-    m_ActionName: Player/New action[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a2c0dbde-97a7-40ec-96e1-7ea12d551898
-    m_ActionName: Player/CallF1[/Keyboard/f1]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ca4b5408-71fd-49a8-a634-7ab9443e2764
-    m_ActionName: Player/Fire[/Keyboard/space]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &4932424906319952118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178790872919254444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdc7b4ff28c74cfcb3156dfc441d81bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: cc898ecbb2cdce147b5be73128b3936d, type: 2}
-  maskForMove:
-    serializedVersion: 2
-    m_Bits: 10240
-  maskForAttack:
-    serializedVersion: 2
-    m_Bits: 8192
-  maskForDig:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &963529810866956795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,3 +289,29 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
   currentWeapon: {fileID: 0}
   currentIdWeapon: 0
+--- !u!61 &9067103324139776466
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178790872919254444}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0

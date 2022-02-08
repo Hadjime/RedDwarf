@@ -1,9 +1,8 @@
-﻿using System;
-using System.Security.Principal;
-using InternalAssets.Scripts.Infrastructure;
+﻿using InternalAssets.Scripts.Data;
+using InternalAssets.Scripts.Infrastructure.Services;
+using InternalAssets.Scripts.Infrastructure.Services.Input;
+using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Map;
-using InternalAssets.Scripts.Services;
-using InternalAssets.Scripts.Services.Input;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,7 +10,7 @@ using UnityEngine.InputSystem;
 
 namespace InternalAssets.Scripts.Player
 {
-	public class MoveNewInputSystem : MonoBehaviour
+	public class MoveNewInputSystem : MonoBehaviour, ISavedProgress
 	{
 		[Range(0.1f, 50f)] [SerializeField] private float speed = 2;
 		[Range(0.1f, 50f)] [SerializeField] private int handAttack = 2;
@@ -47,16 +46,19 @@ namespace InternalAssets.Scripts.Player
 		}
 
 
-		private void Start() {}
+		private void Start()
+		{
+			
+		}
 
 
 		private void Update()
 		{
-			CustomDebug.Log($"_inputService.RawMovementInput = {_inputService.RawMovementInput}");
+			// CustomDebug.Log($"_inputService.RawMovementInput = {_inputService.RawMovementInput}");
 		}
 
 
-		public void FixedUpdate()
+		private void FixedUpdate()
 		{
 			if (isMoving) // если находимся в движении
 			{
@@ -160,7 +162,7 @@ namespace InternalAssets.Scripts.Player
 		}
 
 
-		public void Movement(InputAction.CallbackContext context)
+		private void Movement(InputAction.CallbackContext context)
 		{
 			if (context.started)
 			{
@@ -245,7 +247,7 @@ namespace InternalAssets.Scripts.Player
 		}
 
 
-		public void RotationPlayer(string btnName)
+		private void RotationPlayer(string btnName)
 		{
 			_rb.rotation = btnName switch
 			{
@@ -255,6 +257,16 @@ namespace InternalAssets.Scripts.Player
 				"d" => 0,
 				_ => _rb.rotation
 			};
+		}
+
+		public void LoadProgress(PlayerProgress progress)
+		{
+			
+		}
+
+		public void UpdateProgress(PlayerProgress progress)
+		{
+			
 		}
 	}
 }

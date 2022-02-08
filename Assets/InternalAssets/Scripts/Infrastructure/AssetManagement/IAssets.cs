@@ -1,4 +1,4 @@
-﻿using InternalAssets.Scripts.Services;
+﻿using InternalAssets.Scripts.Infrastructure.Services;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Infrastructure.AssetManagement
@@ -6,6 +6,6 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
     public interface IAssets : IService
     {
         GameObject Instantiate(string path);
-        GameObject Instantiate(string path, GameObject at);
+        GameObject Instantiate(string path, Vector3 at);
     }
 }

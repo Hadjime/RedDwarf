@@ -1,16 +1,16 @@
-﻿using System;
-using InternalAssets.Scripts.Characters.Enemy;
-using InternalAssets.Scripts.Infrastructure;
+﻿using InternalAssets.Scripts.Data;
+using InternalAssets.Scripts.Infrastructure.Services;
+using InternalAssets.Scripts.Infrastructure.Services.Input;
+using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Map;
-using InternalAssets.Scripts.Services;
-using InternalAssets.Scripts.Services.Input;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace InternalAssets.Scripts.Player
 {
-	public class PlayerMove : MonoBehaviour
+	public class PlayerMove : MonoBehaviour, ISavedProgress
 	{
 		[Range(0.1f, 50f)] [SerializeField] private float speed = 2;
 		[Range(0.1f, 50f)] [SerializeField] private int handAttack = 2;
@@ -52,12 +52,15 @@ namespace InternalAssets.Scripts.Player
 		private void Update()
 		{
 			Movement(_inputService.RawMovementInput);
-			CustomDebug.Log($"RawMovement = {_inputService.RawMovementInput}", Color.green);
+			// CustomDebug.Log($"RawMovement = {_inputService.RawMovementInput}", Color.green);
 		}
 
 
-		public void FixedUpdate()
+		private void FixedUpdate()
 		{
+			if (_direction == Vector2.zero)
+				return;
+			
 			if (isMoving) // если находимся в движении
 			{
 				_rb.MovePosition(position: _rb.position + _direction * (Time.deltaTime * speed));
@@ -133,6 +136,32 @@ namespace InternalAssets.Scripts.Player
 		}
 
 
+		public void LoadProgress(PlayerProgress progress)
+		{
+			if (CurrentLevel() == progress.WorldData.PositionOnLevel.Level)
+			{
+				Vector3Data savedPosition = progress.WorldData.PositionOnLevel.Position;
+				if (savedPosition != null) 
+					Warp(to: savedPosition);
+			}
+		}
+
+		public void UpdateProgress(PlayerProgress progress)
+		{
+			var snapPosition = transform.position;
+			snapPosition.x = Mathf.CeilToInt(snapPosition.x);
+			snapPosition.y = Mathf.CeilToInt(snapPosition.y);
+			snapPosition.z = Mathf.CeilToInt(snapPosition.z);
+			progress.WorldData.PositionOnLevel =
+				new PositionOnLevel(CurrentLevel(), snapPosition.AsVectorData());
+		}
+
+		private string CurrentLevel() => 
+			SceneManager.GetActiveScene().name;
+
+		private void Warp(Vector3Data to) => 
+			transform.position = to.AsUnityVector();
+
 		private void Attack(Vector2 attackPoint)
 		{
 			if (currentTime >= TimeoutAttack)
@@ -159,8 +188,19 @@ namespace InternalAssets.Scripts.Player
 			currentTime += Time.deltaTime;
 		}
 
-		public void Movement(Vector2 rawMovement)
+		private void Movement(Vector2 rawMovement)
 		{
+			if (_direction == Vector2.zero)
+			{
+				isMoving = false;
+				isAttack = false;
+				isUp = false;
+				isDown = false;
+				isRight = false;
+				isLeft = false;
+			}
+			
+			
 			if (!isMoving || isAttack) //если стоим на месте
 			{
 				_direction = rawMovement;

@@ -12,6 +12,13 @@ namespace InternalAssets.Scripts.Utils.Log
 		}
 
 
+		public static void Log(object message, Object obj = null)
+		{
+		#if !BUILD_TYPE_PUBLISHER
+			Debug.Log(message, obj);
+		#endif
+		}
+
 		public static void LogError(object message, Object obj = null)
 		{
 			Log("" + message, Color.red, obj);
@@ -21,14 +28,6 @@ namespace InternalAssets.Scripts.Utils.Log
 		public static void LogWarning(object message, Object obj = null)
 		{
 			Log("" + message, Color.yellow, obj);
-		}
-
-
-		public static void Log(object message, Object obj = null)
-		{
-			#if !BUILD_TYPE_PUBLISHER
-			Debug.Log(message, obj);
-			#endif
 		}
 
 

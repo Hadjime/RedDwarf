@@ -14,10 +14,10 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
             return player;
         }
 
-        public GameObject Instantiate(string path, GameObject at)
+        public GameObject Instantiate(string path, Vector3 at)
         {
             AsyncOperationHandle<GameObject> asyncOperationHandle =
-                Addressables.InstantiateAsync(path, at.transform.position, Quaternion.identity);
+                Addressables.InstantiateAsync(path, at, Quaternion.identity);
             GameObject player = asyncOperationHandle.WaitForCompletion();
             return player;
         }

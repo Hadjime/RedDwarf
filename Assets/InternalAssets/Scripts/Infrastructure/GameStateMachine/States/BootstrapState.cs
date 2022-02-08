@@ -1,16 +1,17 @@
 ﻿using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
-using InternalAssets.Scripts.Services;
-using InternalAssets.Scripts.Services.Input;
-using Unity.Entities;
+using InternalAssets.Scripts.Infrastructure.Services;
+using InternalAssets.Scripts.Infrastructure.Services.Input;
+using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 
 
 namespace InternalAssets.Scripts.Infrastructure.States
 {
     public class BootstrapState: IState
     {
-		private const string Initial = "Initial";
+		private const string InitialSceneName = "Initial";
 		
 		
         private readonly GameStateMachine _stateMachine;
@@ -29,7 +30,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         public void Enter()
         {
-	        _sceneLoader.Load(Initial, onLoaded: EnterLoadLevel);
+	        _sceneLoader.Load(InitialSceneName, onLoaded: EnterLoadLevel);
         }
 
 
@@ -42,11 +43,13 @@ namespace InternalAssets.Scripts.Infrastructure.States
         {
 	        _services.RegisterSingle<IInputService>(SetupInputServices());
 	        _services.RegisterSingle<IAssets>(new AssetsProvider());
+	        _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 	        _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>() ) );
+	        _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
         }
 
         private void EnterLoadLevel() =>
-			_stateMachine.Enter<LoadLevelState, string>("Main");
+			_stateMachine.Enter<LoadProgressState>();
 
         private IInputService SetupInputServices()
         {
