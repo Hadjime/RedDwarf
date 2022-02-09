@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using InternalAssets.Scripts.Player;
 using InternalAssets.Scripts.Tools;
 using Pathfinding;
 using UnityEngine;
@@ -63,10 +64,16 @@ namespace InternalAssets.Scripts.Characters.Enemy
             FollowOff();
         }
 
-        private void FollowOn() => 
+        private void FollowOn()
+        {
+            hasAggroTarget = true;
             follow.enabled = true;
-        
-        private void FollowOff() => 
+        }
+
+        private void FollowOff()
+        {
+            hasAggroTarget = false;
             follow.enabled = false;
+        }
     }
 }
