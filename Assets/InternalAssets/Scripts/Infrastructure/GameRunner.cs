@@ -8,6 +8,8 @@ namespace InternalAssets.Scripts.Infrastructure
         [SerializeField] private GameBootstrapper bootstrapperPrefab;
         private void Awake()
         {
+            Application.targetFrameRate = 60;
+            
             var bootstrapper = FindObjectOfType<GameBootstrapper>();
 
             if (bootstrapper == null)
