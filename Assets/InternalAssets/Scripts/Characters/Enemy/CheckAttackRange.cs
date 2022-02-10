@@ -10,20 +10,20 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
         private void Start()
         {
-            triggerObserver.TriggerEnter += OnTriggerEnter;
-            triggerObserver.TriggerExit += OnTriggerExit;
+            triggerObserver.TriggerEnter += OnObserverTriggerEnter;
+            triggerObserver.TriggerExit += OnObserverTriggerExit;
         }
 
         private void OnDestroy()
         {
-            triggerObserver.TriggerEnter -= OnTriggerEnter;
-            triggerObserver.TriggerExit -= OnTriggerExit;
+            triggerObserver.TriggerEnter -= OnObserverTriggerEnter;
+            triggerObserver.TriggerExit -= OnObserverTriggerExit;
         }
 
-        private void OnTriggerEnter(Collider2D obj) => 
+        private void OnObserverTriggerEnter(Collider2D obj) => 
             attack.EnableAttack();
 
-        private void OnTriggerExit(Collider2D obj) => 
+        private void OnObserverTriggerExit(Collider2D obj) => 
             attack.DisableAttack();
     }
 }

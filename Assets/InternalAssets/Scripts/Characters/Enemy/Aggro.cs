@@ -18,19 +18,19 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
         private void Start()
         {
-            triggerObserver.TriggerEnter += OnTriggerEnter;
-            triggerObserver.TriggerExit += OnTriggerExit;
+            triggerObserver.TriggerEnter += OnObserverTriggerEnter;
+            triggerObserver.TriggerExit += OnObserverTriggerExit;
 
             FollowOff();
         }
 
         private void OnDestroy()
         {
-            triggerObserver.TriggerEnter -= OnTriggerEnter;
-            triggerObserver.TriggerExit -= OnTriggerExit;
+            triggerObserver.TriggerEnter -= OnObserverTriggerEnter;
+            triggerObserver.TriggerExit -= OnObserverTriggerExit;
         }
 
-        private void OnTriggerEnter(Collider2D obj)
+        private void OnObserverTriggerEnter(Collider2D obj)
         {
             if (hasAggroTarget) 
                 return;
@@ -40,7 +40,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
             FollowOn();
         }
 
-        private void OnTriggerExit(Collider2D obj)
+        private void OnObserverTriggerExit(Collider2D obj)
         {
             if (!hasAggroTarget) 
                 return;
