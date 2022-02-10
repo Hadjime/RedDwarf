@@ -13,6 +13,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
     public class LoadLevelState : IPayloadState<string>
     {
         private const string INITIAL_POINT_TAG = "InitialPoint";
+        private const string ROOT_UI_TAG = "RootUI";
 
 
         private readonly GameStateMachine _stateMachine;
@@ -51,7 +52,10 @@ namespace InternalAssets.Scripts.Infrastructure.States
             var player = _gameFactory.CreateHero(at: initialPoint);
             SetCameraFollow(player.transform);
 
+            var RootObjectForHud = GameObject.FindWithTag(ROOT_UI_TAG);
             var Hud = _gameFactory.CreateHud();
+            Hud.transform.parent = RootObjectForHud.transform;
+
         }
 
         private void InformProgressReaders()

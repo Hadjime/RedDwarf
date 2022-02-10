@@ -7,6 +7,7 @@ TagManager:
   - Gold
   - Weapon
   - InitialPoint
+  - RootUI
   layers:
   - Default
   - TransparentFX
