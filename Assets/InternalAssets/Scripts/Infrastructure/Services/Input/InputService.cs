@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace InternalAssets.Scripts.Infrastructure.Services.Input
 {
@@ -15,6 +16,10 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 			return UnityEngine.Input.GetMouseButtonUp(0);
 		}
 
+		public event Action<Vector2> MovementDirectionChanged;
+
+		protected void InvokeEvent(Vector2 movementDirection) =>
+			MovementDirectionChanged?.Invoke(movementDirection);
 
 		protected static Vector2 UnityAxis() =>
 			new Vector2(UnityEngine.Input.GetAxis(HORIZONTAL), UnityEngine.Input.GetAxis(VERTICAL));
