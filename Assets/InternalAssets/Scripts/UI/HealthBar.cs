@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using InternalAssets.Scripts.Inventory;
@@ -7,58 +8,26 @@ namespace InternalAssets.Scripts.UI
 {
     public class HealthBar : MonoBehaviour
     {
-        public Inventory.Inventory inventory;
-        public Slider slider;
-        public Image fill;
-        public Gradient gradient;
-        private float _updateSpeedSeconds = 0.2f;
+        [SerializeField] private Slider slider;
+        [SerializeField] private Image fill;
+        [SerializeField] private Gradient gradient;
+        [SerializeField] private float rateOfChangedHp = 0.2f;
 
-        public void Start()
-        {
-            //SetMaxHealth();
-            HandleHpChangePct();
-        }
 
-        public void Update()
+        public void SetValue(float currentHp, float maxHp)
         {
-            //SetMaxHealth();
-        }
-
-        public void SetMaxHealth()
-        {
-            slider.value = 1f;
-            fill.color = gradient.Evaluate(1f);
-        }
-
-        public void ApplyDamage(int damage)
-        {
-            slider.value += damage / 100f;
-            fill.color = gradient.Evaluate(slider.normalizedValue);
-        }
-        private void OnEnable()
-        {
-            EventManager.StartListening("OnHPChange", HandleHpChangePct);
-        }
-
-        private void OnDisable()
-        {
-            EventManager.StopListening("OnHPChange", HandleHpChangePct);
-        }
-        
-        private void HandleHpChangePct()
-        {
-            StartCoroutine(ChangeToPct(inventory.AmountHp / 100f));
+            StartCoroutine(ChangeToPct(currentHp / maxHp));
         }
 
         private IEnumerator ChangeToPct(float pct)
         {
             float preChangePct = slider.value;
-            float elapsed = 0f;
+            float elapsedTime = 0f;
 
-            while (elapsed < _updateSpeedSeconds)
+            while (elapsedTime < rateOfChangedHp)
             {
-                elapsed += Time.deltaTime;
-                slider.value = Mathf.Lerp(preChangePct, pct, elapsed / _updateSpeedSeconds);
+                elapsedTime += Time.deltaTime;
+                slider.value = Mathf.Lerp(preChangePct, pct, elapsedTime / rateOfChangedHp);
                 fill.color = gradient.Evaluate(slider.normalizedValue);
                 yield return null;
             }

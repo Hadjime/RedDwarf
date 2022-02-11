@@ -2,6 +2,7 @@
 using System.Linq;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Services;
+using InternalAssets.Scripts.Player;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 
@@ -10,8 +11,9 @@ namespace InternalAssets.Scripts.Characters.Enemy
     public class Attack : MonoBehaviour
     {
         private const float Radius = 0.4f;
-        
-        
+
+
+        [SerializeField] private float damage = 20;
         [SerializeField] private float attackCooldown = 1f;
         private IGameFactory _gameFactory;
         private Transform _heroTransform;
@@ -21,6 +23,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
         private bool _attackIsActive = default;
 
         public bool isAttacking { get; private set; }
+
 
         private void Awake()
         {
@@ -59,7 +62,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
             if (Hit(out Collider2D hit))
             {
                 PhysicsDebug.DrawDebug(hit.transform.position, 1, 1);
-                CustomDebug.Log($"hit = {hit.name}", Color.magenta);
+                hit.transform.GetComponent<IHealth>().ApplyDamage(damage);
             }
 
             isAttacking = false;

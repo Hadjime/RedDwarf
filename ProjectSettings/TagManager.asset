@@ -45,3 +45,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Land
+    uniqueID: 2772288881
+    locked: 0
+  - name: Wall
+    uniqueID: 822166869
+    locked: 0
+  - name: RockAndAnother
+    uniqueID: 2362527121
+    locked: 0
+  - name: Gold
+    uniqueID: 2550731265
+    locked: 0
+  - name: Weapon
+    uniqueID: 2521912591
+    locked: 0
+  - name: Enemy
+    uniqueID: 2532791045
+    locked: 0
+  - name: Hero
+    uniqueID: 3291018205
+    locked: 0

@@ -3,6 +3,9 @@ using Cinemachine;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Player;
+using InternalAssets.Scripts.UI;
+using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -48,14 +51,27 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         private void InitGameWorld()
         {
-            var initialPoint = GameObject.FindWithTag(INITIAL_POINT_TAG);
-            var player = _gameFactory.CreateHero(at: initialPoint);
-            SetCameraFollow(player.transform);
+            GameObject hero = InitHero();
+            InitHud(hero);
+        }
 
+        private GameObject InitHero()
+        {
+            var initialPoint = GameObject.FindWithTag(INITIAL_POINT_TAG);
+            var hero = _gameFactory.CreateHero(at: initialPoint);
+            SetCameraFollow(hero.transform);
+
+            return hero;
+        }
+
+        private void InitHud(GameObject hero)
+        {
             var RootObjectForHud = GameObject.FindWithTag(ROOT_UI_TAG);
             var Hud = _gameFactory.CreateHud();
-            Hud.transform.parent = RootObjectForHud.transform;
-
+            Hud.transform.SetParent(RootObjectForHud.transform, false);
+            
+            HeroHealth heroHealth = hero.GetComponent<HeroHealth>();
+            Hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth);
         }
 
         private void InformProgressReaders()

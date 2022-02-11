@@ -27,7 +27,7 @@ namespace InternalAssets.Scripts.Logic
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.TryGetComponent<PlayerMove>(out PlayerMove component))
+            if (!other.TryGetComponent<HeroMove>(out HeroMove component))
                 return;
             
             _saveLoadService.SaveProgress();

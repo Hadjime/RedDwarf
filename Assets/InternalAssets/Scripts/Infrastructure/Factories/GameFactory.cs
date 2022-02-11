@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Player;
+using InternalAssets.Scripts.UI.GamePlay;
 using UnityEngine;
 
 
@@ -28,8 +30,8 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
             return HeroGameObject;
         }
 
-        public GameObject CreateHud() =>
-                _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);
+        public GameObject CreateHud() => 
+            _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);
 
         public void Cleanup()
         {
