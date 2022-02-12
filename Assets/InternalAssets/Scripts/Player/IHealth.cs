@@ -4,9 +4,9 @@ namespace InternalAssets.Scripts.Player
 {
     public interface IHealth
     {
-        float CurrentHp { get; }
-        float MaxHp { get; }
-        Action HpChanged { get; set; }
+        float CurrentHp { get; set; }
+        float MaxHp { get; set; }
+		event Action HpChanged;
         void ApplyDamage(float damage);
     }
 }

@@ -11,15 +11,14 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 		public abstract Vector2 RawMovementInput { get; }
 
 
-		public bool IsAttackBtnUp()
-		{
-			return UnityEngine.Input.GetMouseButtonUp(0);
-		}
-
 		public event Action<Vector2> MovementDirectionChanged;
+		public event Action IsAttackBtnUp;
 
-		protected void InvokeEvent(Vector2 movementDirection) =>
+		protected void InvokeEventMovement(Vector2 movementDirection) =>
 			MovementDirectionChanged?.Invoke(movementDirection);
+		
+		protected void InvokeEventAttack() => 
+			IsAttackBtnUp?.Invoke();
 
 		protected static Vector2 UnityAxis() =>
 			new Vector2(UnityEngine.Input.GetAxis(HORIZONTAL), UnityEngine.Input.GetAxis(VERTICAL));

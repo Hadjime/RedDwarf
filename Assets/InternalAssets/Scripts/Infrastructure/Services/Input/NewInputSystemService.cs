@@ -16,15 +16,26 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 
 			_playerInput.Enable();
 			_playerInput.Player.Movement.started += OnMovementStarted;
+			_playerInput.Player.Fire.started += OnFire;
 		}
 
-		
+
+		private void OnFire(InputAction.CallbackContext context)
+		{
+			if (!context.started)
+				return;
+			
+			InvokeEventAttack();
+		}
+
+
 		private void OnMovementStarted(InputAction.CallbackContext context)
 		{
-			if (!context.started) return;
+			if (!context.started) 
+				return;
 			
 			_movementDirection = context.ReadValue<Vector2>();
-			InvokeEvent(movementDirection: _movementDirection);
+			InvokeEventMovement(movementDirection: _movementDirection);
 		}
 
 		public override Vector2 RawMovementInput => _movementDirection;

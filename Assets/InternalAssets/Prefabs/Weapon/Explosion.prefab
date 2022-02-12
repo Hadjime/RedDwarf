@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5271682369917587434}
   - component: {fileID: 8741762855650650394}
   - component: {fileID: 7042673006571811589}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Explosion
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4756164026323333280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.58, y: 1.46, z: 0}
+  m_LocalPosition: {x: -1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
-  damage: 100
+  damage: 30
 --- !u!114 &5271682369917587434
 MonoBehaviour:
   m_ObjectHideFlags: 0

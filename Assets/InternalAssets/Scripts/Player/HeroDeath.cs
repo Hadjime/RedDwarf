@@ -11,6 +11,7 @@ namespace InternalAssets.Scripts.Player
         [SerializeField] private SpriteRenderer heroSpriteRenderer;
         [SerializeField] private HeroHealth heroHealth;
         [SerializeField] private HeroMove heroMove;
+		[SerializeField] private HeroAttack heroAttack;
         [SerializeField] private GameObject redStainPrefab;
         
         private bool _isDead = default;
@@ -20,7 +21,8 @@ namespace InternalAssets.Scripts.Player
             heroSpriteRenderer = GetComponent<SpriteRenderer>();
             heroHealth = GetComponent<HeroHealth>();
             heroMove = GetComponent<HeroMove>();
-        }
+			heroAttack = GetComponent<HeroAttack>();
+		}
 
         private void Start() => 
             heroHealth.HpChanged += OnHpChanged;
@@ -30,7 +32,7 @@ namespace InternalAssets.Scripts.Player
 
         private void OnHpChanged()
         {
-            if (heroHealth.CurrentHp <= 0)
+            if (!_isDead && heroHealth.CurrentHp <= 0)
                 Die();
         }
 
@@ -38,8 +40,13 @@ namespace InternalAssets.Scripts.Player
         {
             _isDead = true;
             heroMove.enabled = false;
+			heroAttack.enabled = false;
             heroSpriteRenderer.enabled = false;
-            Instantiate(redStainPrefab, transform.position, Quaternion.identity);
+            SpawnDeathFx();
         }
-    }
+
+
+		private void SpawnDeathFx() =>
+			Instantiate(redStainPrefab, transform.position, Quaternion.identity);
+	}
 }

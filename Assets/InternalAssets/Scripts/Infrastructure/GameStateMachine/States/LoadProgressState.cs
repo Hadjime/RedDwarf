@@ -38,6 +38,8 @@ namespace InternalAssets.Scripts.Infrastructure.States
             var progress = new PlayerProgress("Main");
             progress.PlayerState.MaxHp = 100;
             progress.PlayerState.ResetHp();
+			progress.HeroStats.Damage = 10;
+			progress.HeroStats.DamageRadius = 1.5f;
 
             return progress;
         }

@@ -7,11 +7,13 @@ namespace InternalAssets.Scripts.Data
     {
         public State PlayerState;
         public WorldData WorldData;
+		public Stats HeroStats;
 
         public PlayerProgress(string initialLevel)
         {
             PlayerState = new State();
             WorldData = new WorldData(initialLevel);
-        }
+			HeroStats = new Stats();
+		}
     }
 }

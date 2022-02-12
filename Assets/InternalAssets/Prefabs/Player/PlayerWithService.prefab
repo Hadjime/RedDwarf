@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 9067103324139776466}
   - component: {fileID: 1464060074958082163}
   - component: {fileID: 441551518747628668}
+  - component: {fileID: -4946234872869551590}
   m_Layer: 8
   m_Name: PlayerWithService
   m_TagString: Untagged
@@ -329,6 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318942a3a6bd444d913e44d8f0f1627f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHp: 0
+  maxHp: 0
 --- !u!114 &441551518747628668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,5 +347,20 @@ MonoBehaviour:
   heroSpriteRenderer: {fileID: 7178790872919254449}
   heroHealth: {fileID: 1464060074958082163}
   heroMove: {fileID: 963529810866956795}
+  heroAttack: {fileID: -4946234872869551590}
   redStainPrefab: {fileID: 3261160465730798524, guid: 12a46cd749d24f442b7dd55e539798d5,
+    type: 3}
+--- !u!114 &-4946234872869551590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178790872919254444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0f9bde8f2f420c8cca0fa4207146f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smallBombPrefab: {fileID: 9021090884675595381, guid: ba64aaa060a86fe4284b76b69352b5ff,
     type: 3}

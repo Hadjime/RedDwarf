@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
 using InternalAssets.Scripts.Map;
+using InternalAssets.Scripts.Player;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -18,11 +19,13 @@ namespace InternalAssets.Scripts.Weapon
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            var objectTile = other.GetComponent<TileSetting>();
-            if (other != null && objectTile != null)
-            {
-                objectTile.DamageTile(damage);
-            }
+			other.transform.parent.GetComponent<IHealth>()?.ApplyDamage(damage);
+			
+            // var objectTile = other.GetComponent<TileSetting>();
+            // if (other != null && objectTile != null)
+            // {
+            //     objectTile.DamageTile(damage);
+            // }
         }
 
         public void DestroyObject()

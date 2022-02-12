@@ -6,13 +6,20 @@ namespace InternalAssets.Scripts.Inventory.Item
 {
     public class SmallBomb : MonoBehaviour
     {
+		private const string LayerName = "Hittable";
+		
+		
         [SerializeField, Range(0, 10)] private int delay;
         [SerializeField] private GameObject cellExplosion;
         private float _timeRemaining;
         private bool once;
-        
-        private void Start()
-        {
+		private int _layerMask;
+		private Collider2D[] _hits = new Collider2D[30];
+
+
+		private void Start()
+		{
+			_layerMask = 1 << LayerMask.NameToLayer(LayerName);
             _timeRemaining = delay;
         }
         private void Update()
@@ -37,5 +44,11 @@ namespace InternalAssets.Scripts.Inventory.Item
                 once = true;
             }
         }
-    }
+
+
+		private void Hit(Vector2 position)
+		{
+			Physics2D.OverlapBoxNonAlloc(position, new Vector2(0.9f, 0.9f), 0f, _hits, _layerMask);
+		}
+	}
 }

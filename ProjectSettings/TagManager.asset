@@ -8,6 +8,8 @@ TagManager:
   - Weapon
   - InitialPoint
   - RootUI
+  - ship
+  - asteroid
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - Aggro
   - Enemy
   - AttackZone
-  - 
+  - Hittable
   - 
   - 
   - 

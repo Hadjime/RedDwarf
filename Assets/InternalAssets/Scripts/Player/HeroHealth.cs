@@ -6,33 +6,40 @@ using UnityEngine;
 namespace InternalAssets.Scripts.Player
 {
     public class HeroHealth : MonoBehaviour, IHealth, ISavedProgress
-    {
+	{
+		[SerializeField] private float currentHp;
+		[SerializeField] private float maxHp;
         private State _playerState;
 
-        public Action HpChanged { get; set; }
+		public event Action HpChanged;
 
         public float CurrentHp
         {
             get => _playerState.CurrentHp;
-            set
+			set
             {
                 if (Mathf.Approximately(_playerState.CurrentHp, value))
                     return;
-                
+
+				currentHp = value;
                 _playerState.CurrentHp = value;
                 HpChanged?.Invoke();
             }
         }
 
         public float MaxHp
-        {
-            get => _playerState.MaxHp;
-            set => _playerState.MaxHp = value;
-        }
+		{
+			get => _playerState.MaxHp;
+			set
+			{
+				maxHp = value;
+				_playerState.MaxHp = value;
+			}
+		}
 
 
 
-        public void LoadProgress(PlayerProgress progress)
+		public void LoadProgress(PlayerProgress progress)
         {
             _playerState = progress.PlayerState;
             HpChanged?.Invoke();
