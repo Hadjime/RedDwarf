@@ -50,7 +50,7 @@ namespace InternalAssets.Scripts.Player
 		}
 
 
-		private void SpawnBomb() { Instantiate(smallBombPrefab, transform.position, Quaternion.identity); }
+		private void SpawnBomb() { Instantiate(smallBombPrefab, transform.position.SnapPosition(), Quaternion.identity); }
 
 
 		private int Hit() =>

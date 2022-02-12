@@ -101,7 +101,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -395,6 +395,8 @@ MonoBehaviour:
   enemySpriteRenderer: {fileID: 3465912852165967898}
   enemyHealth: {fileID: -4397631933012379182}
   agentMoveToPlayer: {fileID: 4789105420064505289}
+  enemyAttack: {fileID: 6844663630887555278}
+  enemyAggro: {fileID: 6314127296029817718}
   redStainPrefab: {fileID: 3261160465730798524, guid: 12a46cd749d24f442b7dd55e539798d5,
     type: 3}
 --- !u!1 &3465912852165967896

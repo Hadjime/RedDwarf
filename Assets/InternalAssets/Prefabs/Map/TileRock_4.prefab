@@ -224,6 +224,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHp: 100
   maxHp: 100
+  currentSprite: {fileID: 9021090884675595383}
+  listSpritesForVisualisationHealth:
+  - {fileID: 21300240, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
+  - {fileID: 21300242, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
+  - {fileID: 21300244, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
 --- !u!114 &-7415165178636070347
 MonoBehaviour:
   m_ObjectHideFlags: 0

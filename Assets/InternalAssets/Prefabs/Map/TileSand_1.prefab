@@ -41,7 +41,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -224,6 +224,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHp: 100
   maxHp: 100
+  currentSprite: {fileID: 9021090884675595383}
+  listSpritesForVisualisationHealth:
+  - {fileID: 21300214, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
+  - {fileID: 21300214, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
+  - {fileID: 21300214, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
 --- !u!114 &-70924127095246384
 MonoBehaviour:
   m_ObjectHideFlags: 0

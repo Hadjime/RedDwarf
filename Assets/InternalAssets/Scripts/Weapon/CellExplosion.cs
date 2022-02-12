@@ -19,7 +19,8 @@ namespace InternalAssets.Scripts.Weapon
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-			other.transform.parent.GetComponent<IHealth>()?.ApplyDamage(damage);
+			// other.transform.parent.GetComponent<IHealth>()?.ApplyDamage(damage);
+            other.GetComponentInParent<IHealth>()?.ApplyDamage(damage);
 			
             // var objectTile = other.GetComponent<TileSetting>();
             // if (other != null && objectTile != null)

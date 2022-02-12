@@ -116,7 +116,7 @@ namespace InternalAssets.Scripts.Player
 			{
 				if (isAttack)
 				{
-					Attack(_direction);
+					DigAttack(_direction);
 				}
 				else
 				{
@@ -162,7 +162,7 @@ namespace InternalAssets.Scripts.Player
 		private void Warp(Vector3Data to) => 
 			transform.position = to.AsUnityVector();
 
-		private void Attack(Vector2 attackPoint)
+		private void DigAttack(Vector2 attackPoint)
 		{
 			if (currentTime >= TimeoutAttack)
 			{
@@ -174,7 +174,7 @@ namespace InternalAssets.Scripts.Player
 				{
 					if (1 << hit.collider.gameObject.layer == _maskForAttack.value)
 					{
-						hit.collider.GetComponent<TileSetting>().DamageTile(handAttack);
+						hit.collider.GetComponent<IHealth>()?.ApplyDamage(handAttack);
 						if (CheckPointForMove(_direction))
 						{
 							isMoving = true;

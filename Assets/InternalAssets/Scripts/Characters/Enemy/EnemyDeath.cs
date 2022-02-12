@@ -10,6 +10,8 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		[SerializeField] private SpriteRenderer enemySpriteRenderer;
 		[SerializeField] private EnemyHealth enemyHealth;
 		[SerializeField] private AgentMoveToPlayer agentMoveToPlayer;
+		[SerializeField] private Attack enemyAttack;
+		[SerializeField] private Aggro enemyAggro;
 		[SerializeField] private GameObject redStainPrefab;
 
 		public event Action Happened;
@@ -37,10 +39,12 @@ namespace InternalAssets.Scripts.Characters.Enemy
 			
 			enemySpriteRenderer.enabled = false;
 			agentMoveToPlayer.enabled = false;
+			enemyAggro.enabled = false;
+			enemyAttack.enabled = false;
 			
 			SpawnDeathFx();
 			Happened?.Invoke();
-			Destroy(this, 5);
+			Destroy(gameObject);
 		}
 
 
