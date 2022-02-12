@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 2581709902746318879}
   - component: {fileID: 2581709902746318864}
   m_Layer: 5
-  m_Name: PlayerIcon
+  m_Name: HeroIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d27742cf30b6fd4681e29b8ae384a03, type: 3}
+  m_Sprite: {fileID: 984273592930766247, guid: 9d27742cf30b6fd4681e29b8ae384a03, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1340,6 +1340,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2749370130195713757}
     m_Modifications:
+    - target: {fileID: 925529387, guid: b78a0cad77946be4d9c11493e297ee2c, type: 3}
+      propertyPath: heroIcon
+      value: 
+      objectReference: {fileID: 2581709902746318864}
+    - target: {fileID: 925529387, guid: b78a0cad77946be4d9c11493e297ee2c, type: 3}
+      propertyPath: heroIconsFirVisualisationHealth.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 925529387, guid: b78a0cad77946be4d9c11493e297ee2c, type: 3}
+      propertyPath: heroIconsFirVisualisationHealth.Array.data[0]
+      value: 
+      objectReference: {fileID: 984273592930766247, guid: 9d27742cf30b6fd4681e29b8ae384a03,
+        type: 3}
+    - target: {fileID: 925529387, guid: b78a0cad77946be4d9c11493e297ee2c, type: 3}
+      propertyPath: heroIconsFirVisualisationHealth.Array.data[1]
+      value: 
+      objectReference: {fileID: -8641974844737790828, guid: 9d27742cf30b6fd4681e29b8ae384a03,
+        type: 3}
+    - target: {fileID: 925529387, guid: b78a0cad77946be4d9c11493e297ee2c, type: 3}
+      propertyPath: heroIconsFirVisualisationHealth.Array.data[2]
+      value: 
+      objectReference: {fileID: -380623950744408897, guid: 9d27742cf30b6fd4681e29b8ae384a03,
+        type: 3}
     - target: {fileID: 2193605168348541105, guid: b78a0cad77946be4d9c11493e297ee2c,
         type: 3}
       propertyPath: m_Pivot.x

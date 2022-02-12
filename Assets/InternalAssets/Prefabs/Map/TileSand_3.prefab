@@ -67,7 +67,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9021090884675595376}
   - component: {fileID: 9021090884675595383}
-  - component: {fileID: 9021090884675595382}
   - component: {fileID: -8638373759334394328}
   - component: {fileID: 8784193213788947492}
   - component: {fileID: -9136943961546669727}
@@ -145,24 +144,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9021090884675595382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9021090884675595381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04649004cf24ef4e95da8f1b1a25d0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 40
-  hpTile: 100
-  listSpritesForVisualisationHealth:
-  - {fileID: 21300218, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
-  - {fileID: 21300218, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
-  - {fileID: 21300218, guid: 49697c394319e9d45846a4f32034e79e, type: 3}
 --- !u!50 &-8638373759334394328
 Rigidbody2D:
   serializedVersion: 4
@@ -222,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc6a4ba6a5036c48ac7b8cc63dbf03a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 100
-  maxHp: 100
+  currentHp: 40
+  maxHp: 40
   currentSprite: {fileID: 9021090884675595383}
   listSpritesForVisualisationHealth:
   - {fileID: 21300218, guid: 49697c394319e9d45846a4f32034e79e, type: 3}

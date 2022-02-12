@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using InternalAssets.Scripts.Inventory;
@@ -12,6 +13,8 @@ namespace InternalAssets.Scripts.UI
         [SerializeField] private Image fill;
         [SerializeField] private Gradient gradient;
         [SerializeField] private float rateOfChangedHp = 0.2f;
+        [SerializeField] private Image heroIcon;
+        [SerializeField] private List<Sprite> heroIconsFirVisualisationHealth;
 
 
         public void SetValue(float currentHp, float maxHp)
@@ -33,7 +36,31 @@ namespace InternalAssets.Scripts.UI
             }
             slider.value = pct;
             fill.color = gradient.Evaluate(slider.normalizedValue);
+            SetHeroIcon(pct);
+        }
 
+        private void SetHeroIcon(float pct)
+        {
+            const float maxStep = 1f;
+            const float minStep = 0f;
+            const float step1 = 0.7f;
+            const float step2 = 0.3f;
+            
+            if (heroIconsFirVisualisationHealth == null)
+                return;
+			
+            if (pct > step1 && pct <= maxStep)
+            {
+                heroIcon.sprite = heroIconsFirVisualisationHealth[0];
+            }
+            if (pct > step2 && pct < step1)
+            {
+                heroIcon.sprite = heroIconsFirVisualisationHealth[1];
+            }
+            if (pct >= minStep && pct < step2)
+            {
+                heroIcon.sprite = heroIconsFirVisualisationHealth[2];
+            }
         }
     }
 }
