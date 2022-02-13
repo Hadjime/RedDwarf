@@ -1,5 +1,7 @@
 ﻿using System;
 using InternalAssets.Scripts.Data;
+using InternalAssets.Scripts.Infrastructure.Factories;
+using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 
@@ -12,11 +14,14 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		[SerializeField] private MonsterTypeId monsterTypeId;
 		private string _id;
 		[SerializeField] private bool _slain;
+		private IGameFactory _factory;
+		private EnemyDeath _enemyDeath;
 
 
 		private void Awake()
 		{
 			_id = GetComponent<UniqueId>()?.Id;
+			_factory = AllServices.Container.Single<IGameFactory>();
 		}
 
 
@@ -31,7 +36,18 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
 		private void Spawn()
 		{
+			GameObject monster = _factory.CreateMonster(monsterTypeId, transform);
+			_enemyDeath = monster.GetComponent<EnemyDeath>();
+			_enemyDeath.Happened += Kill;
+		}
+
+
+		private void Kill()
+		{
+			if (_enemyDeath != null)
+				_enemyDeath.Happened -= Kill;
 			
+			_slain = true;
 		}
 
 

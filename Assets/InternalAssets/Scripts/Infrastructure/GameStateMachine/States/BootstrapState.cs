@@ -5,6 +5,7 @@ using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
+using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 
 
 namespace InternalAssets.Scripts.Infrastructure.States
@@ -41,21 +42,33 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         private void RegisterServices()
         {
-	        _services.RegisterSingle<IInputService>(SetupInputServices());
-	        _services.RegisterSingle<IAssets>(new AssetsProvider());
-	        _services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
-	        _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>() ) );
-	        _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
-        }
+			RegisterStaticData();
+			
+			_services.RegisterSingle<IInputService>(SetupInputServices());
+			_services.RegisterSingle<IAssets>(new AssetsProvider());
+			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
+			_services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>(), _services.Single<IStaticDataService>() ) );
+			_services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
+		}
 
-        private void EnterLoadLevel() =>
+
+		private void EnterLoadLevel() =>
 			_stateMachine.Enter<LoadProgressState>();
 
-        private IInputService SetupInputServices()
+
+		private IInputService SetupInputServices()
         {
             var _inputServices = new NewInputSystemService();
             _inputServices.Init();
             return _inputServices;
         }
-    }
+
+
+		private void RegisterStaticData()
+		{
+			IStaticDataService staticDataService = new StaticDataService();
+			staticDataService.LoadMonsters();
+			_services.RegisterSingle<IStaticDataService>(staticDataService);
+		}
+	}
 }

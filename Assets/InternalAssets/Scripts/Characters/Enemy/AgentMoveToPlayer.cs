@@ -23,24 +23,17 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
         private void OnDisable() => 
             aiDestinationSetter.enabled = false;
+		
 
-        private void Start()
-        {
-            _gameFactory = AllServices.Container.Single<IGameFactory>();
+		public void Constructor(Transform heroTransform)
+		{
+			_heroTransform = heroTransform;
+			
+			InitializedHeroTransform();
+		}
 
-            if (_gameFactory.HeroGameObject != null)
-                InitializedHeroTransform();
-            else
-                _gameFactory.HeroCreated += OnHeroCreated;
-        }
-        
-        private void InitializedHeroTransform()
-        {
-            _heroTransform = _gameFactory.HeroGameObject.transform;
-            aiDestinationSetter.target = _heroTransform;
-        }
 
-        private void OnHeroCreated() => 
-            InitializedHeroTransform();
-    }
+		private void InitializedHeroTransform() =>
+			aiDestinationSetter.target = _heroTransform;
+	}
 }

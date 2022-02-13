@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
@@ -13,9 +12,10 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
         GameObject CreateHud();
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
-        GameObject HeroGameObject { get; }
-        event Action HeroCreated;
+
+
 		void Register(ISavedProgressReader progressReader);
 		void Cleanup();
+		GameObject CreateMonster(MonsterTypeId typeId, Transform parent);
 	}
 }

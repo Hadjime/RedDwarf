@@ -8,19 +8,8 @@ namespace InternalAssets.Scripts.Characters.Enemy
 {
     public class RotateToPlayer : Seeker
     {
-        private IGameFactory _gameFactory;
-        private Transform _heroTransform;
-
-
-        private void Start()
-        {
-            _gameFactory = AllServices.Container.Single<IGameFactory>();
-
-            if (_gameFactory.HeroGameObject != null)
-                InitializedHeroTransform();
-            else
-                _gameFactory.HeroCreated += OnHeroCreated;
-        }
+		private Transform _heroTransform;
+		
 
         private void Update()
         {
@@ -30,7 +19,12 @@ namespace InternalAssets.Scripts.Characters.Enemy
             }
         }
 
-        private void LookAtImmediately(Vector3 heroTransformPosition)
+
+		public void Constructor(Transform heroTransform) =>
+			_heroTransform = heroTransform;
+
+
+		private void LookAtImmediately(Vector3 heroTransformPosition)
         {
             Vector3 direction = heroTransformPosition - transform.position;
             direction = Quaternion.Euler(0, 0, 90) * direction;
@@ -39,13 +33,5 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
         private bool Initialized() => 
             _heroTransform != null;
-
-        private void InitializedHeroTransform()
-        {
-            _heroTransform = _gameFactory.HeroGameObject.transform;
-        }
-
-        private void OnHeroCreated() => 
-            InitializedHeroTransform();
-    }
+	}
 }

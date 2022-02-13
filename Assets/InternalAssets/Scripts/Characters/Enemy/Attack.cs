@@ -1,23 +1,15 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using InternalAssets.Scripts.Characters.Hero;
-using InternalAssets.Scripts.Infrastructure.Factories;
-using InternalAssets.Scripts.Infrastructure.Services;
-using InternalAssets.Scripts.Player;
-using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Characters.Enemy
 {
     public class Attack : MonoBehaviour
     {
-        private const float Radius = 0.4f;
-
-
-        [SerializeField] private float damage = 20;
-        [SerializeField] private float attackCooldown = 1f;
-        private IGameFactory _gameFactory;
-        private Transform _heroTransform;
+		public float Damage = 20;
+		public float Radius = 0.4f;
+		public float AttackCooldown = 1f;
+		private Transform _heroTransform;
         private float _attackCooldown = default;
         private int _layerMask;
         private readonly Collider2D[] _hit = new Collider2D[10];
@@ -26,15 +18,13 @@ namespace InternalAssets.Scripts.Characters.Enemy
         public bool isAttacking { get; private set; }
 
 
-        private void Awake()
+		private void Awake()
         {
-            _gameFactory = AllServices.Container.Single<IGameFactory>();
-            _gameFactory.HeroCreated += OnHeroCreated;
-
-            _layerMask = 1 << LayerMask.NameToLayer("Player");
+			_layerMask = 1 << LayerMask.NameToLayer("Player");
         }
 
-        private void Update()
+
+		private void Update()
         {
             if (!CooldownIsUp())
                 _attackCooldown -= Time.deltaTime;
@@ -43,41 +33,48 @@ namespace InternalAssets.Scripts.Characters.Enemy
                 StartAttack();
         }
 
-        public void EnableAttack() => 
+
+		public void Constructor(Transform heroTransform) =>
+			_heroTransform = heroTransform;
+
+
+		public void EnableAttack() => 
             _attackIsActive = true;
 
-        public void DisableAttack() => 
+
+		public void DisableAttack() => 
             _attackIsActive = false;
 
-        private bool CooldownIsUp() => 
+
+		private bool CooldownIsUp() => 
             _attackCooldown <= 0;
 
-        private bool CanAttack() => 
+
+		private bool CanAttack() => 
             _attackIsActive && !isAttacking && CooldownIsUp();
 
-        private void StartAttack()
+
+		private void StartAttack()
         {
             isAttacking = true;
-            _attackCooldown = attackCooldown;
+            _attackCooldown = AttackCooldown;
 
             if (Hit(out Collider2D hit))
             {
                 PhysicsDebug.DrawDebug(hit.transform.position, 1, 1);
-                hit.transform.GetComponent<IHealth>().ApplyDamage(damage);
+                hit.transform.GetComponent<IHealth>().ApplyDamage(Damage);
             }
 
             isAttacking = false;
         }
 
-        private bool Hit(out Collider2D hit)
+
+		private bool Hit(out Collider2D hit)
         {
             PhysicsDebug.DrawDebug(transform.position, 1, 1);
             int hitCount = Physics2D.OverlapCircleNonAlloc(transform.position, Radius, _hit, _layerMask);
             hit = _hit.FirstOrDefault();
             return hitCount > 0;
         }
-
-        private void OnHeroCreated() => 
-            _heroTransform = _gameFactory.HeroGameObject.transform;
-    }
+	}
 }

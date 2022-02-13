@@ -36,11 +36,15 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		{
 			//TODO проиграть анимацию смерти
 			enemyHealth.HpChanged -= OnHpChanged;
-			
-			enemySpriteRenderer.enabled = false;
-			agentMoveToPlayer.enabled = false;
-			enemyAggro.enabled = false;
-			enemyAttack.enabled = false;
+
+			if (enemySpriteRenderer != null)
+				enemySpriteRenderer.enabled = false;
+			if (agentMoveToPlayer != null)
+				agentMoveToPlayer.enabled = false;
+			if (enemyAggro != null) 
+				enemyAggro.enabled = false;
+			if (enemyAttack != null)
+				enemyAttack.enabled = false;
 			
 			SpawnDeathFx();
 			Happened?.Invoke();
