@@ -1,4 +1,5 @@
 ﻿using System;
+using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 using InternalAssets.Scripts.Player;

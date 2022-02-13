@@ -8,8 +8,7 @@ TagManager:
   - Weapon
   - InitialPoint
   - RootUI
-  - ship
-  - asteroid
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX

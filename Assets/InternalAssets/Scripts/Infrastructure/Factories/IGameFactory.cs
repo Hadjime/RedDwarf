@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
         List<ISavedProgress> ProgressWriters { get; }
         GameObject HeroGameObject { get; }
         event Action HeroCreated;
-        void Cleanup();
-    }
+		void Register(ISavedProgressReader progressReader);
+		void Cleanup();
+	}
 }

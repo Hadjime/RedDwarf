@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Player;

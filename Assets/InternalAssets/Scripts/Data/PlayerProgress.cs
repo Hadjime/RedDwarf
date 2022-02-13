@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace InternalAssets.Scripts.Data
 {
     [Serializable]
@@ -8,12 +9,15 @@ namespace InternalAssets.Scripts.Data
         public State PlayerState;
         public WorldData WorldData;
 		public Stats HeroStats;
+		public KillData KillData;
 
-        public PlayerProgress(string initialLevel)
+
+		public PlayerProgress(string initialLevel)
         {
             PlayerState = new State();
             WorldData = new WorldData(initialLevel);
 			HeroStats = new Stats();
+			KillData = new KillData();
 		}
     }
 }

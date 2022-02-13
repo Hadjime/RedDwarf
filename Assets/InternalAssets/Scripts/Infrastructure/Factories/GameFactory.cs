@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Player;
@@ -33,40 +34,45 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
         public GameObject CreateHud() => 
             _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);
 
-        public void Cleanup()
+
+		public void Register(ISavedProgressReader progressReader)
+		{
+			if (progressReader is ISavedProgress progressWriter)
+				ProgressWriters.Add(progressWriter);
+            
+			ProgressReaders.Add(progressReader);
+		}
+
+
+		public void Cleanup()
         {
             ProgressReaders.Clear();
             ProgressWriters.Clear();
         }
 
-        private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
+
+		private GameObject InstantiateRegistered(string prefabPath, Vector3 at)
         {
             GameObject gameObject = _assets.Instantiate(prefabPath, at);
             RegisterProgressWatchers(gameObject);
             return gameObject;
         }
-        
-        private GameObject InstantiateRegistered(string prefabPath)
+
+
+		private GameObject InstantiateRegistered(string prefabPath)
         {
             GameObject gameObject = _assets.Instantiate(prefabPath);
             RegisterProgressWatchers(gameObject);
             return gameObject;
         }
 
-        private void RegisterProgressWatchers(GameObject herGameObject)
+
+		private void RegisterProgressWatchers(GameObject herGameObject)
         {
             foreach (ISavedProgressReader progressReader in herGameObject.GetComponentsInChildren<ISavedProgressReader>())
             {
                 Register(progressReader);
             }
         }
-
-        private void Register(ISavedProgressReader progressReader)
-        {
-            if (progressReader is ISavedProgress progressWriter)
-                ProgressWriters.Add(progressWriter);
-            
-            ProgressReaders.Add(progressReader);
-        }
-    }
+	}
 }

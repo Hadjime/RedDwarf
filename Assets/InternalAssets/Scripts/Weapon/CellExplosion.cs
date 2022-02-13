@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
+using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Map;
 using InternalAssets.Scripts.Player;
 using UnityEngine;

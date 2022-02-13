@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using Cinemachine;
+using InternalAssets.Scripts.Characters.Enemy;
+using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
@@ -17,9 +19,10 @@ namespace InternalAssets.Scripts.Infrastructure.States
     {
         private const string INITIAL_POINT_TAG = "InitialPoint";
         private const string ROOT_UI_TAG = "RootUI";
+		private const string Enemyspawner = "EnemySpawner";
 
 
-        private readonly GameStateMachine _stateMachine;
+		private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _progressService;
@@ -50,12 +53,24 @@ namespace InternalAssets.Scripts.Infrastructure.States
         }
 
         private void InitGameWorld()
-        {
+		{
+			InitSpawners();
             GameObject hero = InitHero();
             InitHud(hero);
         }
 
-        private GameObject InitHero()
+
+		private void InitSpawners()
+		{
+			foreach (GameObject spawnerObject in GameObject.FindGameObjectsWithTag(Enemyspawner))
+			{
+				EnemySpawner enemySpawner = spawnerObject.GetComponent<EnemySpawner>();
+				_gameFactory.Register(enemySpawner);
+			}
+		}
+
+
+		private GameObject InitHero()
         {
             var initialPoint = GameObject.FindWithTag(INITIAL_POINT_TAG);
             var hero = _gameFactory.CreateHero(at: initialPoint);
