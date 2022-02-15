@@ -84,10 +84,14 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 		}
 
 
-		public LootPiece CreateLoot()
+		public LootPiece CreateLoot(Transform parent)
 		{
-			LootPiece lootPiece = InstantiateRegistered(AssetPath.LOOT_GOLD_1_PATH).GetComponent<LootPiece>();
-			lootPiece.Constructor(_progressService.Progress.WorldData);
+			LootPiece lootPiece = InstantiateRegistered(AssetPath.LOOT_GOLD_1_PATH, parent.position).GetComponent<LootPiece>();
+			if (lootPiece != null)
+			{
+				lootPiece.Constructor(_progressService.Progress.WorldData);
+			}
+			
 			return lootPiece;
 		}
 

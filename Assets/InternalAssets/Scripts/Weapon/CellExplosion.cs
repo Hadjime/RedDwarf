@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.Contracts;
+using Cinemachine;
 using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Map;
 using InternalAssets.Scripts.Player;
@@ -12,6 +13,7 @@ namespace InternalAssets.Scripts.Weapon
     {
         [SerializeField, Range(0, 10)] private int delay;
         [SerializeField, Range(0, 100)] private int damage;
+        [SerializeField] private CinemachineImpulseSource _cinemachineImpulseSource;
 
         void Start()
         {
@@ -22,6 +24,7 @@ namespace InternalAssets.Scripts.Weapon
         {
 			// other.transform.parent.GetComponent<IHealth>()?.ApplyDamage(damage);
             other.GetComponentInParent<IHealth>()?.ApplyDamage(damage);
+            _cinemachineImpulseSource.GenerateImpulse(Vector3.one);
 			
             // var objectTile = other.GetComponent<TileSetting>();
             // if (other != null && objectTile != null)

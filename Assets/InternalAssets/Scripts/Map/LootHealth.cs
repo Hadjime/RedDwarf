@@ -7,7 +7,7 @@ namespace InternalAssets.Scripts.Map
 	public class LootHealth : TileHealth
 	{
 		private float _delay = 0.5f;
-		private bool isImmortal = false;
+		private bool isImmortal = true;
 
 
 		private void Start()
@@ -20,7 +20,7 @@ namespace InternalAssets.Scripts.Map
 		private IEnumerator TimerImmortality()
 		{
 			yield return Coroutines.GetWait(_delay);
-			isImmortal = true;
+			isImmortal = false;
 		}
 
 

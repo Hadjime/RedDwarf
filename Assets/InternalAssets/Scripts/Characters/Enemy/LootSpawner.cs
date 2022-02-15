@@ -31,11 +31,14 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
 		private void SpawnLoot()
 		{
-			LootPiece loot = _factory.CreateLoot();
-			loot.transform.position = transform.position;
-
-			var lootItem = GenerateLoot();
-			loot.Initialize(lootItem);
+			LootPiece loot = _factory.CreateLoot(transform);
+			// loot.transform.position = transform.position;
+			if (loot != null)
+			{
+				var lootItem = GenerateLoot();
+				loot.Initialize(lootItem);
+			}
+			
 		}
 
 

@@ -1,6 +1,4 @@
-﻿using System;
-using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace InternalAssets.Scripts.Inventory.Item
 {
@@ -35,11 +33,11 @@ namespace InternalAssets.Scripts.Inventory.Item
         {
             if (!once)
             {
-                Instantiate(cellExplosion, transform.position, quaternion.identity);
-                Instantiate(cellExplosion, transform.position + Vector3.down, quaternion.identity);
-                Instantiate(cellExplosion, transform.position + Vector3.up, quaternion.identity);
-                Instantiate(cellExplosion, transform.position + Vector3.left, quaternion.identity);
-                Instantiate(cellExplosion, transform.position + Vector3.right, quaternion.identity);
+                Instantiate(cellExplosion, transform.position, Quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.down, Quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.up, Quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.left, Quaternion.identity);
+                Instantiate(cellExplosion, transform.position + Vector3.right, Quaternion.identity);
                 Destroy(this.gameObject);
                 once = true;
             }

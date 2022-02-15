@@ -39,7 +39,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
 			_isPicked = true;
 			
 			UpdateWorldData();
-			HideIcon();
+			// HideIcon();
 			PLayPickupFx();
 			ShowText();
 			StartCoroutine(StartDestroyTimer());
