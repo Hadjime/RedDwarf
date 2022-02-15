@@ -3,6 +3,7 @@ using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Infrastructure.Services.Random;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.Player;
 using InternalAssets.Scripts.StaticData;
@@ -18,16 +19,20 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
     {
         private readonly IAssets _assets;
 		private readonly IStaticDataService _staticDataService;
+		private IRandomService _randomService;
+		private readonly IPersistentProgressService _progressService;
 
 		public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
         public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
 		private GameObject HeroGameObject { get; set; }
 
 
-		public GameFactory(IAssets assets, IStaticDataService staticDataService)
+		public GameFactory(IAssets assets, IStaticDataService staticDataService, IRandomService randomService, IPersistentProgressService progressService)
         {
             _assets = assets;
 			_staticDataService = staticDataService;
+			_randomService = randomService;
+			_progressService = progressService;
 		}
 
         public GameObject CreateHero(GameObject at)
@@ -70,14 +75,21 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 
 			LootSpawner lootSpawner = monster.GetComponentInChildren<LootSpawner>();
 			if (lootSpawner != null)
-				lootSpawner.Constructor(this);
+			{
+				lootSpawner.Constructor(this, _randomService);
+				lootSpawner.SetLoot(monstersStaticData.MinLoot, monstersStaticData.MaxLoot);
+			}
 
 			return monster;
 		}
 
 
-		public GameObject CreateLoot() =>
-			InstantiateRegistered(AssetPath.LOOT_GOLD_1_PATH);
+		public LootPiece CreateLoot()
+		{
+			LootPiece lootPiece = InstantiateRegistered(AssetPath.LOOT_GOLD_1_PATH).GetComponent<LootPiece>();
+			lootPiece.Constructor(_progressService.Progress.WorldData);
+			return lootPiece;
+		}
 
 
 		public void Register(ISavedProgressReader progressReader)

@@ -4,6 +4,7 @@ using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Infrastructure.Services.Random;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 
@@ -43,12 +44,16 @@ namespace InternalAssets.Scripts.Infrastructure.States
         private void RegisterServices()
         {
 			_services.RegisterSingle<IAssets>(new AssetsProvider());
-			
+			_services.RegisterSingle<IRandomService>(new UnityRandomService());
 			RegisterStaticData();
 			
 			_services.RegisterSingle<IInputService>(SetupInputServices());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
-			_services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>(), _services.Single<IStaticDataService>() ) );
+			_services.RegisterSingle<IGameFactory>(new GameFactory(
+				_services.Single<IAssets>(),
+				_services.Single<IStaticDataService>(),
+				_services.Single<IRandomService>(),
+				_services.Single<IPersistentProgressService>()) );
 			_services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
 		}
 

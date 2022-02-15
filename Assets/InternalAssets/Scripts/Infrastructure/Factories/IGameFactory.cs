@@ -17,6 +17,6 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 		void Register(ISavedProgressReader progressReader);
 		void Cleanup();
 		GameObject CreateMonster(MonsterTypeId typeId, Transform parent);
-		GameObject CreateLoot();
+		LootPiece CreateLoot();
 	}
 }

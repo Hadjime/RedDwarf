@@ -19,3 +19,5 @@ MonoBehaviour:
   MoveSpeed: 0
   EffectiveRadiusAttack: 0.4
   Prefab: {fileID: 2828919997466976124, guid: a441446f316c5934eab3a432c4188c8f, type: 3}
+  MinLoot: 0
+  MaxLoot: 0
