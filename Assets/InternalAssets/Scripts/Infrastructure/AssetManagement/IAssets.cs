@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Infrastructure.Services;
+﻿using System.Collections.Generic;
+using InternalAssets.Scripts.Infrastructure.Services;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Infrastructure.AssetManagement
@@ -7,5 +8,6 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
     {
         GameObject Instantiate(string path);
         GameObject Instantiate(string path, Vector3 at);
-    }
+		void LoadAllAsyncByLabel<T>(string path, System.Action<List<T>> onFinish);
+	}
 }

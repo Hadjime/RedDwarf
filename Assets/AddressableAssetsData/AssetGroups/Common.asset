@@ -25,6 +25,16 @@ MonoBehaviour:
     m_Address: HUDCanvas
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: fe320c8097801b04aa8d66029f00bd64
+    m_Address: Assets/InternalAssets/ScriptableObject/Monsters
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Monsters
+  - m_GUID: 6f9489b2475bea54c856ee7bab5d819e
+    m_Address: Assets/InternalAssets/Prefabs/Map/Loot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Loot
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7738103bbe7df1242ac17ff7803bfdab, type: 2}
   m_SchemaSet:

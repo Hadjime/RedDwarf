@@ -161,6 +161,7 @@ Transform:
   - {fileID: 7810208547695691424}
   - {fileID: 5556168297534354752}
   - {fileID: 3894755804436111492}
+  - {fileID: 1906078888179288221}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -350,8 +351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759a30c7b1404d7eafb1b966ae3ef0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
-  attackCooldown: 1
+  Damage: 20
+  Radius: 0.4
+  AttackCooldown: 1
 --- !u!114 &7700772149625917906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,3 +543,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d668c50f070432da1de11e4022f6e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8717309437969650399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1906078888179288221}
+  - component: {fileID: 5461610403713772469}
+  m_Layer: 0
+  m_Name: LootSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1906078888179288221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717309437969650399}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3465912852018416080}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5461610403713772469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8717309437969650399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae0f48dfc044c3394d808dbaffeada1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDeath: {fileID: 1296699012455719634}

@@ -31,7 +31,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
 				Die();
 		}
 
-
+		[ContextMenu("Immediately Die")]
 		private void Die()
 		{
 			//TODO проиграть анимацию смерти

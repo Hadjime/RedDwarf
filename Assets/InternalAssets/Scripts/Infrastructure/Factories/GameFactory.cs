@@ -68,8 +68,16 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 
 			monster.GetComponent<RotateToPlayer>()?.Constructor(HeroGameObject.transform);
 
+			LootSpawner lootSpawner = monster.GetComponentInChildren<LootSpawner>();
+			if (lootSpawner != null)
+				lootSpawner.Constructor(this);
+
 			return monster;
 		}
+
+
+		public GameObject CreateLoot() =>
+			InstantiateRegistered(AssetPath.LOOT_GOLD_1_PATH);
 
 
 		public void Register(ISavedProgressReader progressReader)

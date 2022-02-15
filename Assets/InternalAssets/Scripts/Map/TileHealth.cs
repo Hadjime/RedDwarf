@@ -26,7 +26,7 @@ namespace InternalAssets.Scripts.Map
 		public event Action HpChanged;
 
 
-		public void ApplyDamage(float damage)
+		public virtual void ApplyDamage(float damage)
 		{
 			CurrentHp -= damage;
 			SetSprite(currentHp);

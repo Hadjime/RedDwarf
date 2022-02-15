@@ -42,10 +42,11 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         private void RegisterServices()
         {
+			_services.RegisterSingle<IAssets>(new AssetsProvider());
+			
 			RegisterStaticData();
 			
 			_services.RegisterSingle<IInputService>(SetupInputServices());
-			_services.RegisterSingle<IAssets>(new AssetsProvider());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 			_services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>(), _services.Single<IStaticDataService>() ) );
 			_services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
@@ -66,7 +67,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 		private void RegisterStaticData()
 		{
-			IStaticDataService staticDataService = new StaticDataService();
+			IStaticDataService staticDataService = new StaticDataService(_services.Single<IAssets>());
 			staticDataService.LoadMonsters();
 			_services.RegisterSingle<IStaticDataService>(staticDataService);
 		}
