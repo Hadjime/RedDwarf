@@ -42,8 +42,12 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
         }
 
 
-		public GameObject CreateHud() => 
-            _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);
+		public GameObject CreateHud()
+		{
+			GameObject hud = _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);
+			hud.GetComponentInChildren<LootCounter>()?.Constructor(_progressService.Progress.WorldData);
+			return hud;
+		}
 
 
 		public GameObject CreateMonster(MonsterTypeId typeId, Transform parent)
