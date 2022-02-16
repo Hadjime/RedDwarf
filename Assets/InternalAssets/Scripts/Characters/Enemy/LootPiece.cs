@@ -14,6 +14,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		[SerializeField] private GameObject PickupFxPrefab;
 		[SerializeField] private TextMeshPro LooText;
 		[SerializeField] private GameObject PickupPopup;
+		private Loot _defaultLoot = new Loot(){Value = 3};
 		private Loot _loot;
 		private bool _isPicked;
 		private WorldData _worldData;
@@ -38,16 +39,19 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
 			_isPicked = true;
 			
-			UpdateWorldData();
-			// HideIcon();
+			TryUpdateWorldData();
+			HideIcon();
 			PLayPickupFx();
 			ShowText();
 			StartCoroutine(StartDestroyTimer());
 		}
 
 
-		private void UpdateWorldData() =>
-			_worldData.LootData.Collect(_loot);
+		private void TryUpdateWorldData() =>
+			_worldData?.LootData.Collect(_loot);
+
+
+
 
 
 		private void HideIcon() =>
@@ -60,7 +64,8 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
 		private void ShowText()
 		{
-			LooText.text = $"{_loot.Value}";
+			string lootText = _loot != null ? _loot.Value.ToString() : _defaultLoot.Value.ToString();
+			LooText.text = $"{lootText}";
 			PickupPopup.SetActive(true);
 		}
 

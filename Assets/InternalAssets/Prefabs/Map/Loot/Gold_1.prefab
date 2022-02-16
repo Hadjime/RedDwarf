@@ -69,7 +69,6 @@ GameObject:
   - component: {fileID: 9021090884675595383}
   - component: {fileID: -8638373759334394328}
   - component: {fileID: 8784193213788947492}
-  - component: {fileID: 6006637125311476590}
   - component: {fileID: 5435632799183423002}
   - component: {fileID: 4601857047703655693}
   - component: {fileID: -6728662895349904301}
@@ -137,13 +136,13 @@ SpriteRenderer:
   m_SortingLayerID: -1744236031
   m_SortingLayer: 4
   m_SortingOrder: 3
-  m_Sprite: {fileID: 1715447451273200686, guid: 867a1bc4945eb2a478797a31a2f5b27f,
+  m_Sprite: {fileID: 2490047331491553580, guid: 531054b0fe84087459084c19fde94286,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -188,7 +187,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -196,19 +195,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &6006637125311476590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9021090884675595381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f2f008d8ab34c84797ead17aa1b2383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  price: 10
 --- !u!114 &5435632799183423002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,6 +381,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984278437907084909, guid: 3d8f29094dcec0f419e5231ad2acbd23,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984278437907084909, guid: 3d8f29094dcec0f419e5231ad2acbd23,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1003949091
       objectReference: {fileID: 0}
     - target: {fileID: 7259202369626320990, guid: 3d8f29094dcec0f419e5231ad2acbd23,
         type: 3}

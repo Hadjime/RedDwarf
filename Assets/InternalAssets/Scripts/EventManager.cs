@@ -19,7 +19,7 @@ namespace InternalAssets.Scripts
                     _eventManager = FindObjectOfType(typeof(EventManager)) as EventManager;
                     if (!_eventManager)
                     {
-                        Debug.LogError("Необходим один активный скрипт EventManager на GameObject в сцене");
+                        // Debug.LogError("Необходим один активный скрипт EventManager на GameObject в сцене");
                     }
                     else
                     {

@@ -61,7 +61,6 @@ GameObject:
   - component: {fileID: 4584909920131044525}
   - component: {fileID: 6881477057009628396}
   - component: {fileID: 963529810866956795}
-  - component: {fileID: 4584909920577510784}
   - component: {fileID: 4584909920577510809}
   - component: {fileID: 7472157605124970461}
   - component: {fileID: 8796420274686480772}
@@ -228,19 +227,6 @@ MonoBehaviour:
   isRight: 0
   isMoving: 0
   isAttack: 0
---- !u!114 &4584909920577510784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7178790872919254444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b0342af1a7edbe40bed547168e10a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
 --- !u!114 &4584909920577510809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +348,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0f9bde8f2f420c8cca0fa4207146f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cinemachineImpulseSource: {fileID: 0}
   smallBombPrefab: {fileID: 9021090884675595381, guid: ba64aaa060a86fe4284b76b69352b5ff,
     type: 3}

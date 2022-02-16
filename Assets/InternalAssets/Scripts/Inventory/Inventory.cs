@@ -17,15 +17,15 @@ namespace InternalAssets.Scripts.Inventory
         
         public string NamePlayer { get; set; }
 
-        private void OnEnable()
-        {
-            EventManager.StartListeningWithOneParametr("ChangingCurrentWeapon", HandleChangingCurrentWeapon);
-        }
-
-        private void OnDisable()
-        {
-            EventManager.StopListeningWithOneParametr("ChangingCurrentWeapon", HandleChangingCurrentWeapon);
-        }
+        // private void OnEnable()
+        // {
+        //     EventManager.StartListeningWithOneParametr("ChangingCurrentWeapon", HandleChangingCurrentWeapon);
+        // }
+        //
+        // private void OnDisable()
+        // {
+        //     EventManager.StopListeningWithOneParametr("ChangingCurrentWeapon", HandleChangingCurrentWeapon);
+        // }
 
         private void HandleChangingCurrentWeapon(int weaponID)
         {
