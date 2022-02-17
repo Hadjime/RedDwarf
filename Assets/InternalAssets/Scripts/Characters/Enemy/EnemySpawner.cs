@@ -34,6 +34,12 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		}
 
 
+		public void UpdateProgress(PlayerProgress progress)
+		{
+			if (_slain)
+				progress.KillData.ClearedSpawners.Add(_id);
+		}
+
 		private void Spawn()
 		{
 			GameObject monster = _factory.CreateMonster(monsterTypeId, transform);
@@ -48,13 +54,6 @@ namespace InternalAssets.Scripts.Characters.Enemy
 				_enemyDeath.Happened -= Kill;
 			
 			_slain = true;
-		}
-
-
-		public void UpdateProgress(PlayerProgress progress)
-		{
-			if (_slain)
-				progress.KillData.ClearedSpawners.Add(_id);
 		}
 	}
 }
