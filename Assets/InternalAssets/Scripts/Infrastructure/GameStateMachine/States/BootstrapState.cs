@@ -50,15 +50,19 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			
 			_services.RegisterSingle<IInputService>(SetupInputServices());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
-			
-			SRDebug.Instance.AddOptionContainer(new CheatsThroughDI(_services.Single<IPersistentProgressService>()));
-			
 			_services.RegisterSingle<IGameFactory>(new GameFactory(
 				_services.Single<IAssets>(),
 				_services.Single<IStaticDataService>(),
 				_services.Single<IRandomService>(),
 				_services.Single<IPersistentProgressService>()) );
-			_services.RegisterSingle<ISaveLoadService>(new SaveLoadService(_services.Single<IPersistentProgressService>(), _services.Single<IGameFactory>()));
+			
+			_services.RegisterSingle<ISaveLoadService>(new SaveLoadService(
+				_services.Single<IPersistentProgressService>(),
+				_services.Single<IGameFactory>()));
+			
+			SRDebug.Instance.AddOptionContainer(new CheatsThroughDI(
+				_services.Single<IPersistentProgressService>(),
+				_services.Single<ISaveLoadService>()));
 		}
 
 
