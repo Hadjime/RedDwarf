@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Infrastructure.AssetManagement;
+﻿using InternalAssets.Scripts.Cheats;
+using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services;
@@ -43,12 +44,15 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         private void RegisterServices()
         {
-			_services.RegisterSingle<IAssets>(new AssetsProvider());
+	        _services.RegisterSingle<IAssets>(new AssetsProvider());
 			_services.RegisterSingle<IRandomService>(new UnityRandomService());
 			RegisterStaticData();
 			
 			_services.RegisterSingle<IInputService>(SetupInputServices());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
+			
+			SRDebug.Instance.AddOptionContainer(new CheatsThroughDI(_services.Single<IPersistentProgressService>()));
+			
 			_services.RegisterSingle<IGameFactory>(new GameFactory(
 				_services.Single<IAssets>(),
 				_services.Single<IStaticDataService>(),
