@@ -8,5 +8,6 @@ namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 	{
 		void LoadMonsters();
 		MonstersStaticData ForMonsters(MonsterTypeId monsterTypeId);
+		LevelStaticData ForLevel(string sceneKey);
 	}
 }

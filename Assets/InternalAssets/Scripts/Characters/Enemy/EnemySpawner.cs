@@ -11,8 +11,8 @@ namespace InternalAssets.Scripts.Characters.Enemy
 	[RequireComponent(typeof(UniqueId))]
 	public class EnemySpawner : MonoBehaviour, ISavedProgress
 	{
-		[SerializeField] private MonsterTypeId monsterTypeId;
-		private string _id;
+		public MonsterTypeId monsterTypeId;
+		public string Id;
 		[SerializeField] private bool _slain;
 		private IGameFactory _factory;
 		private EnemyDeath _enemyDeath;
@@ -20,14 +20,14 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
 		private void Awake()
 		{
-			_id = GetComponent<UniqueId>()?.Id;
+			Id = GetComponent<UniqueId>()?.Id;
 			_factory = AllServices.Container.Single<IGameFactory>();
 		}
 
 
 		public void LoadProgress(PlayerProgress progress)
 		{
-			if (progress.KillData.ClearedSpawners.Contains(_id))
+			if (progress.KillData.ClearedSpawners.Contains(Id))
 				_slain = true;
 			else
 				Spawn();
@@ -37,7 +37,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		public void UpdateProgress(PlayerProgress progress)
 		{
 			if (_slain)
-				progress.KillData.ClearedSpawners.Add(_id);
+				progress.KillData.ClearedSpawners.Add(Id);
 		}
 
 		private void Spawn()

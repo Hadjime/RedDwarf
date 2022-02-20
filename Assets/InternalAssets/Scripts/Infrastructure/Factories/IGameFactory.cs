@@ -12,11 +12,10 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
         GameObject CreateHud();
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
-
-
-		void Register(ISavedProgressReader progressReader);
-		void Cleanup();
+		
 		GameObject CreateMonster(MonsterTypeId typeId, Transform parent);
+		void CreateSpawner(string spawnerId, Vector3 at, MonsterTypeId monsterTypeId);
 		LootPiece CreateLoot(Transform parent);
-	}
+		void Cleanup();
+	}	
 }
