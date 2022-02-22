@@ -1,21 +1,17 @@
-﻿using System.Diagnostics;
-using Cinemachine;
-using InternalAssets.Scripts.Characters.Enemy;
+﻿using Cinemachine;
 using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
-using InternalAssets.Scripts.Player;
-using InternalAssets.Scripts.UI;
+using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.UI.GamePlay;
-using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.SceneManagement;
+
 
 namespace InternalAssets.Scripts.Infrastructure.States
 {
-    public class LoadLevelState : IPayloadState<string>
+    public class LoadSceneState : IPayloadState<string>
     {
         private const string INITIAL_POINT_TAG = "InitialPoint";
         private const string ROOT_UI_TAG = "RootUI";
@@ -26,14 +22,23 @@ namespace InternalAssets.Scripts.Infrastructure.States
         private readonly SceneLoader _sceneLoader;
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _progressService;
+		private readonly IStaticDataService _staticDataService;
 
-        public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, IGameFactory gameFactory, IPersistentProgressService progressService)
+
+		public LoadSceneState(
+				GameStateMachine stateMachine,
+				SceneLoader sceneLoader,
+				IGameFactory gameFactory,
+				IPersistentProgressService progressService,
+				IStaticDataService staticDataService
+			)
         {
             _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
             _gameFactory = gameFactory;
             _progressService = progressService;
-        }
+			_staticDataService = staticDataService;
+		}
 
         public void Enter(string sceneName)
         {
@@ -62,10 +67,17 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 		private void InitSpawners()
 		{
-			foreach (GameObject spawnerObject in GameObject.FindGameObjectsWithTag(Enemyspawner))
+			// foreach (GameObject spawnerObject in GameObject.FindGameObjectsWithTag(Enemyspawner))
+			// {
+			// 	EnemySpawner enemySpawner = spawnerObject.GetComponent<EnemySpawner>();
+			// 	_gameFactory.Register(enemySpawner);
+			// }
+
+			string sceneKey = SceneManager.GetActiveScene().name;
+			LevelStaticData levelData = _staticDataService.ForLevel(sceneKey);
+			foreach (EnemySpawnerData spawnerData in levelData.enemySpawners)
 			{
-				EnemySpawner enemySpawner = spawnerObject.GetComponent<EnemySpawner>();
-				_gameFactory.Register(enemySpawner);
+				_gameFactory.CreateSpawner(spawnerData.Id, spawnerData.Position, spawnerData.MonsterTypeId);
 			}
 		}
 

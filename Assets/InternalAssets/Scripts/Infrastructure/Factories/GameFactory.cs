@@ -5,7 +5,6 @@ using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.Random;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
-using InternalAssets.Scripts.Player;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.UI.GamePlay;
 using Pathfinding;
@@ -97,6 +96,14 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 			}
 			
 			return lootPiece;
+		}
+
+
+		public void CreateSpawner(string spawnerId, Vector3 at, MonsterTypeId monsterTypeId)
+		{
+			EnemySpawner spawner = InstantiateRegistered(AssetPath.Spawner, at).GetComponent<EnemySpawner>();
+			spawner.Id = spawnerId;
+			spawner.monsterTypeId = monsterTypeId;
 		}
 
 
