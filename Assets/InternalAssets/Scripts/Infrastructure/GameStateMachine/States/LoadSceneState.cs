@@ -4,6 +4,7 @@ using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
+using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.UI.GamePlay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -75,7 +76,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 			string sceneKey = SceneManager.GetActiveScene().name;
 			LevelStaticData levelData = _staticDataService.ForLevel(sceneKey);
-			foreach (EnemySpawnerData spawnerData in levelData.enemySpawners)
+			foreach (EnemySpawnerData spawnerData in levelData.EnemySpawners)
 			{
 				_gameFactory.CreateSpawner(spawnerData.Id, spawnerData.Position, spawnerData.MonsterTypeId);
 			}
