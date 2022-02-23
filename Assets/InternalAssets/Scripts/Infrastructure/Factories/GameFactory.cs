@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using InternalAssets.Scripts.Characters.Enemy;
+using InternalAssets.Scripts.Characters.Enemy.EnemySpawners;
 using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
@@ -101,7 +102,10 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 
 		public void CreateSpawner(string spawnerId, Vector3 at, MonsterTypeId monsterTypeId)
 		{
-			EnemySpawner spawner = InstantiateRegistered(AssetPath.Spawner, at).GetComponent<EnemySpawner>();
+			SpawnPoint spawner = InstantiateRegistered(AssetPath.SPAWN_POINT, at)
+				.GetComponent<SpawnPoint>();
+			
+			spawner.Constructor(this);
 			spawner.Id = spawnerId;
 			spawner.monsterTypeId = monsterTypeId;
 		}

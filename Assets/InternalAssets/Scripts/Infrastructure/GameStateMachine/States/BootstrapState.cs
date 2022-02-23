@@ -81,7 +81,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		private void RegisterStaticData()
 		{
 			IStaticDataService staticDataService = new StaticDataService(_services.Single<IAssets>());
-			staticDataService.LoadMonsters();
+			staticDataService.Load();
 			_services.RegisterSingle<IStaticDataService>(staticDataService);
 		}
 	}

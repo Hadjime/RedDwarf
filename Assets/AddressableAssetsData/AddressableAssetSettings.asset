@@ -84,6 +84,7 @@ MonoBehaviour:
     - default
     - Monsters
     - Loot
+    - Levels
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: f95b59eca47fb4b47b9a83cc8282da6d, type: 2}

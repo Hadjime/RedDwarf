@@ -22,7 +22,7 @@ namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 		}
 
 
-		public void LoadMonsters()
+		public void Load()
 		{
 			_assets.LoadAllAsyncByLabel<MonstersStaticData>(MonstersLabel, onFinish: list =>
 			{
