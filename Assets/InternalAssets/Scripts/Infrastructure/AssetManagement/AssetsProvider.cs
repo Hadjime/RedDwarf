@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
+using Zenject;
 
 
 namespace InternalAssets.Scripts.Infrastructure.AssetManagement
@@ -12,8 +13,14 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
     {
 		private bool isActivateLog;
 		private string loadingLog;
-		
-		
+		private IAssets _assets;
+
+
+		[Inject]
+		public void Constructor(IAssets assets)
+		{
+			_assets = assets;
+		}
         public GameObject Instantiate(string path)
         {
             AsyncOperationHandle<GameObject> asyncOperationHandle =
