@@ -7,7 +7,9 @@ using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.Random;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.StaticData;
+using InternalAssets.Scripts.UI.Elements;
 using InternalAssets.Scripts.UI.GamePlay;
+using InternalAssets.Scripts.UI.Services.Windows;
 using Pathfinding;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -21,18 +23,26 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 		private readonly IStaticDataService _staticDataService;
 		private IRandomService _randomService;
 		private readonly IPersistentProgressService _progressService;
+		private IWindowService _windowService;
 
 		public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
         public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
 		private GameObject HeroGameObject { get; set; }
 
 
-		public GameFactory(IAssets assets, IStaticDataService staticDataService, IRandomService randomService, IPersistentProgressService progressService)
+		public GameFactory(
+				IAssets assets,
+				IStaticDataService staticDataService,
+				IRandomService randomService,
+				IPersistentProgressService progressService,
+				IWindowService windowService
+			)
         {
             _assets = assets;
 			_staticDataService = staticDataService;
 			_randomService = randomService;
 			_progressService = progressService;
+			_windowService = windowService;
 		}
 
         public GameObject CreateHero(GameObject at)
@@ -46,6 +56,11 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 		{
 			GameObject hud = _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);
 			hud.GetComponentInChildren<LootCounter>()?.Constructor(_progressService.Progress.WorldData);
+
+			foreach (OpenWindowButton openWindowButton in hud.GetComponentsInChildren<OpenWindowButton>())
+			{
+				openWindowButton.Constructor(_windowService);
+			}
 			return hud;
 		}
 

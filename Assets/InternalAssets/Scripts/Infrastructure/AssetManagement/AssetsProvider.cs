@@ -36,7 +36,16 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
             GameObject player = asyncOperationHandle.WaitForCompletion();
             return player;
         }
-		
+
+
+		public T LoadAsync<T>(string path)
+		{
+			AsyncOperationHandle<T> asyncOperationHandle = Addressables.LoadAssetAsync<T>(path);
+			var rezult = asyncOperationHandle.WaitForCompletion();
+			return rezult;
+		}
+
+
 		public void LoadAllAsyncByLabel<T> (string path, System.Action<List<T>> onFinish)
 		{
 			var startTimeResourcesLoading = new Stopwatch();

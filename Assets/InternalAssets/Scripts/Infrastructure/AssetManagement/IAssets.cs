@@ -9,5 +9,8 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
         GameObject Instantiate(string path);
         GameObject Instantiate(string path, Vector3 at);
 		void LoadAllAsyncByLabel<T>(string path, System.Action<List<T>> onFinish);
+
+
+		T LoadAsync<T>(string path);
 	}
 }

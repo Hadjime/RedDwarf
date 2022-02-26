@@ -8,6 +8,8 @@ using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.Random;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
+using InternalAssets.Scripts.UI.Services.Factory;
+using InternalAssets.Scripts.UI.Services.Windows;
 
 
 namespace InternalAssets.Scripts.Infrastructure.States
@@ -46,15 +48,23 @@ namespace InternalAssets.Scripts.Infrastructure.States
         {
 	        _services.RegisterSingle<IAssets>(new AssetsProvider());
 			_services.RegisterSingle<IRandomService>(new UnityRandomService());
-			RegisterStaticData();
-			
-			_services.RegisterSingle<IInputService>(SetupInputServices());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
+
+			RegisterStaticData();
+
+			_services.RegisterSingle<IUIFactory>(new UIFactory(
+				_services.Single<IAssets>(),
+				_services.Single<IStaticDataService>(), _services.Single<IPersistentProgressService>()));
+			_services.RegisterSingle<IWindowService>(
+				new WindowService(_services.Single<IUIFactory>()));
+
+			_services.RegisterSingle<IInputService>(SetupInputServices());
 			_services.RegisterSingle<IGameFactory>(new GameFactory(
 				_services.Single<IAssets>(),
 				_services.Single<IStaticDataService>(),
 				_services.Single<IRandomService>(),
-				_services.Single<IPersistentProgressService>()) );
+				_services.Single<IPersistentProgressService>(),
+				_services.Single<IWindowService>()) );
 			
 			_services.RegisterSingle<ISaveLoadService>(new SaveLoadService(
 				_services.Single<IPersistentProgressService>(),

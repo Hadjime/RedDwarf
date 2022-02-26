@@ -6,6 +6,7 @@ using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.UI.GamePlay;
+using InternalAssets.Scripts.UI.Services.Factory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,6 +25,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _progressService;
 		private readonly IStaticDataService _staticDataService;
+		private readonly IUIFactory _uiFactory;
 
 
 		public LoadSceneState(
@@ -31,7 +33,8 @@ namespace InternalAssets.Scripts.Infrastructure.States
 				SceneLoader sceneLoader,
 				IGameFactory gameFactory,
 				IPersistentProgressService progressService,
-				IStaticDataService staticDataService
+				IStaticDataService staticDataService,
+				IUIFactory uiFactory
 			)
         {
             _stateMachine = stateMachine;
@@ -39,6 +42,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
             _gameFactory = gameFactory;
             _progressService = progressService;
 			_staticDataService = staticDataService;
+			_uiFactory = uiFactory;
 		}
 
         public void Enter(string sceneName)
@@ -53,12 +57,18 @@ namespace InternalAssets.Scripts.Infrastructure.States
         }
 
         private void OnLoaded()
-        {
+		{
+			InitUIRoot();
             InitGameWorld();
             InformProgressReaders();
         }
 
-        private void InitGameWorld()
+
+		private void InitUIRoot() =>
+			_uiFactory.CreateUIRoot();
+
+
+		private void InitGameWorld()
 		{
 			InitSpawners();
             GameObject hero = InitHero();
