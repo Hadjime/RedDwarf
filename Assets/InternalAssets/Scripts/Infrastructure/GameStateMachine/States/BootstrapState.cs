@@ -1,4 +1,5 @@
 ﻿using InternalAssets.Scripts.Cheats;
+using InternalAssets.Scripts.Infrastructure.Ads;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
@@ -46,15 +47,19 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         private void RegisterServices()
         {
-	        _services.RegisterSingle<IAssets>(new AssetsProvider());
+			RegisterAdsService();
+
+			_services.RegisterSingle<IAssets>(new AssetsProvider());
 			_services.RegisterSingle<IRandomService>(new UnityRandomService());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 
-			RegisterStaticData();
+			RegisterStaticDataService();
 
 			_services.RegisterSingle<IUIFactory>(new UIFactory(
 				_services.Single<IAssets>(),
-				_services.Single<IStaticDataService>(), _services.Single<IPersistentProgressService>()));
+				_services.Single<IStaticDataService>(),
+				_services.Single<IPersistentProgressService>(),
+				_services.Single<IAdsService>()));
 			_services.RegisterSingle<IWindowService>(
 				new WindowService(_services.Single<IUIFactory>()));
 
@@ -76,6 +81,14 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		}
 
 
+		private void RegisterAdsService()
+		{
+			IAdsService adsService = new AdsService();
+			adsService.Initialize(true);
+			_services.RegisterSingle<IAdsService>(adsService);
+		}
+
+
 		private void EnterLoadLevel() =>
 			_stateMachine.Enter<LoadProgressState>();
 
@@ -88,7 +101,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
         }
 
 
-		private void RegisterStaticData()
+		private void RegisterStaticDataService()
 		{
 			IStaticDataService staticDataService = new StaticDataService(_services.Single<IAssets>());
 			staticDataService.Load();

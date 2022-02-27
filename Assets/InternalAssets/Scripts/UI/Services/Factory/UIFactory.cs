@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Infrastructure.AssetManagement;
+﻿using InternalAssets.Scripts.Infrastructure.Ads;
+using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.StaticData.Windows;
@@ -16,17 +17,20 @@ namespace InternalAssets.Scripts.UI.Services.Factory
 		private readonly IAssets _assets;
 		private readonly IStaticDataService _staticData;
 		private readonly IPersistentProgressService _progressService;
+		private readonly IAdsService _adsService;
 		private Transform _uiRoot;
 
 
 		public UIFactory(
 				IAssets assets,
 				IStaticDataService staticData,
-				IPersistentProgressService progressService
+				IPersistentProgressService progressService,
+				IAdsService adsService
 			) {
 			_assets = assets;
 			_staticData = staticData;
 			_progressService = progressService;
+			_adsService = adsService;
 		}
 
 
