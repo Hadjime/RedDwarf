@@ -13,14 +13,14 @@ namespace InternalAssets.Scripts.UI.Windows.Shop
 
 		protected override void Initialize()
 		{
-			AdItem.Initialize();
+			//AdItem.Initialize(); // TODO надо разобраться с 4 версией unity ads
 			UpdateGoldText();
 		}
 
 
 		protected override void SubscribeUpdates()
 		{
-			AdItem.Subscribe();
+			// AdItem.Subscribe(); // TODO надо разобраться с 4 версией unity ads
 			Progress.WorldData.LootData.Changed += UpdateGoldText;
 		}
 
@@ -28,7 +28,7 @@ namespace InternalAssets.Scripts.UI.Windows.Shop
 		protected override void Cleanup()
 		{
 			base.Cleanup();
-			AdItem.Cleanup();
+			// AdItem.Cleanup(); //TODO надо разобраться с 4 версией unity ads
 			Progress.WorldData.LootData.Changed -= UpdateGoldText;
 		}
 		

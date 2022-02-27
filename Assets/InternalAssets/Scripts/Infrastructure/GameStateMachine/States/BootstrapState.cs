@@ -49,6 +49,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
         {
 			RegisterAdsService();
 
+			_services.RegisterSingle<IGameStateMachine>(_stateMachine);
 			_services.RegisterSingle<IAssets>(new AssetsProvider());
 			_services.RegisterSingle<IRandomService>(new UnityRandomService());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());

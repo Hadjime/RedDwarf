@@ -14,27 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelKey: Main
   EnemySpawners:
+  - Id: Main_5104fa21-f707-4eb6-adfd-d9f9cce5e374
+    MonsterTypeId: 0
+    Position: {x: -40, y: 12, z: 0}
+  - Id: Main_4e0efa01-e317-4be4-a55e-ae965c445b14
+    MonsterTypeId: 0
+    Position: {x: -41, y: 2, z: 0}
+  - Id: Main_d2ee1511-8dfc-42eb-b0db-901b00cf19c3
+    MonsterTypeId: 0
+    Position: {x: -35, y: 2, z: 0}
+  - Id: Main_2818742c-8d4f-4a00-ace2-f8df00505a81
+    MonsterTypeId: 0
+    Position: {x: -33, y: -2, z: 0}
+  - Id: Main_fcad85a0-3ac2-49b5-88d6-1e0dcb6dd9d1
+    MonsterTypeId: 0
+    Position: {x: -41, y: 2, z: 0}
+  - Id: Main_1ea9ccf3-5771-4bb2-8285-be8297c8015c
+    MonsterTypeId: 0
+    Position: {x: -40, y: -8, z: 0}
   - Id: Main_5711d751-76ce-4b7e-ad98-86082da1b3cf
     MonsterTypeId: 0
     Position: {x: -37, y: 2, z: 0}
   - Id: Main_94284808-28e8-4c68-b478-a292c21d4481
     MonsterTypeId: 0
     Position: {x: -38, y: 10, z: 0}
-  - Id: Main_1ea9ccf3-5771-4bb2-8285-be8297c8015c
-    MonsterTypeId: 0
-    Position: {x: -40, y: -8, z: 0}
-  - Id: Main_2818742c-8d4f-4a00-ace2-f8df00505a81
-    MonsterTypeId: 0
-    Position: {x: -33, y: -2, z: 0}
-  - Id: Main_4e0efa01-e317-4be4-a55e-ae965c445b14
-    MonsterTypeId: 0
-    Position: {x: -41, y: 2, z: 0}
-  - Id: Main_fcad85a0-3ac2-49b5-88d6-1e0dcb6dd9d1
-    MonsterTypeId: 0
-    Position: {x: -41, y: 2, z: 0}
-  - Id: Main_d2ee1511-8dfc-42eb-b0db-901b00cf19c3
-    MonsterTypeId: 0
-    Position: {x: -35, y: 2, z: 0}
-  - Id: Main_5104fa21-f707-4eb6-adfd-d9f9cce5e374
-    MonsterTypeId: 0
-    Position: {x: -40, y: 12, z: 0}
+  InitialHeroPosition: {x: -49, y: 7, z: 0}

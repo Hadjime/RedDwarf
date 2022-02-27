@@ -25,7 +25,7 @@ namespace InternalAssets.Scripts.UI.Windows.Shop
 		public void Initialize()
 		{
 			showAdBtn.onClick.AddListener(OnShowAdClick);
-
+			
 			RefreshAvailableAd();
 		}
 

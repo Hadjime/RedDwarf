@@ -15,8 +15,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 {
     public class LoadSceneState : IPayloadState<string>
     {
-        private const string INITIAL_POINT_TAG = "InitialPoint";
-        private const string ROOT_UI_TAG = "RootUI";
+		private const string ROOT_UI_TAG = "RootUI";
 		private const string Enemyspawner = "EnemySpawner";
 
 
@@ -70,13 +69,15 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 		private void InitGameWorld()
 		{
-			InitSpawners();
-            GameObject hero = InitHero();
+			LevelStaticData levelData = LevelStaticData();
+
+			InitSpawners(levelData);
+            GameObject hero = InitHero(levelData);
             InitHud(hero);
         }
 
 
-		private void InitSpawners()
+		private void InitSpawners(LevelStaticData levelStaticData)
 		{
 			// foreach (GameObject spawnerObject in GameObject.FindGameObjectsWithTag(Enemyspawner))
 			// {
@@ -84,25 +85,24 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			// 	_gameFactory.Register(enemySpawner);
 			// }
 
-			string sceneKey = SceneManager.GetActiveScene().name;
-			LevelStaticData levelData = _staticDataService.ForLevel(sceneKey);
-			foreach (EnemySpawnerData spawnerData in levelData.EnemySpawners)
+			
+			foreach (EnemySpawnerData spawnerData in levelStaticData.EnemySpawners)
 			{
 				_gameFactory.CreateSpawner(spawnerData.Id, spawnerData.Position, spawnerData.MonsterTypeId);
 			}
 		}
 
 
-		private GameObject InitHero()
+		private GameObject InitHero(LevelStaticData levelStaticData)
         {
-            var initialPoint = GameObject.FindWithTag(INITIAL_POINT_TAG);
-            var hero = _gameFactory.CreateHero(at: initialPoint);
+			var hero = _gameFactory.CreateHero(at: levelStaticData.InitialHeroPosition);
             SetCameraFollow(hero.transform);
 
             return hero;
         }
 
-        private void InitHud(GameObject hero)
+
+		private void InitHud(GameObject hero)
         {
             var RootObjectForHud = GameObject.FindWithTag(ROOT_UI_TAG);
             var Hud = _gameFactory.CreateHud();
@@ -112,7 +112,8 @@ namespace InternalAssets.Scripts.Infrastructure.States
             Hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth);
         }
 
-        private void InformProgressReaders()
+
+		private void InformProgressReaders()
         {
             foreach (ISavedProgressReader progressReader in _gameFactory.ProgressReaders)
             {
@@ -120,7 +121,12 @@ namespace InternalAssets.Scripts.Infrastructure.States
             }
         }
 
-        private void SetCameraFollow(Transform player)
+
+		private LevelStaticData LevelStaticData() =>
+			_staticDataService.ForLevel(SceneManager.GetActiveScene().name);
+
+
+		private void SetCameraFollow(Transform player)
         {
             CinemachineVirtualCamera cinemachineVirtualCamera = Camera.main.GetComponentInChildren<CinemachineVirtualCamera>();
             cinemachineVirtualCamera.Follow = player;

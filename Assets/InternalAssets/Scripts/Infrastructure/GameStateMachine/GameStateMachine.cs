@@ -12,8 +12,8 @@ using InternalAssets.Scripts.UI.Services.Factory;
 
 namespace InternalAssets.Scripts.Infrastructure
 {
-    public class GameStateMachine
-    {
+    public class GameStateMachine : IGameStateMachine
+	{
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 

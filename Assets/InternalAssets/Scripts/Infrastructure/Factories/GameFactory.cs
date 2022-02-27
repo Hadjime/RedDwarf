@@ -45,9 +45,9 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 			_windowService = windowService;
 		}
 
-        public GameObject CreateHero(GameObject at)
+        public GameObject CreateHero(Vector3 at)
         {
-            HeroGameObject = InstantiateRegistered(AssetPath.PLAYER_WITH_SERVICE_PATH, at.transform.position);
+            HeroGameObject = InstantiateRegistered(AssetPath.PLAYER_WITH_SERVICE_PATH, at);
 			return HeroGameObject;
         }
 
