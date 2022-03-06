@@ -1,4 +1,5 @@
 ﻿using InternalAssets.Scripts.UI.Services.Factory;
+using SRDebugger;
 
 
 namespace InternalAssets.Scripts.UI.Services.Windows
@@ -7,10 +8,12 @@ namespace InternalAssets.Scripts.UI.Services.Windows
 	{
 		private IUIFactory _uiFactory;
 
+
+		public WindowService() {}
+
 		
-		public WindowService(IUIFactory uiFactory) {
+		public void Initialize(IUIFactory uiFactory) =>
 			_uiFactory = uiFactory;
-		}
 
 
 		public void Open(WindowId windowId)

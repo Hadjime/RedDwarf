@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: PlayerWithService
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 45fb38116bd3084439ebe3b0d1d147db
-    m_Address: HUDCanvas
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: fe320c8097801b04aa8d66029f00bd64
     m_Address: Assets/InternalAssets/ScriptableObject/Monsters
     m_ReadOnly: 0

@@ -38,6 +38,15 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
         }
 
 
+		public GameObject Instantiate(string path, Vector3 at, Transform parent)
+		{
+			AsyncOperationHandle<GameObject> asyncOperationHandle =
+				Addressables.InstantiateAsync(path, at, Quaternion.identity, parent);
+			GameObject player = asyncOperationHandle.WaitForCompletion();
+			return player;
+		}
+
+
 		public T LoadAsync<T>(string path)
 		{
 			AsyncOperationHandle<T> asyncOperationHandle = Addressables.LoadAssetAsync<T>(path);

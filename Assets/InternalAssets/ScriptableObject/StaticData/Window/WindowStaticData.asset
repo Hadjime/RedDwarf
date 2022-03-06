@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: WindowStaticData
   m_EditorClassIdentifier: 
   Configs:
-  - WindowId: 5
+  - elementName: Shop
+    WindowId: 5
     Prefab: {fileID: 7737840989235060433, guid: 3b8086aee3c4e974c8b1a03a28a500d5,
+      type: 3}
+  - elementName: GamePlay
+    WindowId: 10
+    Prefab: {fileID: 6583826129205164383, guid: d5f05184d9d5942409ae9ef77cc52d21,
       type: 3}

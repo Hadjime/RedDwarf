@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
@@ -9,7 +10,7 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
     public interface IGameFactory : IService
     {
         GameObject CreateHero(Vector3 at);
-        GameObject CreateHud();
+		[Obsolete] GameObject CreateHud();
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
 		

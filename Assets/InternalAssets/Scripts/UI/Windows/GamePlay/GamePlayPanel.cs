@@ -1,11 +1,11 @@
-﻿using System;
-using InternalAssets.Scripts.Characters.Hero;
-using InternalAssets.Scripts.Player;
+﻿using InternalAssets.Scripts.Characters.Hero;
+using InternalAssets.Scripts.UI.GamePlay;
 using UnityEngine;
 
-namespace InternalAssets.Scripts.UI.GamePlay
+
+namespace InternalAssets.Scripts.UI.Windows.GamePlay
 {
-    public class GamePlayPanel : MonoBehaviour
+    public class GamePlayPanel : WindowBase
     {
         [SerializeField] private HealthBar healthBar;
 

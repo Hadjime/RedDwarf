@@ -7,6 +7,7 @@ using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.UI.Services.Factory;
+using InternalAssets.Scripts.UI.Windows.GamePlay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +16,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 {
     public class LoadSceneState : IPayloadState<string>
     {
-		private const string ROOT_UI_TAG = "RootUI";
+		// private const string ROOT_UI_TAG = "RootUI";
 		private const string Enemyspawner = "EnemySpawner";
 
 
@@ -79,17 +80,9 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 		private void InitSpawners(LevelStaticData levelStaticData)
 		{
-			// foreach (GameObject spawnerObject in GameObject.FindGameObjectsWithTag(Enemyspawner))
-			// {
-			// 	EnemySpawner enemySpawner = spawnerObject.GetComponent<EnemySpawner>();
-			// 	_gameFactory.Register(enemySpawner);
-			// }
-
-			
 			foreach (EnemySpawnerData spawnerData in levelStaticData.EnemySpawners)
-			{
-				_gameFactory.CreateSpawner(spawnerData.Id, spawnerData.Position, spawnerData.MonsterTypeId);
-			}
+				_gameFactory.CreateSpawner(spawnerData.Id, spawnerData.Position,
+					spawnerData.MonsterTypeId);
 		}
 
 
@@ -104,12 +97,11 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 		private void InitHud(GameObject hero)
         {
-            var RootObjectForHud = GameObject.FindWithTag(ROOT_UI_TAG);
-            var Hud = _gameFactory.CreateHud();
-            Hud.transform.SetParent(RootObjectForHud.transform, false);
-            
-            HeroHealth heroHealth = hero.GetComponent<HeroHealth>();
-            Hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth);
+			GameObject hud = _uiFactory.CreateHud();
+			_gameFactory.CreateHud();
+
+			HeroHealth heroHealth = hero.GetComponent<HeroHealth>();
+			hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth);
         }
 
 

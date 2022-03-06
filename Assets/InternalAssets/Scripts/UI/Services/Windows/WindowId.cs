@@ -4,6 +4,6 @@
 	{
 		Unknown = 0,
 		Shop = 5,
-		
+		GamePlay = 10
 	}
 }

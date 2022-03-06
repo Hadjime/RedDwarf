@@ -3,6 +3,8 @@ using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.StaticData.Windows;
+using InternalAssets.Scripts.UI.Elements;
+using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.UI.Services.Windows;
 using InternalAssets.Scripts.UI.Windows;
 using UnityEngine;
@@ -18,6 +20,7 @@ namespace InternalAssets.Scripts.UI.Services.Factory
 		private readonly IStaticDataService _staticData;
 		private readonly IPersistentProgressService _progressService;
 		private readonly IAdsService _adsService;
+		private readonly IWindowService _windowService;
 		private Transform _uiRoot;
 
 
@@ -25,12 +28,14 @@ namespace InternalAssets.Scripts.UI.Services.Factory
 				IAssets assets,
 				IStaticDataService staticData,
 				IPersistentProgressService progressService,
-				IAdsService adsService
+				IAdsService adsService,
+				IWindowService windowService
 			) {
 			_assets = assets;
 			_staticData = staticData;
 			_progressService = progressService;
 			_adsService = adsService;
+			_windowService = windowService;
 		}
 
 
@@ -43,6 +48,24 @@ namespace InternalAssets.Scripts.UI.Services.Factory
 			WindowConfig config = _staticData.ForWindow(WindowId.Shop);
 			WindowBase window = Object.Instantiate(config.Prefab, _uiRoot);
 			window.Constructor(_progressService);
+		}
+
+
+		public GameObject CreateHud()
+		{
+			WindowConfig config = _staticData.ForWindow(WindowId.GamePlay);
+			WindowBase hud = Object.Instantiate(config.Prefab, _uiRoot);
+
+			hud.GetComponentInChildren<LootCounter>()
+			   ?.Constructor(_progressService.Progress.WorldData);
+
+			foreach (OpenWindowButton openWindowButton in hud
+				.GetComponentsInChildren<OpenWindowButton>())
+			{
+				openWindowButton.Constructor(_windowService);
+			}
+			
+			return hud.gameObject;
 		}
 	}
 }

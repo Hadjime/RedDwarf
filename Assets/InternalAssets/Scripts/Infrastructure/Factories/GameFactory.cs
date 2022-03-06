@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Characters.Enemy.EnemySpawners;
 using InternalAssets.Scripts.Characters.Hero;
@@ -50,8 +51,7 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
             HeroGameObject = InstantiateRegistered(AssetPath.PLAYER_WITH_SERVICE_PATH, at);
 			return HeroGameObject;
         }
-
-
+		
 		public GameObject CreateHud()
 		{
 			GameObject hud = _assets.Instantiate(AssetPath.HUD_CANVAS_PATH);

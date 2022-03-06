@@ -56,13 +56,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 			RegisterStaticDataService();
 
-			_services.RegisterSingle<IUIFactory>(new UIFactory(
-				_services.Single<IAssets>(),
-				_services.Single<IStaticDataService>(),
-				_services.Single<IPersistentProgressService>(),
-				_services.Single<IAdsService>()));
-			_services.RegisterSingle<IWindowService>(
-				new WindowService(_services.Single<IUIFactory>()));
+			RegisterWindowsServiceAndUIFactory();
 
 			_services.RegisterSingle<IInputService>(SetupInputServices());
 			_services.RegisterSingle<IGameFactory>(new GameFactory(
@@ -79,6 +73,23 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			SRDebug.Instance.AddOptionContainer(new CheatsThroughDI(
 				_services.Single<IPersistentProgressService>(),
 				_services.Single<ISaveLoadService>()));
+		}
+
+
+		private void RegisterWindowsServiceAndUIFactory()
+		{
+			WindowService windowService = new WindowService();
+			_services.RegisterSingle<IWindowService>(windowService);
+
+			UIFactory uiFactory = new UIFactory(
+				_services.Single<IAssets>(),
+				_services.Single<IStaticDataService>(),
+				_services.Single<IPersistentProgressService>(),
+				_services.Single<IAdsService>(),
+				_services.Single<IWindowService>());
+			_services.RegisterSingle<IUIFactory>(uiFactory);
+
+			windowService.Initialize(uiFactory);
 		}
 
 

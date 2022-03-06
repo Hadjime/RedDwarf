@@ -1,5 +1,5 @@
 ﻿using InternalAssets.Scripts.Infrastructure.Services;
-using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using UnityEngine;
 
 
 namespace InternalAssets.Scripts.UI.Services.Factory
@@ -8,5 +8,6 @@ namespace InternalAssets.Scripts.UI.Services.Factory
 	{
 		void CreateShop();
 		void CreateUIRoot();
+		GameObject CreateHud();
 	}
 }

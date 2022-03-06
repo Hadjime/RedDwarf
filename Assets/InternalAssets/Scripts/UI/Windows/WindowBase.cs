@@ -1,5 +1,4 @@
-﻿using System;
-using InternalAssets.Scripts.Data;
+﻿using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,7 +36,7 @@ namespace InternalAssets.Scripts.UI.Windows
 
 
 		private void OnAwake() =>
-			closeButton.onClick.AddListener(() => Destroy(gameObject));
+			closeButton?.onClick.AddListener(() => Destroy(gameObject));
 
 
 		protected virtual void Initialize() {}

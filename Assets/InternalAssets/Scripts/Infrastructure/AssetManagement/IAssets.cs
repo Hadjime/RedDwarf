@@ -12,5 +12,8 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 
 
 		T LoadAsync<T>(string path);
+
+
+		GameObject Instantiate(string path, Vector3 at, Transform parent);
 	}
 }
