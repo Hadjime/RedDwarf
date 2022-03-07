@@ -1,11 +1,11 @@
-﻿using Cinemachine;
+﻿using System.Threading.Tasks;
+using Cinemachine;
 using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.StaticData;
-using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.UI.Services.Factory;
 using InternalAssets.Scripts.UI.Windows.GamePlay;
 using UnityEngine;
@@ -16,7 +16,6 @@ namespace InternalAssets.Scripts.Infrastructure.States
 {
     public class LoadSceneState : IPayloadState<string>
     {
-		// private const string ROOT_UI_TAG = "RootUI";
 		private const string Enemyspawner = "EnemySpawner";
 
 
@@ -48,6 +47,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
         public void Enter(string sceneName)
         {
             _gameFactory.Cleanup();
+			_gameFactory.WarmUp();
             _sceneLoader.Load(sceneName, OnLoaded);
         }
 
@@ -56,10 +56,10 @@ namespace InternalAssets.Scripts.Infrastructure.States
             
         }
 
-        private void OnLoaded()
+        private async void OnLoaded()
 		{
 			InitUIRoot();
-            InitGameWorld();
+            await InitGameWorld();
             InformProgressReaders();
         }
 
@@ -68,21 +68,28 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			_uiFactory.CreateUIRoot();
 
 
-		private void InitGameWorld()
+		private async Task InitGameWorld()
 		{
 			LevelStaticData levelData = LevelStaticData();
 
-			InitSpawners(levelData);
+			await InitSpawners(levelData);
+			await InitDroppedLoot(); // TODO если лут выпал но не был собран то добавляем на сцену
             GameObject hero = InitHero(levelData);
             InitHud(hero);
         }
 
 
-		private void InitSpawners(LevelStaticData levelStaticData)
+		private async Task InitSpawners(LevelStaticData levelStaticData)
 		{
 			foreach (EnemySpawnerData spawnerData in levelStaticData.EnemySpawners)
-				_gameFactory.CreateSpawner(spawnerData.Id, spawnerData.Position,
+				await _gameFactory.CreateSpawner(spawnerData.Id, spawnerData.Position,
 					spawnerData.MonsterTypeId);
+		}
+
+
+		private async  Task InitDroppedLoot()
+		{
+			
 		}
 
 
@@ -98,7 +105,6 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		private void InitHud(GameObject hero)
         {
 			GameObject hud = _uiFactory.CreateHud();
-			_gameFactory.CreateHud();
 
 			HeroHealth heroHealth = hero.GetComponent<HeroHealth>();
 			hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth);

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -11,6 +12,8 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 {
     public class AssetsProvider : IAssets
     {
+		private readonly Dictionary<string, AsyncOperationHandle> _competedCache = new Dictionary<string, AsyncOperationHandle>();
+		private readonly Dictionary<string, List<AsyncOperationHandle>> _handles = new Dictionary<string, List<AsyncOperationHandle>>();
 		private bool isActivateLog;
 		private string loadingLog;
 		private IAssets _assets;
@@ -21,7 +24,13 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 		{
 			_assets = assets;
 		}
-        public GameObject Instantiate(string path)
+
+
+		public void Initialize() =>
+			Addressables.InitializeAsync();
+
+
+		public GameObject Instantiate(string path)
         {
             AsyncOperationHandle<GameObject> asyncOperationHandle =
                 Addressables.InstantiateAsync(path);
@@ -44,6 +53,31 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 				Addressables.InstantiateAsync(path, at, Quaternion.identity, parent);
 			GameObject player = asyncOperationHandle.WaitForCompletion();
 			return player;
+		}
+
+
+		public async Task<T> Load<T>(AssetReference assetReference) where T : class
+		{
+			if (_competedCache.TryGetValue(assetReference.AssetGUID, out AsyncOperationHandle completedHandle))
+				return completedHandle.Result as T;
+
+			return await RunWithCacheOnComplete(
+				Addressables.LoadAssetAsync<T>(assetReference),
+				cacheKey: assetReference.AssetGUID);
+		}
+
+
+
+
+		public async Task<T> Load<T>(string address) where T : class
+		{
+			if (_competedCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
+				return completedHandle.Result as T;
+			
+
+			return await RunWithCacheOnComplete(
+				Addressables.LoadAssetAsync<T>(address),
+				cacheKey: address);
 		}
 
 
@@ -124,5 +158,43 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
                 }
             };
         }
-    }
+
+
+		public void CleanUp()
+		{
+			foreach (List<AsyncOperationHandle> resourceHandles in _handles.Values)
+				foreach (AsyncOperationHandle handle in resourceHandles)
+					Addressables.Release(handle);
+
+			_competedCache.Clear();
+			_handles.Clear();
+		}
+
+
+		private async Task<T> RunWithCacheOnComplete<T>(AsyncOperationHandle<T> handle, string cacheKey)
+			where T : class
+		{
+			handle.Completed += completedHandle =>
+			{
+				_competedCache[cacheKey] = completedHandle;
+			};
+
+			AddHandle(cacheKey, handle);
+
+
+			return await handle.Task;
+		}
+
+
+		private void AddHandle<T>(string key, AsyncOperationHandle<T> handle) where T : class
+		{
+			if (!_handles.TryGetValue(key,
+				out List<AsyncOperationHandle> resourcesHandles))
+			{
+				resourcesHandles = new List<AsyncOperationHandle>();
+				_handles[key] = resourcesHandles;
+			}
+			resourcesHandles.Add(handle);
+		}
+	}
 }

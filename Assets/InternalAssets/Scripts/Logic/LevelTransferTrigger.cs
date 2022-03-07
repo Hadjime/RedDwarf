@@ -9,7 +9,7 @@ namespace InternalAssets.Scripts.Logic
 {
 	public class LevelTransferTrigger : MonoBehaviour
 	{
-		private const string ЗДФНУК_LAYER_NAME = "Player";
+		private const string PLAYER_LAYER_NAME = "Player";
 		[SerializeField] private string transferTo;
 		private int _playerMask;
 		private IGameStateMachine _stateMachine;
@@ -23,7 +23,7 @@ namespace InternalAssets.Scripts.Logic
 		private void Awake()
 		{
 			_stateMachine = AllServices.Container.Single<IGameStateMachine>(); //TODO по хорошему надо через фабрику передать зависимость
-			_playerMask = LayerMask.NameToLayer(ЗДФНУК_LAYER_NAME);
+			_playerMask = LayerMask.NameToLayer(PLAYER_LAYER_NAME);
 		}
 
 

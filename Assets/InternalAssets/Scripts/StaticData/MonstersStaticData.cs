@@ -1,5 +1,6 @@
 ﻿using InternalAssets.Scripts.Characters.Enemy;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 namespace InternalAssets.Scripts.StaticData
@@ -18,8 +19,8 @@ namespace InternalAssets.Scripts.StaticData
 		public float MoveSpeed;
 		[Range(0.5f, 4)]
 		public float EffectiveRadiusAttack = 0.4f;
-		public GameObject Prefab;
 		public int MinLoot = 10;
 		public int MaxLoot = 50;
+		public AssetReferenceGameObject PrefabReference;
 	}
 }

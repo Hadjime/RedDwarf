@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Data;
+﻿using System.Threading.Tasks;
+using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
@@ -35,9 +36,9 @@ namespace InternalAssets.Scripts.Characters.Enemy.EnemySpawners
 				progress.KillData.ClearedSpawners.Add(Id);
 		}
 
-		private void Spawn()
+		private async void Spawn()
 		{
-			GameObject monster = _gameFactory.CreateMonster(monsterTypeId, transform);
+			GameObject monster = await _gameFactory.CreateMonster(monsterTypeId, transform);
 			_enemyDeath = monster.GetComponent<EnemyDeath>();
 			_enemyDeath.Happened += Kill;
 		}

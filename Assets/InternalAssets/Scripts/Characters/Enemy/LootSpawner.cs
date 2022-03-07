@@ -29,9 +29,9 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		}
 
 
-		private void SpawnLoot()
+		private async void SpawnLoot()
 		{
-			LootPiece loot = _factory.CreateLoot(transform);
+			LootPiece loot = await _factory.CreateLoot(transform);
 			// loot.transform.position = transform.position;
 			if (loot != null)
 			{

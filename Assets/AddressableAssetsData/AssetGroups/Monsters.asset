@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Monsters
+  m_EditorClassIdentifier: 
+  m_GroupName: Monsters
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f7b7598f9931bd64a8041c0c38c14e2b
+  m_SerializeEntries:
+  - m_GUID: c5262a912f6a46c4b9ac5275ff5a99ba
+    m_Address: SlugMoveToPlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a441446f316c5934eab3a432c4188c8f
+    m_Address: BatrakLookToPlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7738103bbe7df1242ac17ff7803bfdab, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6c7877dc71b26e648bab4834ae59f937, type: 2}
+    - {fileID: 11400000, guid: 93b79ec4d58af2944a77bc6450752a41, type: 2}

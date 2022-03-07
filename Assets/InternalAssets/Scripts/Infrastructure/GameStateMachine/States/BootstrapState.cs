@@ -36,7 +36,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         public void Enter()
         {
-	        _sceneLoader.Load(InitialSceneName, onLoaded: EnterLoadLevel);
+	        _sceneLoader.Load(InitialSceneName, onLoaded: EnterInLoadLevel);
         }
 
 
@@ -45,17 +45,24 @@ namespace InternalAssets.Scripts.Infrastructure.States
             
         }
 
-        private void RegisterServices()
+
+		private void EnterInLoadLevel() =>
+			_stateMachine.Enter<LoadProgressState>();
+
+
+		private void RegisterServices()
         {
 			RegisterAdsService();
 
 			_services.RegisterSingle<IGameStateMachine>(_stateMachine);
-			_services.RegisterSingle<IAssets>(new AssetsProvider());
+			
+			RegisterAssetProvider();
+			
 			_services.RegisterSingle<IRandomService>(new UnityRandomService());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 
 			RegisterStaticDataService();
-
+			
 			RegisterWindowsServiceAndUIFactory();
 
 			_services.RegisterSingle<IInputService>(SetupInputServices());
@@ -76,9 +83,25 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		}
 
 
+		private void RegisterAssetProvider()
+		{
+			var assetsProvider = new AssetsProvider();
+			assetsProvider.Initialize();
+			_services.RegisterSingle<IAssets>(assetsProvider);
+		}
+
+
+		private void RegisterStaticDataService()
+		{
+			IStaticDataService staticDataService = new StaticDataService(_services.Single<IAssets>());
+			staticDataService.Load();
+			_services.RegisterSingle<IStaticDataService>(staticDataService);
+		}
+
+
 		private void RegisterWindowsServiceAndUIFactory()
 		{
-			WindowService windowService = new WindowService();
+			var windowService = new WindowService();
 			_services.RegisterSingle<IWindowService>(windowService);
 
 			UIFactory uiFactory = new UIFactory(
@@ -93,31 +116,19 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		}
 
 
+		private IInputService SetupInputServices()
+		{
+			var _inputServices = new NewInputSystemService();
+			_inputServices.Init();
+			return _inputServices;
+		}
+
+
 		private void RegisterAdsService()
 		{
 			IAdsService adsService = new AdsService();
 			adsService.Initialize(true);
 			_services.RegisterSingle<IAdsService>(adsService);
-		}
-
-
-		private void EnterLoadLevel() =>
-			_stateMachine.Enter<LoadProgressState>();
-
-
-		private IInputService SetupInputServices()
-        {
-            var _inputServices = new NewInputSystemService();
-            _inputServices.Init();
-            return _inputServices;
-        }
-
-
-		private void RegisterStaticDataService()
-		{
-			IStaticDataService staticDataService = new StaticDataService(_services.Single<IAssets>());
-			staticDataService.Load();
-			_services.RegisterSingle<IStaticDataService>(staticDataService);
 		}
 	}
 }
