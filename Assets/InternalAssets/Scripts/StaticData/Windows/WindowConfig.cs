@@ -2,6 +2,7 @@
 using InternalAssets.Scripts.UI.Services.Windows;
 using InternalAssets.Scripts.UI.Windows;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 namespace InternalAssets.Scripts.StaticData.Windows
@@ -11,7 +12,7 @@ namespace InternalAssets.Scripts.StaticData.Windows
 	{
 		[SerializeField] private string elementName;
 		public WindowId WindowId;
-		public WindowBase Prefab;
+		public AssetReference Prefab;
 
 
 		public void OnBeforeSerialize() {}

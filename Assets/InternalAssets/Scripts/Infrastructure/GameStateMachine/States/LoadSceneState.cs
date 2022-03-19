@@ -58,14 +58,14 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
         private async void OnLoaded()
 		{
-			InitUIRoot();
+			await InitUIRoot();
             await InitGameWorld();
             InformProgressReaders();
         }
 
 
-		private void InitUIRoot() =>
-			_uiFactory.CreateUIRoot();
+		private async Task InitUIRoot() =>
+			await _uiFactory.CreateUIRoot();
 
 
 		private async Task InitGameWorld()
@@ -74,8 +74,8 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 			await InitSpawners(levelData);
 			await InitDroppedLoot(); // TODO если лут выпал но не был собран то добавляем на сцену
-            GameObject hero = InitHero(levelData);
-            InitHud(hero);
+            GameObject hero = await InitHero(levelData);
+            await InitHud(hero);
         }
 
 
@@ -93,18 +93,18 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		}
 
 
-		private GameObject InitHero(LevelStaticData levelStaticData)
+		private async Task<GameObject> InitHero(LevelStaticData levelStaticData)
         {
-			var hero = _gameFactory.CreateHero(at: levelStaticData.InitialHeroPosition);
+			var hero = await _gameFactory.CreateHero(at: levelStaticData.InitialHeroPosition);
             SetCameraFollow(hero.transform);
 
             return hero;
         }
 
 
-		private void InitHud(GameObject hero)
+		private async Task InitHud(GameObject hero)
         {
-			GameObject hud = _uiFactory.CreateHud();
+			GameObject hud = await _uiFactory.CreateHud();
 
 			HeroHealth heroHealth = hero.GetComponent<HeroHealth>();
 			hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth);

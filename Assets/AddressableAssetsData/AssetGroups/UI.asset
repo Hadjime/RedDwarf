@@ -29,6 +29,14 @@ MonoBehaviour:
     m_Address: HUDCanvas
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 3b8086aee3c4e974c8b1a03a28a500d5
+    m_Address: Shop
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d5f05184d9d5942409ae9ef77cc52d21
+    m_Address: GamePlay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7738103bbe7df1242ac17ff7803bfdab, type: 2}
   m_SchemaSet:

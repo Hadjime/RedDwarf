@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Infrastructure.Ads;
+﻿using System.Threading.Tasks;
+using InternalAssets.Scripts.Infrastructure.Ads;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
@@ -39,22 +40,29 @@ namespace InternalAssets.Scripts.UI.Services.Factory
 		}
 
 
-		public void CreateUIRoot() =>
-			_uiRoot = _assets.Instantiate(UI_ROOT_PATH).transform;
-
-
-		public void CreateShop()
+		public async Task CreateUIRoot()
 		{
-			WindowConfig config = _staticData.ForWindow(WindowId.Shop);
-			WindowBase window = Object.Instantiate(config.Prefab, _uiRoot);
-			window.Constructor(_progressService);
+			GameObject gameObject = await _assets.InstantiateAsync(UI_ROOT_PATH);
+			_uiRoot = gameObject.transform;
 		}
 
 
-		public GameObject CreateHud()
+		public async Task CreateShop()
+		{
+			WindowConfig config = _staticData.ForWindow(WindowId.Shop);
+			GameObject shopPrefab = await _assets.LoadAsync<GameObject>(config.Prefab);
+			GameObject shop = Object.Instantiate(shopPrefab, _uiRoot);
+			shop.TryGetComponent(out WindowBase shopWindow);
+			shopWindow.Constructor(_progressService);
+		}
+
+
+		public async Task<GameObject> CreateHud()
 		{
 			WindowConfig config = _staticData.ForWindow(WindowId.GamePlay);
-			WindowBase hud = Object.Instantiate(config.Prefab, _uiRoot);
+			GameObject hudPrefab = await _assets.LoadAsync<GameObject>(config.Prefab);
+			var hud = Object.Instantiate(hudPrefab, _uiRoot);
+
 
 			hud.GetComponentInChildren<LootCounter>()
 			   ?.Constructor(_progressService.Progress.WorldData);

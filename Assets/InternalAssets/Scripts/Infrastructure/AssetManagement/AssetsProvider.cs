@@ -30,33 +30,20 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 			Addressables.InitializeAsync();
 
 
-		public GameObject Instantiate(string path)
+		public Task<GameObject> InstantiateAsync(string path)
         {
-            AsyncOperationHandle<GameObject> asyncOperationHandle =
-                Addressables.InstantiateAsync(path);
-            GameObject player = asyncOperationHandle.WaitForCompletion();
-            return player;
-        }
-
-        public GameObject Instantiate(string path, Vector3 at)
-        {
-            AsyncOperationHandle<GameObject> asyncOperationHandle =
-                Addressables.InstantiateAsync(path, at, Quaternion.identity);
-            GameObject player = asyncOperationHandle.WaitForCompletion();
-            return player;
-        }
-
-
-		public GameObject Instantiate(string path, Vector3 at, Transform parent)
-		{
-			AsyncOperationHandle<GameObject> asyncOperationHandle =
-				Addressables.InstantiateAsync(path, at, Quaternion.identity, parent);
-			GameObject player = asyncOperationHandle.WaitForCompletion();
-			return player;
+			return Addressables.InstantiateAsync(path).Task;
 		}
 
+        public Task<GameObject> InstantiateAsync(string path, Vector3 at) =>
+			Addressables.InstantiateAsync(path, at, Quaternion.identity).Task;
 
-		public async Task<T> Load<T>(AssetReference assetReference) where T : class
+
+		public Task<GameObject> InstantiateAsync(string path, Vector3 at, Transform parent) =>
+			Addressables.InstantiateAsync(path, at, Quaternion.identity, parent).Task;
+
+
+		public async Task<T> LoadAsync<T>(AssetReference assetReference) where T : class
 		{
 			if (_competedCache.TryGetValue(assetReference.AssetGUID, out AsyncOperationHandle completedHandle))
 				return completedHandle.Result as T;
@@ -69,7 +56,7 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 
 
 
-		public async Task<T> Load<T>(string address) where T : class
+		public async Task<T> LoadAsync<T>(string address) where T : class
 		{
 			if (_competedCache.TryGetValue(address, out AsyncOperationHandle completedHandle))
 				return completedHandle.Result as T;
@@ -79,15 +66,6 @@ namespace InternalAssets.Scripts.Infrastructure.AssetManagement
 				Addressables.LoadAssetAsync<T>(address),
 				cacheKey: address);
 		}
-
-
-		public T LoadAsync<T>(string path)
-		{
-			AsyncOperationHandle<T> asyncOperationHandle = Addressables.LoadAssetAsync<T>(path);
-			var rezult = asyncOperationHandle.WaitForCompletion();
-			return rezult;
-		}
-
 
 		public void LoadAllAsyncByLabel<T> (string path, System.Action<List<T>> onFinish)
 		{

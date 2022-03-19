@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.StaticData;
@@ -26,7 +27,7 @@ namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 		}
 
 
-		public void Load()
+		public async Task Load()
 		{
 			_assets.LoadAllAsyncByLabel<MonstersStaticData>(MonstersLabel, onFinish: list =>
 			{
@@ -38,9 +39,10 @@ namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 				_levels = list.ToDictionary(data => data.LevelKey, data => data);
 			});
 
-			_windowConfigs = _assets.LoadAsync<WindowStaticData>(windowStaticDataPath)
-									.Configs
-									.ToDictionary(config => config.WindowId, config => config);
+			var tmp = await _assets.LoadAsync<WindowStaticData>(windowStaticDataPath);
+			_windowConfigs = tmp
+							 .Configs
+							 .ToDictionary(config => config.WindowId, config => config);
 		}
 
 

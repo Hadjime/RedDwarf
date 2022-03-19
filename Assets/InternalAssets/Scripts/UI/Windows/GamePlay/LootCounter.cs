@@ -15,12 +15,10 @@ namespace InternalAssets.Scripts.UI.GamePlay
 		{
 			_worldData = worldData;
 			_worldData.LootData.Changed += OnUpdateCounter;
-		}
 
-
-		private void Start() =>
 			OnUpdateCounter();
-
+		}
+		
 
 		private void OnUpdateCounter()
 		{

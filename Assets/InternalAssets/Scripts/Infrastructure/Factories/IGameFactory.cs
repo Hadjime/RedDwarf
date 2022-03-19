@@ -10,8 +10,8 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 {
     public interface IGameFactory : IService
     {
-        GameObject CreateHero(Vector3 at);
-		[Obsolete] GameObject CreateHud();
+        Task<GameObject> CreateHero(Vector3 at);
+		[Obsolete] Task<GameObject> CreateHud();
         List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
 		
