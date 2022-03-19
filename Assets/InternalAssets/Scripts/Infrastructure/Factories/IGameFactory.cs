@@ -11,8 +11,7 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
     public interface IGameFactory : IService
     {
         Task<GameObject> CreateHero(Vector3 at);
-		[Obsolete] Task<GameObject> CreateHud();
-        List<ISavedProgressReader> ProgressReaders { get; }
+		List<ISavedProgressReader> ProgressReaders { get; }
         List<ISavedProgress> ProgressWriters { get; }
 		
 		Task<GameObject> CreateMonster(MonsterTypeId typeId, Transform parent);
