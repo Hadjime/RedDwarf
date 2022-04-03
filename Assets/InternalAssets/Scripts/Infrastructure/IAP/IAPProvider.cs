@@ -8,23 +8,27 @@ using UnityEngine.Purchasing;
 
 namespace InternalAssets.Scripts.Infrastructure.IAP
 {
-	public partial class IAPProvider: IStoreListener
+	public class IAPProvider: IStoreListener
 	{
 		private const string IAP_CONFIG_PATH = "IAP_Products";
 		
 		private IStoreController _controller;
 		private IExtensionProvider _extension;
+		private IAPService _iapService;
 
 		public Dictionary<string, ProductConfig> Configs { get; private set; }
+		public Dictionary<string, Product> Products { get; private set; }
 
 		public event Action Initialized;
 		public bool IsInitialized => _controller != null && _extension != null;
 
 
 
-		public void Initialize()
+		public void Initialize( IAPService iapService)
 		{
+			_iapService = iapService;
 			Configs = new Dictionary<string, ProductConfig>();
+			Products = new Dictionary<string, Product>();
 			
 			Load();
 			
@@ -36,16 +40,23 @@ namespace InternalAssets.Scripts.Infrastructure.IAP
 			UnityPurchasing.Initialize(this, builder);
 		}
 
-
 		public void StartPurchase(string productId) =>
 			_controller.InitiatePurchase(productId);
 
 
+		/// <summary>
+		/// Только после вызова этого callback покупки будут доступны
+		/// </summary>
+		/// <param name="controller">содержит информацию  продуктах</param>
+		/// <param name="extensions">позволяет реализовать специфические штуки для разных сторов</param>
 		public void OnInitialized(IStoreController controller, IExtensionProvider extensions)
 		{
 			_controller = controller;
 			_extension = extensions;
-			
+
+			foreach (Product product in _controller.products.all)
+				Products.Add(product.definition.id, product);
+
 			Initialized?.Invoke();
 			
 			CustomDebug.Log($"UnityPurchasing initialization success", Color.yellow);
@@ -54,12 +65,12 @@ namespace InternalAssets.Scripts.Infrastructure.IAP
 
 		public void OnInitializeFailed(InitializationFailureReason error) =>
 			CustomDebug.Log($"UnityPurchasing OnInitializeFailed: {error}", Color.yellow);
-
-
+		
+		
 		public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs purchaseEvent)
 		{
 			CustomDebug.Log($"UnityPurchasing ProcessPurchase success{purchaseEvent.purchasedProduct.definition.id}");
-			return PurchaseProcessingResult.Complete;
+			return _iapService.ProcessPurchase(purchaseEvent.purchasedProduct);
 		}
 
 
@@ -69,7 +80,12 @@ namespace InternalAssets.Scripts.Infrastructure.IAP
 
 		private void Load()
 		{
-			Configs = Resources.Load<TextAsset>(IAP_CONFIG_PATH).text.AsDeserialized<ProductConfigWrapper>().Configs;
+			//TODO не смог найти метод расширения, надо подумать как обойти.
+			// Configs = Resources.Load<TextAsset>(IAP_CONFIG_PATH)
+			// 				   .text
+			// 				   .AsDeserialized<ProductConfigWrapper>()
+			// 				   .Configs.
+			// 				   ToDictionary( x => x.Id, x => x);
 		}
 	}
 }

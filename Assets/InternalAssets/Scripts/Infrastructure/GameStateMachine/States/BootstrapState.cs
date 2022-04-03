@@ -2,6 +2,7 @@
 using InternalAssets.Scripts.Infrastructure.Ads;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Factories;
+using InternalAssets.Scripts.Infrastructure.IAP;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
@@ -51,7 +52,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 
 		private void RegisterServices()
-        {
+		{
 			RegisterAdsService();
 
 			_services.RegisterSingle<IGameStateMachine>(_stateMachine);
@@ -61,6 +62,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			_services.RegisterSingle<IRandomService>(new UnityRandomService());
 			_services.RegisterSingle<IPersistentProgressService>(new PersistentProgressService());
 
+			RegisterIAPService(new IAPProvider(), _services.Single<IPersistentProgressService>());
 			RegisterStaticDataService();
 			
 			RegisterWindowsServiceAndUIFactory();
@@ -129,6 +131,14 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			IAdsService adsService = new AdsService();
 			adsService.Initialize(true);
 			_services.RegisterSingle<IAdsService>(adsService);
+		}
+
+
+		private void RegisterIAPService(IAPProvider iapProvider, IPersistentProgressService progressService)
+		{
+			IAPService iapService = new IAPService(iapProvider, progressService);
+			iapService.Initialize();
+			_services.RegisterSingle<IIAPService>(iapService);
 		}
 	}
 }
