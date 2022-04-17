@@ -1,4 +1,5 @@
 ﻿using System;
+using AirFishLab.ScrollingList;
 using UnityEngine;
 
 namespace InternalAssets.Scripts._temp
@@ -14,7 +15,7 @@ namespace InternalAssets.Scripts._temp
             //throw new NotImplementedException();
         }
 
-        public override string GetListContent(int index)
+        public override object GetListContent(int index)
         {
             return _contents[index].ToString();
         }

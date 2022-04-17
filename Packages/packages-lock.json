@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.qwerty.circular-scrolling-list": {
-      "version": "https://github.com/Hadjime/Circular-Scrolling-List.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "427f00c164a0df827e21565434c19b10877f6d86"
-    },
     "com.unity.2d.pixel-perfect": {
       "version": "4.0.1",
       "depth": 0,
