@@ -1312,7 +1312,6 @@ GameObject:
   - component: {fileID: 4693146086650451337}
   - component: {fileID: 7528778536935166334}
   - component: {fileID: 5151436610949627382}
-  - component: {fileID: 7596949828119522458}
   m_Layer: 5
   m_Name: CircleInventory
   m_TagString: Untagged
@@ -1530,7 +1529,7 @@ MonoBehaviour:
     _onMovementEnd:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7596949828119522458}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: InternalAssets.Scripts.UI.Old.CircularScrollingList.UpdateData,
             Assembly-CSharp
           m_MethodName: Stop
@@ -1543,19 +1542,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &7596949828119522458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6654276106420914042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0742ab1c5f6d47ffa95ff8f4db3fa168, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 8e36a7cbc38f74b4c9bd7fb848ceafc7, type: 2}
 --- !u!1 &7058286319204445098
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using InternalAssets.Scripts.Utils.Log;
-using UnityEditor.iOS;
 using UnityEngine;
 using UnityEngine.Purchasing;
 
