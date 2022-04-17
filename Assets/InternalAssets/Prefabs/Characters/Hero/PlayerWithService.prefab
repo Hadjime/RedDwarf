@@ -348,5 +348,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0f9bde8f2f420c8cca0fa4207146f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallBombPrefab: {fileID: 9021090884675595381, guid: ba64aaa060a86fe4284b76b69352b5ff,
+  currentWeaponPrefab: {fileID: 9021090884675595381, guid: ba64aaa060a86fe4284b76b69352b5ff,
     type: 3}

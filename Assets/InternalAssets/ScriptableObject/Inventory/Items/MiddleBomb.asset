@@ -18,4 +18,4 @@ MonoBehaviour:
   attackDamage: 0
   protection: 0
   amount: 8
-  prefab: {fileID: 9021090884675595381, guid: dd208c8c82d0f374bbbdb8db9206715a, type: 3}
+  prefab: {fileID: 9021090884675595381, guid: 6f184c7e93ff42d4987dc354920ca32b, type: 3}

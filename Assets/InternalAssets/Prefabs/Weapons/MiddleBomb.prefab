@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -8638373759334394328}
   - component: {fileID: 8784193213788947492}
   - component: {fileID: 5435632799183423002}
-  - component: {fileID: 3525407938341656731}
+  - component: {fileID: -5797287380115666243}
   m_Layer: 15
-  m_Name: SmallBomb
+  m_Name: MiddleBomb
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1773054705
   m_SortingLayer: 5
   m_SortingOrder: 3
-  m_Sprite: {fileID: -6968641040546624544, guid: 531054b0fe84087459084c19fde94286,
+  m_Sprite: {fileID: -6426065034693174535, guid: 531054b0fe84087459084c19fde94286,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   xStep: 1
   yStep: 1
   zStep: 1
---- !u!114 &3525407938341656731
+--- !u!114 &-5797287380115666243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9021090884675595381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1efddb82f7f48aea9b91dea139c2546, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e6ab8edbeff46759eae238cda9152d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 2
