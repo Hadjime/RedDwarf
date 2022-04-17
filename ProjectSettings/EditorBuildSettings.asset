@@ -11,18 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/InternalAssets/Scenes/Lvl/Main.unity
     guid: 1861cf56ca781db4e8430fa4f4485c3c
-  - enabled: 1
-    path: Assets/InternalAssets/Scenes/Menu/Menu.unity
-    guid: e5fd6fb0eaf14274ea34ecef29d0bd17
-  - enabled: 1
-    path: Assets/InternalAssets/Scenes/Shop/Shop.unity
-    guid: 43f40bd3633c83942b7fcc28b7289aa2
-  - enabled: 1
-    path: Assets/InternalAssets/Scenes/Lvl/Scene_Test_1.unity
-    guid: 44a600c8c06512044ae8b34e34b56ade
-  - enabled: 1
-    path: Assets/InternalAssets/Scenes/UI/UIIndicators.unity
-    guid: 517a9a0f1b5e1c040948c71791b00d60
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 3d2dcf8258e74b643a2d166c288fb25e,
       type: 2}
