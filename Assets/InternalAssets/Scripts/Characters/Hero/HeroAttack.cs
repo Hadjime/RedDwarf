@@ -2,6 +2,7 @@
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Inventory.Item;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace InternalAssets.Scripts.Characters.Hero
 {
 	public class HeroAttack : MonoBehaviour, ISavedProgressReader
 	{
-		[SerializeField] private GameObject smallBombPrefab;
+		[SerializeField] private GameObject currentWeaponPrefab;
 		private const string LayerName = "Hittable";
 		private IInputService _input;
 		private int _layerMask;
@@ -36,6 +37,10 @@ namespace InternalAssets.Scripts.Characters.Hero
 			_stats = progress.HeroStats;
 
 
+		public void SetCurrentWeapon(Item item) =>
+			currentWeaponPrefab = item.Prefab;
+
+
 		private void OnIsAttackBtnUp()
 		{
 			SpawnBomb();
@@ -48,7 +53,7 @@ namespace InternalAssets.Scripts.Characters.Hero
 		}
 
 
-		private void SpawnBomb() { Instantiate(smallBombPrefab, transform.position.SnapPosition(), Quaternion.identity); }
+		private void SpawnBomb() { Instantiate(currentWeaponPrefab, transform.position.SnapPosition(), Quaternion.identity); }
 
 
 		private int Hit() =>

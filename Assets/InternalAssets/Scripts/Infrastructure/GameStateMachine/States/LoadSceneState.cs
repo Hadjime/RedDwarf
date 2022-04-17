@@ -107,7 +107,8 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			GameObject hud = await _uiFactory.CreateHud();
 
 			HeroHealth heroHealth = hero.GetComponent<HeroHealth>();
-			hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth);
+			HeroAttack heroAttack = hero.GetComponent<HeroAttack>();
+			hud.GetComponentInChildren<GamePlayPanel>().Constructor(heroHealth, heroAttack);
         }
 
 

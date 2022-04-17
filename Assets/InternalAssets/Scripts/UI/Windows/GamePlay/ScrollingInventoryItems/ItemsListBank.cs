@@ -1,9 +1,8 @@
-﻿using System;
-using AirFishLab.ScrollingList;
+﻿using AirFishLab.ScrollingList;
 using UnityEngine;
 
 
-namespace InternalAssets.Scripts.UI.Windows.GamePlay
+namespace InternalAssets.Scripts.UI.Windows.GamePlay.ScrollingInventoryItems
 {
 	public class ItemsListBank : BaseListBank
 	{
