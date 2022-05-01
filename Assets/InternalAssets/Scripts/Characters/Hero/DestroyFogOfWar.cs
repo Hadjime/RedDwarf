@@ -10,6 +10,9 @@ namespace InternalAssets.Scripts.Characters.Hero
         public Tilemap fogOfWar;
         private void OnCollisionStay2D(Collision2D other)
         {
+			if (grid == null || fogOfWar == null)
+				return;
+			
             foreach (var contact in other.contacts)
             {
                 Vector3Int point = grid.WorldToCell(contact.point);
@@ -18,6 +21,9 @@ namespace InternalAssets.Scripts.Characters.Hero
         }
         private void OnCollisionEnter2D(Collision2D other)
         {
+			if (grid == null || fogOfWar == null)
+				return;
+			
             foreach (var contact in other.contacts)
             {
                 Vector3Int point = grid.WorldToCell(contact.point);

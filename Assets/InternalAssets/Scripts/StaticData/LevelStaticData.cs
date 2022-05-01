@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 
 namespace InternalAssets.Scripts.StaticData
@@ -8,6 +9,7 @@ namespace InternalAssets.Scripts.StaticData
 	public class LevelStaticData: ScriptableObject
 	{
 		public string LevelKey;
+		public AssetReferenceGameObject Grid;
 		public List<EnemySpawnerData> EnemySpawners;
 		public Vector3 InitialHeroPosition;
 	}

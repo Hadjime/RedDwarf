@@ -66,3 +66,6 @@ TagManager:
   - name: Hero
     uniqueID: 3291018205
     locked: 0
+  - name: FogOfWar
+    uniqueID: 2995536435
+    locked: 0

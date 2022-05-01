@@ -5,11 +5,13 @@ using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
+using InternalAssets.Scripts.Map.Grids;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.UI.Services.Factory;
 using InternalAssets.Scripts.UI.Windows.GamePlay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 
 namespace InternalAssets.Scripts.Infrastructure.States
@@ -72,11 +74,17 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		{
 			LevelStaticData levelData = LevelStaticData();
 
+			GridsManager gridsManager = await InitGrid(levelData);
 			await InitSpawners(levelData);
 			await InitDroppedLoot(); // TODO если лут выпал но не был собран то добавляем на сцену
-            GameObject hero = await InitHero(levelData);
+            GameObject hero = await InitHero(levelData, gridsManager);
             await InitHud(hero);
         }
+
+		private async Task<GridsManager> InitGrid(LevelStaticData levelStaticData)
+		{
+			return await _gameFactory.CreateGrid(levelStaticData.Grid);
+		}
 
 
 		private async Task InitSpawners(LevelStaticData levelStaticData)
@@ -93,11 +101,18 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		}
 
 
-		private async Task<GameObject> InitHero(LevelStaticData levelStaticData)
+		private async Task<GameObject> InitHero(LevelStaticData levelStaticData, GridsManager gridsManager)
         {
-			var hero = await _gameFactory.CreateHero(at: levelStaticData.InitialHeroPosition);
+			GameObject hero = await _gameFactory.CreateHero(at: levelStaticData.InitialHeroPosition);
             SetCameraFollow(hero.transform);
-
+			SetCameraConfiner(gridsManager.Land);
+			
+			if (hero.TryGetComponent(out DestroyFogOfWar destroyFogOfWar))
+			{
+				destroyFogOfWar.grid = gridsManager.Grid;
+				destroyFogOfWar.fogOfWar = gridsManager.FogOfWar;
+			}
+			
             return hero;
         }
 
@@ -130,5 +145,12 @@ namespace InternalAssets.Scripts.Infrastructure.States
             CinemachineVirtualCamera cinemachineVirtualCamera = Camera.main.GetComponentInChildren<CinemachineVirtualCamera>();
             cinemachineVirtualCamera.Follow = player;
         }
+
+		private void SetCameraConfiner(Tilemap Land)
+		{
+			CinemachineConfiner cinemachineConfiner = Camera.main.GetComponentInChildren<CinemachineConfiner>();
+			if (Land.TryGetComponent(out CompositeCollider2D collider2D))
+				cinemachineConfiner.m_BoundingShape2D = collider2D;
+		}
     }
 }

@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 1464060074958082163}
   - component: {fileID: 441551518747628668}
   - component: {fileID: -4946234872869551590}
+  - component: {fileID: -9038343552488388551}
   m_Layer: 8
   m_Name: PlayerWithService
   m_TagString: Untagged
@@ -350,3 +351,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentWeaponPrefab: {fileID: 9021090884675595381, guid: ba64aaa060a86fe4284b76b69352b5ff,
     type: 3}
+--- !u!114 &-9038343552488388551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178790872919254444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e359d129d14fe4ab639c8c2f93dc53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  fogOfWar: {fileID: 0}

@@ -4,7 +4,10 @@ using System.Threading.Tasks;
 using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Map.Grids;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+
 
 namespace InternalAssets.Scripts.Infrastructure.Factories
 {
@@ -21,5 +24,7 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 
 
 		Task WarmUp();
+
+		Task<GridsManager> CreateGrid(AssetReferenceGameObject grid);
 	}	
 }

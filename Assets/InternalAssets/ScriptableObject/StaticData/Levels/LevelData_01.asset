@@ -13,6 +13,11 @@ MonoBehaviour:
   m_Name: LevelData_01
   m_EditorClassIdentifier: 
   LevelKey: Main
+  Grid:
+    m_AssetGUID: ba15fe70eff2b194cb98bf42578d66c7
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   EnemySpawners:
   - Id: Main_5104fa21-f707-4eb6-adfd-d9f9cce5e374
     MonsterTypeId: 0

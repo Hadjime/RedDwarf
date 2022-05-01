@@ -8,12 +8,14 @@ using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.Random;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
+using InternalAssets.Scripts.Map.Grids;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.UI.Elements;
 using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.UI.Services.Windows;
 using Pathfinding;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using Object = UnityEngine.Object;
 
 
@@ -53,8 +55,16 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 			await _assets.LoadAsync<GameObject>(AssetAddress.LOOT_GOLD_1_PATH);
 			await _assets.LoadAsync<GameObject>(AssetAddress.SPAWN_POINT);
 		}
-		
-        public async Task<GameObject> CreateHero(Vector3 at)
+
+		public async Task<GridsManager> CreateGrid(AssetReferenceGameObject grid)
+		{
+			GameObject gridPrefab = await _assets.LoadAsync<GameObject>(grid);
+			GameObject gridGameObject = Object.Instantiate(gridPrefab);
+			gridGameObject.TryGetComponent(out GridsManager gridsManager);
+			return gridsManager;
+		}
+
+		public async Task<GameObject> CreateHero(Vector3 at)
         {
             HeroGameObject = await InstantiateRegisteredAsync(AssetAddress.PLAYER_WITH_SERVICE_PATH, at);
 			return HeroGameObject;
