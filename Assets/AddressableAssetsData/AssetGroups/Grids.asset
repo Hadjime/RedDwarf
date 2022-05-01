@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Grids
+  m_EditorClassIdentifier: 
+  m_GroupName: Grids
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 61baaeb64aecf384abbe4c067c94affb
+  m_SerializeEntries:
+  - m_GUID: ba15fe70eff2b194cb98bf42578d66c7
+    m_Address: Grid_01
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 7738103bbe7df1242ac17ff7803bfdab, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6b024b02ecbf8994f9d16fa245341cfe, type: 2}
+    - {fileID: 11400000, guid: 6070ce252aad14944b41cf2ce910ef0b, type: 2}
