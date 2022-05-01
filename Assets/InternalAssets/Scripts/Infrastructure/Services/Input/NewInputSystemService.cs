@@ -18,8 +18,7 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 			_playerInput.Player.Movement.started += OnMovementStarted;
 			_playerInput.Player.Fire.started += OnFire;
 		}
-
-
+		
 		private void OnFire(InputAction.CallbackContext context)
 		{
 			if (!context.started)
@@ -27,17 +26,28 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 			
 			InvokeEventAttack();
 		}
-
-
+		
 		private void OnMovementStarted(InputAction.CallbackContext context)
 		{
 			if (!context.started) 
 				return;
 			
-			_movementDirection = context.ReadValue<Vector2>();
+			_movementDirection = NormalizeInputValue(context.ReadValue<Vector2>());
+			
 			InvokeEventMovement(movementDirection: _movementDirection);
 		}
-
+		
 		public override Vector2 RawMovementInput => _movementDirection;
+		
+		private Vector2 NormalizeInputValue(Vector2 movementDirection)
+		{
+			//отбрасываем меньшее значение, т.к. движение может быть только в одном направлении
+			if (Mathf.Abs(movementDirection.x) > Mathf.Abs(movementDirection.y))
+				movementDirection.y = 0;
+			else
+				movementDirection.x = 0;
+
+			return movementDirection;
+		}
 	}
 }
