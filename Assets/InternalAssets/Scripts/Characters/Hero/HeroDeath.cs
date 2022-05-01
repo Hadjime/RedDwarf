@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Player;
+﻿using System;
+using InternalAssets.Scripts.Player;
 using UnityEngine;
 
 
@@ -15,6 +16,9 @@ namespace InternalAssets.Scripts.Characters.Hero
         [SerializeField] private GameObject redStainPrefab;
         
         private bool _isDead = default;
+
+
+		public event Action HeroDead;
 
         private void OnValidate()
         {
@@ -43,6 +47,7 @@ namespace InternalAssets.Scripts.Characters.Hero
 			heroAttack.enabled = false;
             heroSpriteRenderer.enabled = false;
             SpawnDeathFx();
+			HeroDead?.Invoke();
         }
 
 

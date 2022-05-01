@@ -27,6 +27,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
         private readonly IPersistentProgressService _progressService;
 		private readonly IStaticDataService _staticDataService;
 		private readonly IUIFactory _uiFactory;
+		private GameObject hero;
 
 
 		public LoadSceneState(
@@ -63,6 +64,9 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			await InitUIRoot();
             await InitGameWorld();
             InformProgressReaders();
+			
+			if (hero.TryGetComponent(out HeroDeath heroDeath))
+				_stateMachine.Enter<GameLoopState, HeroDeath>(heroDeath);
         }
 
 
@@ -77,7 +81,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			GridsManager gridsManager = await InitGrid(levelData);
 			await InitSpawners(levelData);
 			await InitDroppedLoot(); // TODO если лут выпал но не был собран то добавляем на сцену
-            GameObject hero = await InitHero(levelData, gridsManager);
+            hero = await InitHero(levelData, gridsManager);
             await InitHud(hero);
         }
 

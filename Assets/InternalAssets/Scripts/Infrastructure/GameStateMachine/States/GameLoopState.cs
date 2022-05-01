@@ -1,19 +1,30 @@
-﻿using InternalAssets.Scripts.Infrastructure.Scene;
+﻿using InternalAssets.Scripts.Characters.Hero;
+using InternalAssets.Scripts.Infrastructure.Scene;
 
 namespace InternalAssets.Scripts.Infrastructure.States
 {
-    public class GameLoopState : IExitableState
+    public class GameLoopState : IPayloadState<HeroDeath>
     {
         private readonly GameStateMachine _gameStateMachine;
+		private HeroDeath _heroDeath;
 
-        public GameLoopState(GameStateMachine gameStateMachine)
+		public GameLoopState(GameStateMachine gameStateMachine)
         {
             _gameStateMachine = gameStateMachine;
         }
 
-        public void Exit()
+		public void Enter(HeroDeath heroDeath)
+		{
+			_heroDeath = heroDeath;
+			_heroDeath.HeroDead += OnHeroDead;
+		}
+
+		public void Exit()
         {
-            
+			_heroDeath.HeroDead -= OnHeroDead;
         }
-    }
+
+		private void OnHeroDead() =>
+			_gameStateMachine.Enter<BootstrapState>();
+	}
 }
