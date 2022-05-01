@@ -8,6 +8,8 @@ using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.Infrastructure.States;
 using InternalAssets.Scripts.UI.Services.Factory;
+using InternalAssets.Scripts.Utils.Log;
+using UnityEngine;
 
 
 namespace InternalAssets.Scripts.Infrastructure
@@ -41,11 +43,13 @@ namespace InternalAssets.Scripts.Infrastructure
 
         private TState ChangeState<TState>() where TState : class, IExitableState
         {
-            _activeState?.Exit();
+			CustomDebug.Log($"Exit {_activeState?.GetType().Name} state", Color.green);
+			_activeState?.Exit();
             
             TState state = GetState<TState>();
             _activeState = state;
-            
+			CustomDebug.Log($"Enter {_activeState?.GetType().Name} state", Color.green);
+			
             return state;
         }
 

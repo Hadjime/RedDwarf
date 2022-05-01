@@ -6,6 +6,8 @@ using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.StaticData.Windows;
 using InternalAssets.Scripts.UI.Services.Windows;
+using InternalAssets.Scripts.Utils.Log;
+using UnityEngine;
 
 
 namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
@@ -17,9 +19,9 @@ namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 		private const string windowStaticDataPath = "WindowStaticData";
 		
 		private readonly IAssets _assets;
-		private Dictionary<MonsterTypeId, MonstersStaticData> _monsters;
-		private Dictionary<string, LevelStaticData> _levels;
-		private Dictionary<WindowId, WindowConfig> _windowConfigs;
+		private Dictionary<MonsterTypeId, MonstersStaticData> _monsters = new Dictionary<MonsterTypeId, MonstersStaticData>();
+		private Dictionary<string, LevelStaticData> _levels = new Dictionary<string, LevelStaticData>();
+		private Dictionary<WindowId, WindowConfig> _windowConfigs = new Dictionary<WindowId, WindowConfig>();
 
 
 		public StaticDataService(IAssets assets) {
@@ -31,12 +33,14 @@ namespace InternalAssets.Scripts.Infrastructure.Services.StaticData
 		{
 			_assets.LoadAllAsyncByLabel<MonstersStaticData>(MonstersLabel, onFinish: list =>
 			{
-				_monsters = list.ToDictionary(data => data.MonsterTypeId, data => data);
+				// _monsters = list.ToDictionary(data => data.MonsterTypeId, data => data); //странная штука повторяется ключ
+				list.ForEach(data => _monsters[data.MonsterTypeId] = data);
 			});
 			
 			_assets.LoadAllAsyncByLabel<LevelStaticData>(LevelsLabel, onFinish: list =>
 			{
-				_levels = list.ToDictionary(data => data.LevelKey, data => data);
+				// _levels = list.ToDictionary(data => data.LevelKey, data => data); //странная штука повторяется ключ
+				list.ForEach(data => _levels[data.LevelKey] = data);
 			});
 
 			var tmp = await _assets.LoadAsync<WindowStaticData>(windowStaticDataPath);

@@ -17,5 +17,5 @@ MonoBehaviour:
   price: 1
   attackDamage: 0
   protection: 0
-  amount: 22
+  amount: 0
   prefab: {fileID: 9021090884675595381, guid: dd208c8c82d0f374bbbdb8db9206715a, type: 3}
