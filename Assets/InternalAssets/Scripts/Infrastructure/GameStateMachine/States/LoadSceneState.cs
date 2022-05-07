@@ -80,7 +80,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 			GridsManager gridsManager = await InitGrid(levelData);
 			await InitSpawners(levelData);
-			await InitDroppedLoot(); // TODO если лут выпал но не был собран то добавляем на сцену
+			await InitDroppedLoot(); // TODO сделать если лут выпал но не был собран и перезайти в игру то добавляем на сцену
             hero = await InitHero(levelData, gridsManager);
             await InitHud(hero);
         }
