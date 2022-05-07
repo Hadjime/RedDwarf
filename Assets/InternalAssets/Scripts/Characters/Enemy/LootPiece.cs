@@ -10,11 +10,11 @@ namespace InternalAssets.Scripts.Characters.Enemy
 {
 	public class LootPiece : MonoBehaviour
 	{
+		[SerializeField] private Loot defaultLoot = new Loot(){Value = 10};
 		[SerializeField] private SpriteRenderer lootIcon; 
 		[SerializeField] private GameObject PickupFxPrefab;
 		[SerializeField] private TextMeshPro LooText;
-		[SerializeField] private GameObject PickupPopup;
-		private Loot _defaultLoot = new Loot(){Value = 3};
+		
 		private Loot _loot;
 		private bool _isPicked;
 		private WorldData _worldData;
@@ -48,7 +48,7 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
 
 		private void TryUpdateWorldData() =>
-			_worldData?.LootData.Collect(_loot);
+			_worldData?.LootData.Collect(_loot ?? defaultLoot);
 
 
 
@@ -64,15 +64,15 @@ namespace InternalAssets.Scripts.Characters.Enemy
 
 		private void ShowText()
 		{
-			string lootText = _loot != null ? _loot.Value.ToString() : _defaultLoot.Value.ToString();
+			string lootText = _loot != null ? _loot.Value.ToString() : defaultLoot.Value.ToString();
 			LooText.text = $"{lootText}";
-			PickupPopup.SetActive(true);
+			LooText.gameObject.SetActive(true);
 		}
 
 
 		private IEnumerator StartDestroyTimer()
 		{
-			yield return Coroutines.GetWait(1.5f);
+			yield return Coroutines.GetWaitRealTime(1.5f);
 			Destroy(gameObject);
 		}
 	}
