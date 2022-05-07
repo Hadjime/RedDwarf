@@ -69,3 +69,6 @@ TagManager:
   - name: FogOfWar
     uniqueID: 2995536435
     locked: 0
+  - name: Message
+    uniqueID: 1214008197
+    locked: 0
