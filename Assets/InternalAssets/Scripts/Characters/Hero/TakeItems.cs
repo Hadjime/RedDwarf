@@ -1,10 +1,12 @@
-﻿using InternalAssets.Scripts.Characters.Enemy;
+﻿using System;
+using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Map;
 using UnityEngine;
 
 
 namespace InternalAssets.Scripts.Characters.Hero
 {
+	[Obsolete]
     public class TakeItems : MonoBehaviour, IDamageable
     {
         public Inventory.Inventory inventory;
