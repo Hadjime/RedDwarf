@@ -118,7 +118,7 @@ namespace AirFishLab.ScrollingList
         /// <summary>
         /// Initialize the list
         /// </summary>
-        public void Initialize()
+        public virtual void Initialize()
         {
             if (_isInitialized)
                 return;
