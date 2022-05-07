@@ -7,6 +7,7 @@ namespace InternalAssets.Scripts.Tools
 	public sealed class Coroutines : MonoBehaviour
 	{
 		private static readonly Dictionary<float, WaitForSeconds> WaitForSecondsDictionary = new Dictionary<float, WaitForSeconds>();
+		private static readonly Dictionary<float, WaitForSecondsRealtime> WaitForSecondsRealTime = new Dictionary<float, WaitForSecondsRealtime>();
 		
 		private static Coroutines instance
 		{
@@ -52,6 +53,14 @@ namespace InternalAssets.Scripts.Tools
 
 			WaitForSecondsDictionary[time] = new WaitForSeconds(time);
 			return WaitForSecondsDictionary[time];
+		}
+
+		public static WaitForSecondsRealtime GetWaitRealTime(float time)
+		{
+			if (WaitForSecondsRealTime.TryGetValue(time, out var wait)) return wait;
+
+			WaitForSecondsRealTime[time] = new WaitForSecondsRealtime(time);
+			return WaitForSecondsRealTime[time];
 		}
 	}
 }
