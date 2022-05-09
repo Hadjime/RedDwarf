@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Data;
+﻿using System;
+using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
@@ -45,6 +46,16 @@ namespace InternalAssets.Scripts.Characters.Hero
 			_animator = GetComponent<Animator>();
 
 			_startPosition = _rb.position;
+
+			_inputService.MovementDirectionChanged += OnMovementDirectionChanged;
+		}
+
+		private void OnDestroy() =>
+			_inputService.MovementDirectionChanged -= OnMovementDirectionChanged;
+
+		private void OnMovementDirectionChanged(Vector2 normalizeDirection)
+		{
+			// _direction = normalizeDirection;
 		}
 
 

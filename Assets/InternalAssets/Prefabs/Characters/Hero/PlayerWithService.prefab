@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 7178790872919254450}
   - component: {fileID: 4584909920131044525}
   - component: {fileID: 6881477057009628396}
-  - component: {fileID: 963529810866956795}
+  - component: {fileID: -7926546111285486872}
   - component: {fileID: 4584909920577510809}
   - component: {fileID: 8796420274686480772}
   - component: {fileID: 9067103324139776466}
@@ -87,6 +87,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4584909920447272098}
+  - {fileID: 3654161762189706996}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -207,7 +208,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &963529810866956795
+--- !u!114 &-7926546111285486872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,17 +217,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7178790872919254444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56e961ef675a4694bcfe20f21e36285c, type: 3}
+  m_Script: {fileID: 11500000, guid: 10dba7f6628c4fcda68a79f251a0f5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  handAttack: 30
-  isUp: 0
-  isDown: 0
-  isLeft: 0
-  isRight: 0
-  isMoving: 0
+  time: 0.3
+  deltaTimeMultiplier: 1
+  handAttack: 50
+  isMoving: 1
   isAttack: 0
+  _previousPosition: {x: 0, y: 0}
+  _nextPosition: {x: 0, y: 0}
+  _nextNormalizeDirection: {x: 0, y: 0}
 --- !u!114 &4584909920577510809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,8 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318942a3a6bd444d913e44d8f0f1627f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHp: 0
-  maxHp: 0
+  _playerState:
+    CurrentHp: 0
+    MaxHp: 0
 --- !u!114 &441551518747628668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroSpriteRenderer: {fileID: 7178790872919254449}
   heroHealth: {fileID: 1464060074958082163}
-  heroMove: {fileID: 963529810866956795}
+  heroMove: {fileID: -7926546111285486872}
   heroAttack: {fileID: -4946234872869551590}
   redStainPrefab: {fileID: 3261160465730798524, guid: 12a46cd749d24f442b7dd55e539798d5,
     type: 3}
@@ -346,3 +348,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
   fogOfWar: {fileID: 0}
+--- !u!1 &7232139646651465116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3654161762189706996}
+  - component: {fileID: 1347602238451874767}
+  m_Layer: 19
+  m_Name: DamageBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3654161762189706996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7232139646651465116}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7178790872919254451}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1347602238451874767
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7232139646651465116}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.9}
+  m_EdgeRadius: 0

@@ -9,9 +9,7 @@ namespace InternalAssets.Scripts.Characters.Hero
 {
     public class HeroHealth : MonoBehaviour, IHealth, ISavedProgress
 	{
-		[SerializeField] private float currentHp;
-		[SerializeField] private float maxHp;
-        private State _playerState;
+		[SerializeField] private State _playerState;
 
 		public event Action HpChanged;
 
@@ -22,8 +20,7 @@ namespace InternalAssets.Scripts.Characters.Hero
             {
                 if (Mathf.Approximately(_playerState.CurrentHp, value))
                     return;
-
-				currentHp = value;
+				
                 _playerState.CurrentHp = value;
                 HpChanged?.Invoke();
             }
@@ -32,11 +29,7 @@ namespace InternalAssets.Scripts.Characters.Hero
         public float MaxHp
 		{
 			get => _playerState.MaxHp;
-			set
-			{
-				maxHp = value;
-				_playerState.MaxHp = value;
-			}
+			set => _playerState.MaxHp = value;
 		}
 
 
