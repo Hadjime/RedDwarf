@@ -58,8 +58,10 @@ GameObject:
   - component: {fileID: 7178790872919254451}
   - component: {fileID: 7178790872919254449}
   - component: {fileID: 7178790872919254450}
+  - component: {fileID: 8080081347512632610}
   - component: {fileID: 4584909920131044525}
   - component: {fileID: 6881477057009628396}
+  - component: {fileID: 5318047514758081727}
   - component: {fileID: -7926546111285486872}
   - component: {fileID: 4584909920577510809}
   - component: {fileID: 8796420274686480772}
@@ -161,6 +163,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8080081347512632610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178790872919254444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9390704615a647829184fa7409600597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7178790872919254450}
 --- !u!50 &4584909920131044525
 Rigidbody2D:
   serializedVersion: 4
@@ -208,6 +223,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
+--- !u!114 &5318047514758081727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178790872919254444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d213a2666de04676ab4cbfe1c644bf6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroMove: {fileID: -7926546111285486872}
+  TimeoutAttack: 1
+  handAttack: 40
+  isAttack: 0
 --- !u!114 &-7926546111285486872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,14 +251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10dba7f6628c4fcda68a79f251a0f5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0.3
+  timeBetweenSteps: 0.3
   deltaTimeMultiplier: 1
-  handAttack: 50
   isMoving: 1
-  isAttack: 0
+  _nextNormalizeDirection: {x: 0, y: 0}
   _previousPosition: {x: 0, y: 0}
   _nextPosition: {x: 0, y: 0}
-  _nextNormalizeDirection: {x: 0, y: 0}
 --- !u!114 &4584909920577510809
 MonoBehaviour:
   m_ObjectHideFlags: 0

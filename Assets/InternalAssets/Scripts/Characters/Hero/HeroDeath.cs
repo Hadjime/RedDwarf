@@ -11,7 +11,7 @@ namespace InternalAssets.Scripts.Characters.Hero
     {
         [SerializeField] private SpriteRenderer heroSpriteRenderer;
         [SerializeField] private HeroHealth heroHealth;
-        [SerializeField] private HeroMoveNewAttempt heroMove;
+        [SerializeField] private HeroMove heroMove;
 		[SerializeField] private HeroAttack heroAttack;
         [SerializeField] private GameObject redStainPrefab;
         
@@ -24,7 +24,7 @@ namespace InternalAssets.Scripts.Characters.Hero
         {
             heroSpriteRenderer = GetComponent<SpriteRenderer>();
             heroHealth = GetComponent<HeroHealth>();
-            heroMove = GetComponent<HeroMoveNewAttempt>();
+            heroMove = GetComponent<HeroMove>();
 			heroAttack = GetComponent<HeroAttack>();
 		}
 
