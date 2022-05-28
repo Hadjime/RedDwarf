@@ -4,7 +4,7 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 {
 	public class StandardInputService : InputService
 	{
-		public override Vector2 RawMovementInput
+		public override Vector2 NormalizeMovementInput
 		{
 			get
 			{

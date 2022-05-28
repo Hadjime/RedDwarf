@@ -81,7 +81,8 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			
 			SRDebug.Instance.AddOptionContainer(new CheatsThroughDI(
 				_services.Single<IPersistentProgressService>(),
-				_services.Single<ISaveLoadService>()));
+				_services.Single<ISaveLoadService>(),
+				_services.Single<IGameFactory>()));
 		}
 
 

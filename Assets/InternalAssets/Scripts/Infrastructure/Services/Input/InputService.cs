@@ -8,7 +8,7 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 		protected const string HORIZONTAL = "Horizontal";
 		protected const string VERTICAL = "Vertical";
 
-		public abstract Vector2 RawMovementInput { get; }
+		public abstract Vector2 NormalizeMovementInput { get; }
 
 
 		public event Action<Vector2> MovementDirectionChanged;

@@ -253,8 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenSteps: 0.3
   deltaTimeMultiplier: 1
-  isMoving: 1
-  _nextNormalizeDirection: {x: 0, y: 0}
+  isMoving: 0
+  <_nextNormalizeDirection>k__BackingField: {x: 0, y: 0}
   _previousPosition: {x: 0, y: 0}
   _nextPosition: {x: 0, y: 0}
 --- !u!114 &4584909920577510809

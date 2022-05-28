@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using InternalAssets.Scripts.Characters;
 using InternalAssets.Scripts.Characters.Enemy.EnemySpawners;
+using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.StaticData;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,14 +26,20 @@ namespace InternalAssets.Scripts.Editor
 
 			if (GUILayout.Button("Collect"))
 			{
-				levelData.EnemySpawners = 
-					FindObjectsOfType<SpawnMarker>()
-						.Select(marker => new EnemySpawnerData(marker.GetComponent<UniqueId>().Id, marker.MonsterTypeId, marker.transform.position))
-						.ToList();
+				levelData.EnemySpawners = StageUtility.GetCurrentStageHandle()
+													  .FindComponentsOfType<SpawnMarker>()
+													  .Select(marker =>
+														  new EnemySpawnerData(marker.GetComponent<UniqueId>().Id, marker.MonsterTypeId, marker.transform.position))
+													  .ToList();
+
+				// levelData.EnemySpawners = 
+				// 	FindObjectsOfType<SpawnMarker>()
+				// 		.Select(marker => new EnemySpawnerData(marker.GetComponent<UniqueId>().Id, marker.MonsterTypeId, marker.transform.position))
+				// 		.ToList();
 
 				levelData.LevelKey = SceneManager.GetActiveScene().name;
 
-				levelData.InitialHeroPosition = GameObject.FindWithTag(INITIAL_POINT_TAG).transform.position;
+				levelData.InitialHeroPosition = StageUtility.GetCurrentStageHandle().FindComponentOfType<HeroInitialPointMarker>().transform.position;
 			}
 			
 			EditorUtility.SetDirty(target);

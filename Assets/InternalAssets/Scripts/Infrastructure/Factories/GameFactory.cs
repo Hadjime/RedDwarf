@@ -31,7 +31,7 @@ namespace InternalAssets.Scripts.Infrastructure.Factories
 
 		public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
         public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
-		private GameObject HeroGameObject { get; set; }
+		public GameObject HeroGameObject { get; private set; }
 
 
 		public GameFactory(

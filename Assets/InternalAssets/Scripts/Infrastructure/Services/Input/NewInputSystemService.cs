@@ -37,7 +37,8 @@ namespace InternalAssets.Scripts.Infrastructure.Services.Input
 			InvokeEventMovement(movementDirection: _movementDirection);
 		}
 		
-		public override Vector2 RawMovementInput => _movementDirection;
+		public override Vector2 NormalizeMovementInput => NormalizeInputValue(_playerInput.Player.Movement.ReadValue<Vector2>());
+		// public override Vector2 NormalizeMovementInput => _movementDirection;
 		
 		private Vector2 NormalizeInputValue(Vector2 movementDirection)
 		{

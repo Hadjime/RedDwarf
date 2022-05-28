@@ -1,4 +1,5 @@
 ﻿using System;
+using InternalAssets.Scripts.Cheats;
 using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
@@ -26,8 +27,8 @@ namespace InternalAssets.Scripts.Characters.Hero
 		private RaycastHit2D[] _poolRaycast = new RaycastHit2D[10];
 		private float _timer;
 
-		//просто смотреть в инспектореw
-		[SerializeField] private Vector2 _nextNormalizeDirection;
+		//просто смотреть в инспекторе
+		[field: SerializeField] public Vector2 _nextNormalizeDirection { get; private set; }
 		[SerializeField] private Vector2 _previousPosition;
 		[SerializeField] private Vector2 _nextPosition;
 
@@ -45,6 +46,8 @@ namespace InternalAssets.Scripts.Characters.Hero
 			
 			_inputService.MovementDirectionChanged += OnMovementDirectionChanged;
 			ResetAllFlags();
+			_currentNormalizeDirection = new Vector2(1, 0);
+			_nextNormalizeDirection = new Vector2(1, 0);
 		}
 
 		private void OnDestroy() =>
@@ -69,6 +72,8 @@ namespace InternalAssets.Scripts.Characters.Hero
 					isMoving = true;
 				}
 			}
+
+			CheatsThroughDI.Instance.IsMoving = isMoving;
 		}
 
 		private void FixedUpdate()
@@ -95,6 +100,8 @@ namespace InternalAssets.Scripts.Characters.Hero
 		private void OnMovementDirectionChanged(Vector2 normalizeDirection)
 		{
 			_nextNormalizeDirection = normalizeDirection;
+			CheatsThroughDI.Instance.NextNormalizeDirectionX = _nextNormalizeDirection.x;
+			CheatsThroughDI.Instance.NextNormalizeDirectionY = _nextNormalizeDirection.y;
 			
 			if (!IsMovementInOppositeDirectionAvailable())
 				return;
@@ -107,7 +114,8 @@ namespace InternalAssets.Scripts.Characters.Hero
 			return _currentNormalizeDirection == Vector2.up && _nextNormalizeDirection == Vector2.down ||
 				   _currentNormalizeDirection == Vector2.down && _nextNormalizeDirection == Vector2.up ||
 				   _currentNormalizeDirection == Vector2.left && _nextNormalizeDirection == Vector2.right ||
-				   _currentNormalizeDirection == Vector2.right && _nextNormalizeDirection == Vector2.left;
+				   _currentNormalizeDirection == Vector2.right && _nextNormalizeDirection == Vector2.left ||
+				   _currentNormalizeDirection == Vector2.zero;
 		}
 
 		private void TurnAround()
