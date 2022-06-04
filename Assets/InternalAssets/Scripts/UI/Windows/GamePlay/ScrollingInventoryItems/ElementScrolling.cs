@@ -10,12 +10,16 @@ namespace InternalAssets.Scripts.UI.Windows.GamePlay.ScrollingInventoryItems
 {
 	public class ElementScrolling : ListBox
 	{
+		[SerializeField] private Image backLight;
 		[SerializeField] private GameObject itemNotAvailable;
 		[SerializeField] private Image itemIcon;
 		[SerializeField] private TextMeshProUGUI amountTMP;
 		[SerializeField] private Button attackBtn; //TODO убрать от сюда
 
 		public Item ItemData { get; private set; }
+
+		private void OnEnable() =>
+			SetBackLight(false);
 
 		protected override void UpdateDisplayContent(object content)
 		{
@@ -30,5 +34,8 @@ namespace InternalAssets.Scripts.UI.Windows.GamePlay.ScrollingInventoryItems
 
 		public void SetAvailable(bool isState) =>
 			itemNotAvailable.SetActive(isState);
+
+		public void SetBackLight(bool isState) =>
+			backLight.gameObject.SetActive(isState);
 	}
 }
