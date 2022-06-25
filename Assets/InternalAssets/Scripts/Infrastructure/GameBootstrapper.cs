@@ -2,6 +2,7 @@
 using InternalAssets.Scripts.Infrastructure.States;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
+using Zenject;
 
 
 namespace InternalAssets.Scripts.Infrastructure
@@ -9,14 +10,29 @@ namespace InternalAssets.Scripts.Infrastructure
     public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
     {
         private Game _game;
+		private DiContainer diContainer;
 
+		[Inject]
+		public void Construct(DiContainer diContainer)
+		{
+			this.diContainer = diContainer;
+		}
         private void Awake()
         {
-            _game = new Game(this);
+            _game = new Game(this, diContainer);
             _game.StateMachine.Enter<BootstrapState>();
             
             DontDestroyOnLoad(this);
 			CustomDebug.Log($"[Game] Init", Color.grey);
         }
+
+		public  void Initialize()
+		{
+			_game = new Game(this, diContainer);
+			_game.StateMachine.Enter<BootstrapState>();
+
+			DontDestroyOnLoad(this);
+			CustomDebug.Log($"[Game] Init", Color.grey);
+		}
     }
 }

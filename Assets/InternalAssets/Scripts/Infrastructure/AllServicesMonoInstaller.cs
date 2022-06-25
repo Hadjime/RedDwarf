@@ -1,5 +1,15 @@
-﻿using InternalAssets.Scripts.Infrastructure.AssetManagement;
+﻿using InternalAssets.Scripts.Cheats;
+using InternalAssets.Scripts.Infrastructure.Ads;
+using InternalAssets.Scripts.Infrastructure.AssetManagement;
+using InternalAssets.Scripts.Infrastructure.Factories;
+using InternalAssets.Scripts.Infrastructure.IAP;
+using InternalAssets.Scripts.Infrastructure.Services.Input;
+using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.Random;
+using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
+using InternalAssets.Scripts.Infrastructure.Services.StaticData;
+using InternalAssets.Scripts.UI.Services.Factory;
+using InternalAssets.Scripts.UI.Services.Windows;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using Zenject;
@@ -12,70 +22,118 @@ namespace InternalAssets.Scripts.Infrastructure
         {
 			CustomDebug.Log($"MonoInstaller START bind", Color.green);
 			
-            Container.Bind<Greeter.Protocol>().FromInstance(new Greeter.Protocol("Mono Installer!"));
-            Container.Bind<Greeter>().AsSingle().NonLazy();
-
-            Container.Bind<IAssets>().To<AssetsProvider>().AsSingle();
-			
 			AllServicesInstaller.Install(Container);
 
 			CustomDebug.Log($"MonoInstaller STOP bind", Color.green);
         }
-        
-        public class Greeter
-        {
-            public Greeter(Protocol protoco)
-            {
-                Debug.Log(protoco.value);
-            }
-
-
-			public class Protocol
-			{
-				public string value;
-
-
-				public Protocol(string _value)
-				{
-					value = _value;
-				}
-			}
-        }
-
-		public class Greeter2
-		{
-			public Greeter2(Protocol2 protoco)
-			{
-				Debug.Log(protoco.value);
-			}
-
-
-			public class Protocol2
-			{
-				public string value;
-
-
-				public Protocol2(string _value)
-				{
-					value = _value;
-				}
-			}
-		}
-    }
+	}
 
 	public class AllServicesInstaller : Installer<AllServicesInstaller>
 	{
 		public override void InstallBindings()
 		{
-			CustomDebug.Log($"Installer START bind", Color.green);
+			CustomDebug.Log($"All services installer START bind", Color.green);
 			
-			Container.Bind<AllServicesMonoInstaller.Greeter2.Protocol2>().FromInstance(new AllServicesMonoInstaller.Greeter2.Protocol2(
-				"Simple Installer!"));
-			Container.Bind<AllServicesMonoInstaller.Greeter2>().AsSingle().NonLazy();
+			RegisterServices();
+
+			CustomDebug.Log($"All services installer STOP bind", Color.green);
+		}
+		
+		private void RegisterServices()
+		{
+			RegisterAdsService();
+			
+			// _services.RegisterSingle<IGameStateMachine>(_stateMachine);
+			
+			RegisterAssetProvider();
 
 			Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
+			// Container.Bind<IPersistentProgressService>().To<PersistentProgressService>().AsSingle();
+			PersistentProgressService progressService = new PersistentProgressService();
+			Container.Bind<IPersistentProgressService>().FromInstance(progressService).AsSingle();
 
-			CustomDebug.Log($"Installer STOP bind", Color.green);
+			RegisterIAPService(new IAPProvider(), progressService);
+			RegisterStaticDataService();
+			
+			RegisterWindowsServiceAndUIFactory();
+			
+			Container.Bind<IInputService>().FromMethod(SetupInputServices).AsSingle();
+			GameFactory gameFactory = new GameFactory(
+				Container.Resolve<IAssets>(),
+				Container.Resolve<IStaticDataService>(),
+				Container.Resolve<IRandomService>(),
+				Container.Resolve<IPersistentProgressService>(),
+				Container.Resolve<IWindowService>());
+			Container.Bind<IGameFactory>().FromInstance(gameFactory);
+
+			SaveLoadService saveLoadService = new SaveLoadService(
+				Container.Resolve<IPersistentProgressService>(),
+				Container.Resolve<IGameFactory>());
+			Container.Bind<ISaveLoadService>().FromInstance(saveLoadService);
+			
+			SRDebug.Instance.AddOptionContainer(new CheatsThroughDI(
+				Container.Resolve<IPersistentProgressService>(),
+				Container.Resolve<ISaveLoadService>(),
+				Container.Resolve<IGameFactory>()));
+		}
+
+
+		private void RegisterAssetProvider()
+		{
+			var assetsProvider = new AssetsProvider();
+			assetsProvider.Initialize();
+			Container.Bind<IAssets>().FromInstance(assetsProvider).AsSingle();
+		}
+
+
+		private void RegisterStaticDataService()
+		{
+			IStaticDataService staticDataService = new StaticDataService(Container.Resolve<IAssets>());
+			staticDataService.Load();
+			Container.Bind<IStaticDataService>().FromInstance(staticDataService).AsSingle();
+		}
+
+
+		private void RegisterWindowsServiceAndUIFactory()
+		{
+			var windowService = new WindowService();
+			Container.Bind<IWindowService>().FromInstance(windowService).AsSingle();
+			
+			UIFactory uiFactory = new UIFactory(
+				Container.Resolve<IAssets>(),
+				Container.Resolve<IStaticDataService>(),
+				Container.Resolve<IPersistentProgressService>(),
+				Container.Resolve<IAdsService>(),
+				Container.Resolve<IWindowService>());
+			Container.Bind<IUIFactory>().FromInstance(uiFactory).AsSingle();
+
+			windowService.Initialize(uiFactory);
+		}
+
+
+		private IInputService SetupInputServices()
+		{
+			var _inputServices = new NewInputSystemService();
+			_inputServices.Init();
+			return _inputServices;
+		}
+
+
+		private void RegisterAdsService()
+		{
+			AdsService adsService = new AdsService();
+			adsService.Initialize(true);
+			Container.Bind<IAdsService>().FromInstance(adsService);
+			// Container.Bind<IAdsService>().To<AdsService>().AsSingle();
+			// Container.Resolve<IAdsService>().Initialize(true);
+		}
+
+
+		private void RegisterIAPService(IAPProvider iapProvider, IPersistentProgressService progressService)
+		{
+			IAPService iapService = new IAPService(iapProvider, progressService);
+			iapService.Initialize();
+			Container.Bind<IIAPService>().FromInstance(iapService).AsSingle();
 		}
 	}
 }

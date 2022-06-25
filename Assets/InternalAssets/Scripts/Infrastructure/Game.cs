@@ -1,6 +1,8 @@
 ﻿using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
+using Zenject;
+
 
 namespace InternalAssets.Scripts.Infrastructure
 {
@@ -9,9 +11,9 @@ namespace InternalAssets.Scripts.Infrastructure
         public static IInputService InputServices;
         public GameStateMachine StateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner)
+		public Game(ICoroutineRunner coroutineRunner, DiContainer diContainer)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container);
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container, diContainer);
         }
 
         

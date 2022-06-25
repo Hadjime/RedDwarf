@@ -1,4 +1,5 @@
-﻿using InternalAssets.Scripts.Data;
+﻿using System.Runtime.Remoting.Messaging;
+using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
@@ -18,11 +19,15 @@ namespace InternalAssets.Scripts.Characters.Hero
 		private Collider2D[] _hits = new Collider2D[20];
 		private Stats _stats;
 
-
+		public void Construct(IInputService inputService)
+		{
+			_input = inputService;
+			_input.IsAttackBtnUp += OnIsAttackBtnUp;
+		}
+		
 		private void Awake()
 		{
-			_input = AllServices.Container.Single<IInputService>();
-			_input.IsAttackBtnUp += OnIsAttackBtnUp;
+			// _input = AllServices.Container.Single<IInputService>();
 			_layerMask = 1 << LayerMask.NameToLayer(LayerName);
 		}
 

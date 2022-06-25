@@ -7,6 +7,7 @@ using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 using InternalAssets.Scripts.Tools;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 
 namespace InternalAssets.Scripts.Characters.Enemy
@@ -21,17 +22,17 @@ namespace InternalAssets.Scripts.Characters.Enemy
 		private Loot _loot;
 		private bool _isPicked;
 		private WorldData _worldData;
-		private IPersistentProgressService _persistentProgressService;
 
-
-		public void Constructor(WorldData worldData) =>
+		public void Constructor(WorldData worldData)
+		{
 			_worldData = worldData;
+		}
 
 		private void Awake()
 		{
-			//TODO на время чтобы лутт размещенный на карте а не выпавший с монстра заработал
-			_persistentProgressService = AllServices.Container.Single<IPersistentProgressService>();
-			_worldData = _persistentProgressService.Progress.WorldData;
+			// //TODO на время чтобы лутт размещенный на карте а не выпавший с монстра заработал
+			// _persistentProgressService = AllServices.Container.Single<IPersistentProgressService>();
+			// _worldData = _persistentProgressService.Progress.WorldData;
 		}
 
 		public void Initialize(Loot loot) =>

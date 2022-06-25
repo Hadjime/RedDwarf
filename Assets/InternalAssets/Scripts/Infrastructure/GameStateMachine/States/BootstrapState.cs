@@ -23,7 +23,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		
         private readonly GameStateMachine _stateMachine;
 		private readonly SceneLoader _sceneLoader;
-		private AllServices _services;
+		private readonly AllServices _services;
 
 
 		public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services)
@@ -32,7 +32,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
 			_sceneLoader = sceneLoader;
 			_services = services;
 			
-			RegisterServices();
+			// RegisterServices();
 		}
 
         public void Enter()

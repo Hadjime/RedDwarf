@@ -34,9 +34,16 @@ namespace InternalAssets.Scripts.Characters.Hero
 
 		public bool IsMoving => isMoving;
 		public Vector2 CurrentNormalizeDirection => _currentNormalizeDirection;
+
+		public void Construct(IInputService inputService)
+		{
+			_inputService = inputService;
+			_inputService.MovementDirectionChanged += OnMovementDirectionChanged;
+		}
+
 		private void Awake()
 		{
-			_inputService = AllServices.Container.Single<IInputService>();
+			// _inputService = AllServices.Container.Single<IInputService>();
 			_rb = GetComponent<Rigidbody2D>();
 			_maskForMove = LayerMask.GetMask("Wall", "RockAndOther");
 			_animator = GetComponent<HeroAnimator>();
@@ -44,7 +51,7 @@ namespace InternalAssets.Scripts.Characters.Hero
 			_previousPosition = _rb.position;
 			_nextPosition = _previousPosition;
 			
-			_inputService.MovementDirectionChanged += OnMovementDirectionChanged;
+			
 			ResetAllFlags();
 			_currentNormalizeDirection = new Vector2(1, 0);
 			_nextNormalizeDirection = new Vector2(1, 0);
@@ -56,13 +63,17 @@ namespace InternalAssets.Scripts.Characters.Hero
 
 		private void Update()
 		{
+			if (_inputService == null)
+				return;
+			
+			CustomDebug.Log($"_inputService.NormalizeMovementInput = {_inputService.NormalizeMovementInput}", Color.magenta);
 			if (_currentNormalizeDirection == Vector2.zero)
 				ResetAllFlags();
 
 
 			if (!isMoving) //если стоим на месте
 			{
-				_currentNormalizeDirection = _nextNormalizeDirection;
+				_currentNormalizeDirection = _inputService.NormalizeMovementInput;
 				RotationPlayer(_currentNormalizeDirection);
 				if (IsMoveAvailable(_currentNormalizeDirection))
 				{
@@ -71,6 +82,11 @@ namespace InternalAssets.Scripts.Characters.Hero
 					_animator.PlayRunAnimation();
 					isMoving = true;
 				}
+			}
+			else
+			{
+				if (IsMovementInOppositeDirectionAvailable())
+					TurnAround();
 			}
 
 			CheatsThroughDI.Instance.IsMoving = isMoving;

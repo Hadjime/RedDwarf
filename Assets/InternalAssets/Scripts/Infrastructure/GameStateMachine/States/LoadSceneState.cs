@@ -3,6 +3,7 @@ using Cinemachine;
 using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Scene;
+using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.Map.Grids;
@@ -27,6 +28,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
         private readonly IPersistentProgressService _progressService;
 		private readonly IStaticDataService _staticDataService;
 		private readonly IUIFactory _uiFactory;
+		private readonly IInputService _inputService;
 		private GameObject hero;
 
 
@@ -36,7 +38,8 @@ namespace InternalAssets.Scripts.Infrastructure.States
 				IGameFactory gameFactory,
 				IPersistentProgressService progressService,
 				IStaticDataService staticDataService,
-				IUIFactory uiFactory
+				IUIFactory uiFactory,
+				IInputService inputService
 			)
         {
             _stateMachine = stateMachine;
@@ -45,6 +48,7 @@ namespace InternalAssets.Scripts.Infrastructure.States
             _progressService = progressService;
 			_staticDataService = staticDataService;
 			_uiFactory = uiFactory;
+			_inputService = inputService;
 		}
 
         public void Enter(string sceneName)
@@ -87,7 +91,9 @@ namespace InternalAssets.Scripts.Infrastructure.States
 
 		private async Task<GridsManager> InitGrid(LevelStaticData levelStaticData)
 		{
-			return await _gameFactory.CreateGrid(levelStaticData.Grid);
+			GridsManager gridsManager = await _gameFactory.CreateGrid(levelStaticData.Grid);
+			gridsManager.Initialize(_progressService);
+			return gridsManager;
 		}
 
 
@@ -108,14 +114,20 @@ namespace InternalAssets.Scripts.Infrastructure.States
 		private async Task<GameObject> InitHero(LevelStaticData levelStaticData, GridsManager gridsManager)
         {
 			GameObject hero = await _gameFactory.CreateHero(at: levelStaticData.InitialHeroPosition);
-            SetCameraFollow(hero.transform);
-			SetCameraConfiner(gridsManager.Land);
+			if (hero.TryGetComponent(out HeroMove heroMove))
+				heroMove.Construct(_inputService);
+
+			if (hero.TryGetComponent(out HeroAttack heroAttack))
+				heroAttack.Construct(_inputService);
 			
 			if (hero.TryGetComponent(out DestroyFogOfWar destroyFogOfWar))
 			{
 				destroyFogOfWar.grid = gridsManager.Grid;
 				destroyFogOfWar.fogOfWar = gridsManager.FogOfWar;
 			}
+			
+            SetCameraFollow(hero.transform);
+			SetCameraConfiner(gridsManager.Land);
 			
             return hero;
         }
