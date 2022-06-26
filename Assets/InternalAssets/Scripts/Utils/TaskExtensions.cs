@@ -2,7 +2,7 @@ using System.Collections;
 using System.Threading.Tasks;
 
 
-namespace InternalAssets.Scripts.Tools
+namespace InternalAssets.Scripts.Utils
 {
 	
 	public static class TaskExtensions

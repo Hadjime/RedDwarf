@@ -1,6 +1,4 @@
-﻿using UnityEngine.InputSystem.LowLevel;
-
-namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
+﻿namespace InternalAssets.Scripts.Characters.Hero.PlayerFinitStateMachine
 {
     public class PlayerFSM
     {

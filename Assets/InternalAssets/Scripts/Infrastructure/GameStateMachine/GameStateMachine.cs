@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using InternalAssets.Scripts.Infrastructure.Factories;
+using InternalAssets.Scripts.Infrastructure.GameStateMachine.States;
 using InternalAssets.Scripts.Infrastructure.Scene;
-using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
-using InternalAssets.Scripts.Infrastructure.States;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using InternalAssets.Scripts.UI.Services.Factory;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using Zenject;
 
 
-namespace InternalAssets.Scripts.Infrastructure
+namespace InternalAssets.Scripts.Infrastructure.GameStateMachine
 {
     public class GameStateMachine : IGameStateMachine
 	{

@@ -5,9 +5,9 @@ using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.StaticData.Windows;
 using InternalAssets.Scripts.UI.Elements;
-using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.UI.Services.Windows;
 using InternalAssets.Scripts.UI.Windows;
+using InternalAssets.Scripts.UI.Windows.GamePlay;
 using UnityEngine;
 
 

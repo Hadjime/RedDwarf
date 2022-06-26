@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-namespace Utils
+namespace InternalAssets.Scripts.Utils
 {
     public enum TypeHighlighting
     {

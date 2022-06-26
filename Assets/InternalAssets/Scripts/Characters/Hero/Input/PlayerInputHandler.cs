@@ -1,8 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace InternalAssets.Scripts.Player.Input
+
+namespace InternalAssets.Scripts.Characters.Hero.Input
 {
     [RequireComponent(typeof(PlayerInput))]
     public class PlayerInputHandler : MonoBehaviour

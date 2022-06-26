@@ -1,4 +1,5 @@
 ﻿using System;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Infrastructure.Services.Input

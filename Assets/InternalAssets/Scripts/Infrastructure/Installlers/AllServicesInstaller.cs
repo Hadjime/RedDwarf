@@ -14,20 +14,9 @@ using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using Zenject;
 
-namespace InternalAssets.Scripts.Infrastructure
+
+namespace InternalAssets.Scripts.Infrastructure.Installlers
 {
-    public class AllServicesMonoInstaller : MonoInstaller
-    {
-        public override void InstallBindings()
-        {
-			CustomDebug.Log($"MonoInstaller START bind", Color.green);
-			
-			AllServicesInstaller.Install(Container);
-
-			CustomDebug.Log($"MonoInstaller STOP bind", Color.green);
-        }
-	}
-
 	public class AllServicesInstaller : Installer<AllServicesInstaller>
 	{
 		public override void InstallBindings()
@@ -43,12 +32,12 @@ namespace InternalAssets.Scripts.Infrastructure
 		{
 			RegisterAdsService();
 			
+			//TODO возможно понадобится в дальнейшем и надо подумать как его сюда запихнуть
 			// _services.RegisterSingle<IGameStateMachine>(_stateMachine);
 			
 			RegisterAssetProvider();
 
 			Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
-			// Container.Bind<IPersistentProgressService>().To<PersistentProgressService>().AsSingle();
 			PersistentProgressService progressService = new PersistentProgressService();
 			Container.Bind<IPersistentProgressService>().FromInstance(progressService).AsSingle();
 
@@ -78,6 +67,13 @@ namespace InternalAssets.Scripts.Infrastructure
 		}
 
 
+		private void RegisterAdsService()
+		{
+			AdsService adsService = new AdsService();
+			adsService.Initialize(true);
+			Container.Bind<IAdsService>().FromInstance(adsService);
+		}
+
 		private void RegisterAssetProvider()
 		{
 			var assetsProvider = new AssetsProvider();
@@ -86,14 +82,20 @@ namespace InternalAssets.Scripts.Infrastructure
 		}
 
 
+		private void RegisterIAPService(IAPProvider iapProvider, IPersistentProgressService progressService)
+		{
+			IAPService iapService = new IAPService(iapProvider, progressService);
+			iapService.Initialize();
+			Container.Bind<IIAPService>().FromInstance(iapService).AsSingle();
+		}
+
 		private void RegisterStaticDataService()
 		{
 			IStaticDataService staticDataService = new StaticDataService(Container.Resolve<IAssets>());
 			staticDataService.Load();
 			Container.Bind<IStaticDataService>().FromInstance(staticDataService).AsSingle();
 		}
-
-
+		
 		private void RegisterWindowsServiceAndUIFactory()
 		{
 			var windowService = new WindowService();
@@ -109,31 +111,12 @@ namespace InternalAssets.Scripts.Infrastructure
 
 			windowService.Initialize(uiFactory);
 		}
-
-
+		
 		private IInputService SetupInputServices()
 		{
 			var _inputServices = new NewInputSystemService();
 			_inputServices.Init();
 			return _inputServices;
-		}
-
-
-		private void RegisterAdsService()
-		{
-			AdsService adsService = new AdsService();
-			adsService.Initialize(true);
-			Container.Bind<IAdsService>().FromInstance(adsService);
-			// Container.Bind<IAdsService>().To<AdsService>().AsSingle();
-			// Container.Resolve<IAdsService>().Initialize(true);
-		}
-
-
-		private void RegisterIAPService(IAPProvider iapProvider, IPersistentProgressService progressService)
-		{
-			IAPService iapService = new IAPService(iapProvider, progressService);
-			iapService.Initialize();
-			Container.Bind<IIAPService>().FromInstance(iapService).AsSingle();
 		}
 	}
 }

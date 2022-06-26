@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace InternalAssets.Scripts.UI.GamePlay
+namespace InternalAssets.Scripts.UI.Windows.GamePlay
 {
     public class HealthBar : MonoBehaviour
     {

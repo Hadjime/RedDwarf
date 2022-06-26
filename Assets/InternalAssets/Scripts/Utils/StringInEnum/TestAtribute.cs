@@ -1,6 +1,7 @@
 using UnityEngine;
 
-namespace Utils.StringInEnum
+
+namespace InternalAssets.Scripts.Utils.StringInEnum
 {
     public class TestAtribute: MonoBehaviour
     {

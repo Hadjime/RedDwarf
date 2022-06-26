@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using InternalAssets.Scripts.Characters.Hero;
-using InternalAssets.Scripts.Player;
+﻿using InternalAssets.Scripts.Characters.Hero;
 using UnityEditor;
 
 [CustomEditor(typeof(MoveNewInputSystem))]

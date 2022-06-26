@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-namespace InternalAssets.Scripts.Player.Data
+
+namespace InternalAssets.Scripts.Characters.Hero.Data
 {
     [CreateAssetMenu(fileName = "PlayerDataDefault", menuName = "Scriptable Object/Player Data/New Player Data", order = 0)]
     public class PlayerData : ScriptableObject

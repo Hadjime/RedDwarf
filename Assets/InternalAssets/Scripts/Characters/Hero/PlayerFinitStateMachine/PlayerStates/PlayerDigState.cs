@@ -1,8 +1,7 @@
-﻿using InternalAssets.Scripts.Player.Data;
-using InternalAssets.Scripts.Player.PlayerFinitStateMachine;
-using UnityEngine;
+﻿using InternalAssets.Scripts.Characters.Hero.Data;
 
-namespace InternalAssets.Scripts.Player.PlayerStates
+
+namespace InternalAssets.Scripts.Characters.Hero.PlayerFinitStateMachine.PlayerStates
 {
     public class PlayerDigState: PlayerState
     {

@@ -2,7 +2,8 @@
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
 
-namespace InternalAssets.Scripts.Infrastructure.States
+
+namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 {
     public class LoadProgressState : IState
     {

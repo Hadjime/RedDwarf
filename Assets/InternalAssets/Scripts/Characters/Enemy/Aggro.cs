@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using InternalAssets.Scripts.Player;
-using InternalAssets.Scripts.Tools;
-using Pathfinding;
+﻿using System.Collections;
+using InternalAssets.Scripts.Utils;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Characters.Enemy

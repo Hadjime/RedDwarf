@@ -1,7 +1,6 @@
 ﻿using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
-using InternalAssets.Scripts.Infrastructure.States;
 using UnityEngine;
 
 namespace InternalAssets.Scripts.Infrastructure.Services.SaveLoad

@@ -1,7 +1,8 @@
-﻿using InternalAssets.Scripts.Player.Data;
+﻿using InternalAssets.Scripts.Characters.Hero.Data;
 using UnityEngine;
 
-namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
+
+namespace InternalAssets.Scripts.Characters.Hero.PlayerFinitStateMachine
 {
     public abstract class PlayerState
     {

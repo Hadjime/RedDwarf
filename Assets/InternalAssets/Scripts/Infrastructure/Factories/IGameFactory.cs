@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using InternalAssets.Scripts.Characters.Enemy;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using InternalAssets.Scripts.Map.Grids;
 using UnityEngine;
 using UnityEngine.AddressableAssets;

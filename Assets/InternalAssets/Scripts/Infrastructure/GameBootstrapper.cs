@@ -1,5 +1,5 @@
-﻿using InternalAssets.Scripts.Infrastructure.Scene;
-using InternalAssets.Scripts.Infrastructure.States;
+﻿using InternalAssets.Scripts.Infrastructure.GameStateMachine.States;
+using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using Zenject;
@@ -7,9 +7,9 @@ using Zenject;
 
 namespace InternalAssets.Scripts.Infrastructure
 {
-    public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
-    {
-        private Game _game;
+	public class GameBootstrapper : MonoBehaviour, ICoroutineRunner
+	{
+		private Game _game;
 		private DiContainer diContainer;
 
 		[Inject]
@@ -17,16 +17,8 @@ namespace InternalAssets.Scripts.Infrastructure
 		{
 			this.diContainer = diContainer;
 		}
-        private void Awake()
-        {
-            _game = new Game(this, diContainer);
-            _game.StateMachine.Enter<BootstrapState>();
-            
-            DontDestroyOnLoad(this);
-			CustomDebug.Log($"[Game] Init", Color.grey);
-        }
 
-		public  void Initialize()
+		private void Awake()
 		{
 			_game = new Game(this, diContainer);
 			_game.StateMachine.Enter<BootstrapState>();
@@ -34,5 +26,5 @@ namespace InternalAssets.Scripts.Infrastructure
 			DontDestroyOnLoad(this);
 			CustomDebug.Log($"[Game] Init", Color.grey);
 		}
-    }
+	}
 }

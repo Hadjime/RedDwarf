@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 
-namespace InternalAssets.Scripts.Infrastructure.States
+namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 {
     public class LoadSceneState : IPayloadState<string>
     {

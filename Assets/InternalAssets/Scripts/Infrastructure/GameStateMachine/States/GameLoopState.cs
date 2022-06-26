@@ -1,7 +1,7 @@
 ﻿using InternalAssets.Scripts.Characters.Hero;
-using InternalAssets.Scripts.Infrastructure.Scene;
 
-namespace InternalAssets.Scripts.Infrastructure.States
+
+namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 {
     public class GameLoopState : IPayloadState<HeroDeath>
     {

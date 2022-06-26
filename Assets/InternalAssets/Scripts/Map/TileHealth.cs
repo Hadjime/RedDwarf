@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using InternalAssets.Scripts.Characters.Hero;
-using InternalAssets.Scripts.Player;
 using UnityEngine;
 
 
@@ -37,7 +36,7 @@ namespace InternalAssets.Scripts.Map
 		{
 			if (listSpritesForVisualisationHealth == null)
 				return;
-			
+
 			if (hp > MaxHp * 0.7f && hp <= MaxHp)
 			{
 				currentSprite.sprite = listSpritesForVisualisationHealth[0];

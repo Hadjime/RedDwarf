@@ -1,5 +1,6 @@
 ﻿using System;
 using InternalAssets.Scripts.Infrastructure.Services;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 
 
 namespace InternalAssets.Scripts.Infrastructure.Ads
