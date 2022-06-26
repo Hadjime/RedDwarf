@@ -1,4 +1,4 @@
-﻿namespace InternalAssets.Scripts.Characters.Enemy
+﻿namespace InternalAssets.Scripts.Characters
 {
 	public interface IDamageable
 	{

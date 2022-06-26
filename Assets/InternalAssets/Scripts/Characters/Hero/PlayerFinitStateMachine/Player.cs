@@ -1,11 +1,10 @@
-﻿using System;
-using InternalAssets.Scripts.Player.Data;
-using InternalAssets.Scripts.Player.Input;
-using InternalAssets.Scripts.Player.PlayerStates;
+﻿using InternalAssets.Scripts.Characters.Hero.Data;
+using InternalAssets.Scripts.Characters.Hero.Input;
+using InternalAssets.Scripts.Characters.Hero.PlayerFinitStateMachine.PlayerStates;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-namespace InternalAssets.Scripts.Player.PlayerFinitStateMachine
+
+namespace InternalAssets.Scripts.Characters.Hero.PlayerFinitStateMachine
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Animator))]

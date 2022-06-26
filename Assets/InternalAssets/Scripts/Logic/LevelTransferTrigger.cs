@@ -1,7 +1,9 @@
 ﻿using System;
 using InternalAssets.Scripts.Infrastructure;
+using InternalAssets.Scripts.Infrastructure.GameStateMachine;
+using InternalAssets.Scripts.Infrastructure.GameStateMachine.States;
 using InternalAssets.Scripts.Infrastructure.Services;
-using InternalAssets.Scripts.Infrastructure.States;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using UnityEngine;
 
 

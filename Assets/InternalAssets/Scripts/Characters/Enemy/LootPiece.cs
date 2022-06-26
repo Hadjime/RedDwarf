@@ -4,7 +4,7 @@ using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
-using InternalAssets.Scripts.Tools;
+using InternalAssets.Scripts.Utils;
 using TMPro;
 using UnityEngine;
 using Zenject;

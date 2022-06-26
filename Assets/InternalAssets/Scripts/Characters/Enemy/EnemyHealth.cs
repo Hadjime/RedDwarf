@@ -1,6 +1,5 @@
 ﻿using System;
 using InternalAssets.Scripts.Characters.Hero;
-using InternalAssets.Scripts.Player;
 using UnityEngine;
 
 

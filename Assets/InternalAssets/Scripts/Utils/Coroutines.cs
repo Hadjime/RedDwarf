@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace InternalAssets.Scripts.Tools
+
+namespace InternalAssets.Scripts.Utils
 {
 	public sealed class Coroutines : MonoBehaviour
 	{

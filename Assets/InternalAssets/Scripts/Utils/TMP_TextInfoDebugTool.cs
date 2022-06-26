@@ -1,10 +1,10 @@
 ﻿using System;
-using UnityEngine;
-using System.Collections;
+using TMPro;
 using UnityEditor;
+using UnityEngine;
 
 
-namespace TMPro.Examples
+namespace InternalAssets.Scripts.Utils
 {
 
     public class TMP_TextInfoDebugTool : MonoBehaviour

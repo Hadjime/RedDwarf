@@ -1,7 +1,7 @@
-﻿using InternalAssets.Scripts.Infrastructure.Services;
+﻿using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 
 
-namespace InternalAssets.Scripts.Infrastructure
+namespace InternalAssets.Scripts.Infrastructure.GameStateMachine
 {
 	public interface IGameStateMachine : IService
 	{

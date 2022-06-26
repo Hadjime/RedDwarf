@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.Sockets;
-using UnityEngine;
-using DG.Tweening;
-public class MoveMenu : MonoBehaviour
+﻿using UnityEngine;
+
+
+namespace InternalAssets.Scripts._temp
 {
+	public class MoveMenu : MonoBehaviour
+	{
 
 
-    // Update is called once per frame
-    void Start()
-    {
-        //transform.DOShakeScale(10);
-        //transform.DOShakeRotation(1);
-        //
-        //transform.DOMove(new Vector3(0, 0, 0), 2, false);
+		// Update is called once per frame
+		void Start()
+		{
+			//transform.DOShakeScale(10);
+			//transform.DOShakeRotation(1);
+			//
+			//transform.DOMove(new Vector3(0, 0, 0), 2, false);
         
-    }
+		}
 
-    private void Update()
-    {
+		private void Update()
+		{
         
-    }
+		}
+	}
 }

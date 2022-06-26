@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Utils
+namespace InternalAssets.Scripts.Utils.Log
 {
     public static class DrowsyLogger
     {

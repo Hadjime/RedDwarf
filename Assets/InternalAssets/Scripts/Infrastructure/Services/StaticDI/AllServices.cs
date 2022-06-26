@@ -1,4 +1,4 @@
-﻿namespace InternalAssets.Scripts.Infrastructure.Services
+﻿namespace InternalAssets.Scripts.Infrastructure.Services.StaticDI
 {
     public class AllServices
     {

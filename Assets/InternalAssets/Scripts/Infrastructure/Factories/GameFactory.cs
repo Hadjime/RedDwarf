@@ -11,7 +11,6 @@ using InternalAssets.Scripts.Infrastructure.Services.StaticData;
 using InternalAssets.Scripts.Map.Grids;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.UI.Elements;
-using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.UI.Services.Windows;
 using Pathfinding;
 using UnityEngine;

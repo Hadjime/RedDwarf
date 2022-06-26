@@ -1,4 +1,4 @@
-﻿namespace InternalAssets.Scripts.Infrastructure
+﻿namespace InternalAssets.Scripts.Infrastructure.GameStateMachine
 {
     public interface IExitableState
     {

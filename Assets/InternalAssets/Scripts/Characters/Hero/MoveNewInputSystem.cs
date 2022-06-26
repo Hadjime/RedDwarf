@@ -2,6 +2,7 @@
 using InternalAssets.Scripts.Infrastructure.Services;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using InternalAssets.Scripts.Map;
 using UnityEngine;
 using UnityEngine.InputSystem;

@@ -1,4 +1,7 @@
-﻿namespace InternalAssets.Scripts.Infrastructure.Services.Random
+﻿using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
+
+
+namespace InternalAssets.Scripts.Infrastructure.Services.Random
 {
 	public interface IRandomService: IService
 	{

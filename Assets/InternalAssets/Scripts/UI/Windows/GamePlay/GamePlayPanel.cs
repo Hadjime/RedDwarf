@@ -2,7 +2,6 @@
 using AirFishLab.ScrollingList;
 using InternalAssets.Scripts.Characters.Hero;
 using InternalAssets.Scripts.Inventory.Item;
-using InternalAssets.Scripts.UI.GamePlay;
 using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using UnityEngine.UI;

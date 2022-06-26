@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using InternalAssets.Scripts.Characters.Enemy;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using InternalAssets.Scripts.StaticData;
 using InternalAssets.Scripts.StaticData.Windows;
 using InternalAssets.Scripts.UI.Services.Windows;

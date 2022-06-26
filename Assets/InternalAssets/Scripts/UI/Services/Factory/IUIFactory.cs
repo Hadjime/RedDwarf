@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using InternalAssets.Scripts.Infrastructure.Services;
+using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using UnityEngine;
 
 

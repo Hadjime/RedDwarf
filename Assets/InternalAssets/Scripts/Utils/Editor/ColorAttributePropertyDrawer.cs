@@ -1,15 +1,8 @@
-using UnityEngine;
 using UnityEditor;
-using Object = UnityEngine.Object;
-using System.Collections.Generic;
-using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using Utils;
+using UnityEngine;
 
 
-namespace Module.General
+namespace InternalAssets.Scripts.Utils.Editor
 {
     [CustomPropertyDrawer(typeof(ColorHtmlPropertyAttribute))]
     public class ColorAttributePropertyDrawer : PropertyDrawer

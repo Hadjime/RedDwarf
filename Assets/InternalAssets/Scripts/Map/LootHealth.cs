@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using InternalAssets.Scripts.Tools;
+using InternalAssets.Scripts.Utils;
 
 
 namespace InternalAssets.Scripts.Map

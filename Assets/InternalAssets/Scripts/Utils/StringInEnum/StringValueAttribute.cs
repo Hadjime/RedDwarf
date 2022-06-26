@@ -1,7 +1,8 @@
 using System;
 using System.Reflection;
 
-namespace Utils.StringInEnum
+
+namespace InternalAssets.Scripts.Utils.StringInEnum
 {
     public enum StringEnum
     {

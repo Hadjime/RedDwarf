@@ -1,8 +1,8 @@
-﻿using InternalAssets.Scripts.Player.Data;
-using InternalAssets.Scripts.Player.PlayerFinitStateMachine;
+﻿using InternalAssets.Scripts.Characters.Hero.Data;
 using UnityEngine;
 
-namespace InternalAssets.Scripts.Player.PlayerStates
+
+namespace InternalAssets.Scripts.Characters.Hero.PlayerFinitStateMachine.PlayerStates
 {
     public class PlayerMoveState : PlayerState
     {

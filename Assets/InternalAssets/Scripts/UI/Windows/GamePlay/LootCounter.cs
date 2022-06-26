@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 
-namespace InternalAssets.Scripts.UI.GamePlay
+namespace InternalAssets.Scripts.UI.Windows.GamePlay
 {
 	public class LootCounter : MonoBehaviour
 	{
