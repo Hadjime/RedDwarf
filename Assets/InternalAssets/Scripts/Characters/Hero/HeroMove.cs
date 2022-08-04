@@ -34,6 +34,8 @@ namespace InternalAssets.Scripts.Characters.Hero
 
 		public bool IsMoving => isMoving;
 		public Vector2 CurrentNormalizeDirection => _currentNormalizeDirection;
+		public event Action<Vector2> OnFoundBarrierInDirection;
+		public event Action<Vector2> OnChangeDirection;
 
 		public void Construct(IInputService inputService)
 		{
@@ -66,14 +68,18 @@ namespace InternalAssets.Scripts.Characters.Hero
 			if (_inputService == null)
 				return;
 			
-			CustomDebug.Log($"_inputService.NormalizeMovementInput = {_inputService.NormalizeMovementInput}", Color.magenta);
-			if (_currentNormalizeDirection == Vector2.zero)
-				ResetAllFlags();
+			// if (_currentNormalizeDirection == Vector2.zero)
+			// 	ResetAllFlags();
 
 
 			if (!isMoving) //если стоим на месте
 			{
 				_currentNormalizeDirection = _inputService.NormalizeMovementInput;
+				if (_currentNormalizeDirection == Vector2.zero)
+					return;
+				
+				OnChangeDirection?.Invoke(_currentNormalizeDirection);
+				CustomDebug.Log($"_currentNormalizeDirection = {_currentNormalizeDirection}", Color.magenta);
 				RotationPlayer(_currentNormalizeDirection);
 				if (IsMoveAvailable(_currentNormalizeDirection))
 				{
@@ -156,7 +162,11 @@ namespace InternalAssets.Scripts.Characters.Hero
 			int count = Physics2D.RaycastNonAlloc(position, point, _poolRaycast, DISTANCE, _maskForMove);
 			Color rayColor = count > 0 ? Color.red : Color.green;
 			Debug.DrawRay(position, point, rayColor);
-			return count == 0;
+			if (count == 0)
+				return true;
+			
+			OnFoundBarrierInDirection?.Invoke(point);
+			return false;
 		}
 
 		private void RotationPlayer(Vector2 direction)
@@ -207,5 +217,7 @@ namespace InternalAssets.Scripts.Characters.Hero
 			progress.WorldData.PositionOnLevel =
 				new PositionOnLevel(CurrentLevel(), snapPosition.AsVectorData());
 		}
+
+		
 	}
 }
