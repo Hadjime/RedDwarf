@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroMove: {fileID: -7926546111285486872}
-  TimeoutAttack: 1
-  handAttack: 40
+  TimeoutAttack: 0.5
+  handAttack: 20
   isAttack: 0
 --- !u!114 &-7926546111285486872
 MonoBehaviour:

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace InternalAssets.Scripts.Utils
 	{
 		private static readonly Dictionary<float, WaitForSeconds> WaitForSecondsDictionary = new Dictionary<float, WaitForSeconds>();
 		private static readonly Dictionary<float, WaitForSecondsRealtime> WaitForSecondsRealTime = new Dictionary<float, WaitForSecondsRealtime>();
+		private static readonly List<WaitForSecondsRealtime> WaitForSecondsRealTimeList = new List<WaitForSecondsRealtime>();
 		
 		private static Coroutines instance
 		{
@@ -56,12 +58,29 @@ namespace InternalAssets.Scripts.Utils
 			return WaitForSecondsDictionary[time];
 		}
 
+		[Obsolete("Eсли вызывать с одинаковым временем в нескольких местах то не будет обрабатываться в каком-то месте")]
 		public static WaitForSecondsRealtime GetWaitRealTime(float time)
 		{
 			if (WaitForSecondsRealTime.TryGetValue(time, out var wait)) return wait;
 
 			WaitForSecondsRealTime[time] = new WaitForSecondsRealtime(time);
 			return WaitForSecondsRealTime[time];
+		}
+
+		public static WaitForSecondsRealtime GetWaitRealtime(float time)
+		{
+			var wait = WaitForSecondsRealTimeList.Find(w => !w.keepWaiting);
+
+			if (wait != null)
+			{
+				wait.waitTime = time;
+				return wait;
+			}
+
+			wait = new WaitForSecondsRealtime(time);
+			WaitForSecondsRealTimeList.Add(wait);
+			Debug.LogWarning($"Extend Coroutines.WaitForSecondsRealtimeList. It's size now {WaitForSecondsRealTimeList.Count}");
+			return wait;
 		}
 	}
 }
