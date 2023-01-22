@@ -21,7 +21,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, AllServices services, DiContainer diContainer)
+        public GameStateMachine(SceneLoader sceneLoader, DiContainer diContainer)
         {
             // _states = new Dictionary<Type, IExitableState>()
             // {
@@ -35,7 +35,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine
 			_states = new Dictionary<Type, IExitableState>()
 			{
 
-				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
+				[typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
 				[typeof(LoadSceneState)] = new LoadSceneState(
 					this,
 					sceneLoader,

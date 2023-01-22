@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,10 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e6589720da476459dc6dd71624b071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 429616f500a2b684d9433513058e63ed, type: 2}
+  - {fileID: 11400000, guid: efd4af400b484614299ddd13e99641d5, type: 2}
+  - {fileID: 11400000, guid: ff47624b4d64ade4dbe2aa0df7327b15, type: 2}
   _monoInstallers: []
-  _installerPrefabs:
-  - {fileID: 6120597028759624679, guid: 4a8fc819949e62842a7cb8ef2e5513ec, type: 3}
+  _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
   _buildsReflectionBakingCoverageMode: 0

@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections;
+using InternalAssets.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
 namespace InternalAssets.Scripts.Infrastructure.Scene
 {
-	public class SceneLoader
+	public class SceneLoader : ISceneLoaderProvider
 	{
 		private readonly ICoroutineRunner _coroutineRunner;
 
 
-		public SceneLoader(ICoroutineRunner coroutineRunner) =>
-			_coroutineRunner = coroutineRunner;
+		public SceneLoader() { }
 
 
 		public void Load(string name, Action onLoaded = null)
 		{
-			_coroutineRunner.StartCoroutine(LoadScene(name, onLoaded));
+			//TODO: надо прокинуть через конструктор как было раньше
+			// _coroutineRunner.StartCoroutine(LoadScene(name, onLoaded)); 
+			Coroutines.StartRoutine(LoadScene(name, onLoaded));
 		}
 		
 		

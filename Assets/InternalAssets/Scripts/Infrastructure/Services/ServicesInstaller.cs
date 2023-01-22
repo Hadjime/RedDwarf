@@ -3,6 +3,7 @@ using InternalAssets.Scripts.Infrastructure.Ads;
 using InternalAssets.Scripts.Infrastructure.AssetManagement;
 using InternalAssets.Scripts.Infrastructure.Factories;
 using InternalAssets.Scripts.Infrastructure.IAP;
+using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.Random;
@@ -17,7 +18,8 @@ using Zenject;
 
 namespace InternalAssets.Scripts.Infrastructure.Installlers
 {
-	public class AllServicesInstaller : Installer<AllServicesInstaller>
+	[CreateAssetMenu(fileName = "ServicesInstaller", menuName = "Installers/ServicesInstaller")]
+	public class ServicesInstaller : ScriptableObjectInstaller<ServicesInstaller>
 	{
 		public override void InstallBindings()
 		{
@@ -30,6 +32,8 @@ namespace InternalAssets.Scripts.Infrastructure.Installlers
 		
 		private void RegisterServices()
 		{
+			Container.BindInterfacesAndSelfTo<SceneLoader>().AsSingle();
+			
 			RegisterAdsService();
 			
 			//TODO возможно понадобится в дальнейшем и надо подумать как его сюда запихнуть

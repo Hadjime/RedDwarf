@@ -13,7 +13,7 @@ namespace InternalAssets.Scripts.Infrastructure
 
 		public Game(ICoroutineRunner coroutineRunner, DiContainer diContainer)
 		{
-			StateMachine = new GameStateMachine.GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container, diContainer);
+			StateMachine = new GameStateMachine.GameStateMachine(new SceneLoader(), diContainer);
 		}
 	}
 }
