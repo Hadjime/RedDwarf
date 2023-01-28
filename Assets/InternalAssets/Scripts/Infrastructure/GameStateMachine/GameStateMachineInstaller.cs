@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using InternalAssets.Scripts.Infrastructure.GameStateMachine.States;
+using UnityEngine;
 using Zenject;
 
 namespace InternalAssets.Scripts.Infrastructure.GameStateMachine
@@ -8,7 +9,12 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine
     {
         public override void InstallBindings()
         {
-            Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
+            Container.BindInterfacesTo<GameStateMachine>().AsSingle();
+
+            Container.BindInterfacesTo<BootstrapState>().AsSingle();
+            Container.BindInterfacesTo<LoadSceneState>().AsSingle();
+            Container.BindInterfacesTo<LoadProgressState>().AsSingle();
+            Container.BindInterfacesTo<GameLoopState>().AsSingle();
         }
     }
 }

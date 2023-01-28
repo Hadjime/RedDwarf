@@ -1,17 +1,5 @@
-﻿using InternalAssets.Scripts.Cheats;
-using InternalAssets.Scripts.Infrastructure.Ads;
-using InternalAssets.Scripts.Infrastructure.AssetManagement;
-using InternalAssets.Scripts.Infrastructure.Factories;
-using InternalAssets.Scripts.Infrastructure.IAP;
-using InternalAssets.Scripts.Infrastructure.Scene;
-using InternalAssets.Scripts.Infrastructure.Services.Input;
-using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
-using InternalAssets.Scripts.Infrastructure.Services.Random;
-using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
-using InternalAssets.Scripts.Infrastructure.Services.StaticData;
-using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
-using InternalAssets.Scripts.UI.Services.Factory;
-using InternalAssets.Scripts.UI.Services.Windows;
+﻿using InternalAssets.Scripts.Infrastructure.Scene;
+using Zenject;
 
 
 namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
@@ -21,16 +9,14 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 		private const string InitialSceneName = "Initial";
 		
 		
-        private readonly GameStateMachine _stateMachine;
+        private readonly LazyInject<IGameStateMachine> _gameStateMachine;
 		private readonly SceneLoader _sceneLoader;
 
 
-		public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader)
+		public BootstrapState(LazyInject<IGameStateMachine> gameStateMachine, SceneLoader sceneLoader)
 		{
-			_stateMachine = stateMachine;
+			_gameStateMachine = gameStateMachine;
 			_sceneLoader = sceneLoader;
-
-			// RegisterServices();
 		}
 
         public void Enter()
@@ -46,7 +32,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 
 
 		private void EnterInLoadLevel() =>
-			_stateMachine.Enter<LoadProgressState>();
+			_gameStateMachine.Value.Enter<LoadProgressState>();
 
 
 	// 	private void RegisterServices()

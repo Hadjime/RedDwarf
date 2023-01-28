@@ -13,6 +13,7 @@ using InternalAssets.Scripts.UI.Windows.GamePlay;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using Zenject;
 
 
 namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
@@ -22,7 +23,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 		private const string Enemyspawner = "EnemySpawner";
 
 
-		private readonly GameStateMachine _stateMachine;
+		private readonly LazyInject<IGameStateMachine> _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly IGameFactory _gameFactory;
         private readonly IPersistentProgressService _progressService;
@@ -33,7 +34,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 
 
 		public LoadSceneState(
-				GameStateMachine stateMachine,
+				LazyInject<IGameStateMachine> gameStateMachine,
 				SceneLoader sceneLoader,
 				IGameFactory gameFactory,
 				IPersistentProgressService progressService,
@@ -42,7 +43,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 				IInputService inputService
 			)
         {
-            _stateMachine = stateMachine;
+            _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _gameFactory = gameFactory;
             _progressService = progressService;
@@ -70,7 +71,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
             InformProgressReaders();
 			
 			if (hero.TryGetComponent(out HeroDeath heroDeath))
-				_stateMachine.Enter<GameLoopState, HeroDeath>(heroDeath);
+				_gameStateMachine.Value.Enter<GameLoopState, HeroDeath>(heroDeath);
         }
 
 

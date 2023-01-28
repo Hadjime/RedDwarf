@@ -1,14 +1,15 @@
 ﻿using InternalAssets.Scripts.Characters.Hero;
+using Zenject;
 
 
 namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 {
     public class GameLoopState : IPayloadState<HeroDeath>
     {
-        private readonly GameStateMachine _gameStateMachine;
+        private readonly LazyInject<IGameStateMachine> _gameStateMachine;
 		private HeroDeath _heroDeath;
 
-		public GameLoopState(GameStateMachine gameStateMachine)
+		public GameLoopState(LazyInject<IGameStateMachine> gameStateMachine)
         {
             _gameStateMachine = gameStateMachine;
         }
@@ -25,6 +26,6 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
         }
 
 		private void OnHeroDead() =>
-			_gameStateMachine.Enter<BootstrapState>();
+			_gameStateMachine.Value.Enter<BootstrapState>();
 	}
 }

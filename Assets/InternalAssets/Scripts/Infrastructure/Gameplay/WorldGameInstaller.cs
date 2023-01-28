@@ -8,7 +8,6 @@ namespace InternalAssets.Scripts.Infrastructure.Gameplay
     {
         public override void InstallBindings()
         {
-            // Container.BindInterfacesTo<WorldGame>();
             Container.BindInterfacesAndSelfTo<WorldGame>().AsSingle();
         }
     }

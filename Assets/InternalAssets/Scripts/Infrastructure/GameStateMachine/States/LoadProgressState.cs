@@ -1,17 +1,19 @@
 ﻿using InternalAssets.Scripts.Data;
 using InternalAssets.Scripts.Infrastructure.Services.PersistentProgress;
 using InternalAssets.Scripts.Infrastructure.Services.SaveLoad;
+using Zenject;
 
 
 namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
 {
     public class LoadProgressState : IState
     {
-        private readonly GameStateMachine _gameStateMachine;
+        private readonly LazyInject<IGameStateMachine> _gameStateMachine;
         private readonly IPersistentProgressService _progressService;
         private readonly ISaveLoadService _saveLoadService;
 
-        public LoadProgressState(GameStateMachine gameStateMachine, IPersistentProgressService progressService, ISaveLoadService saveLoadService)
+        
+        public LoadProgressState(LazyInject<IGameStateMachine> gameStateMachine, IPersistentProgressService progressService, ISaveLoadService saveLoadService)
         {
             _gameStateMachine = gameStateMachine;
             _progressService = progressService;
@@ -21,7 +23,7 @@ namespace InternalAssets.Scripts.Infrastructure.GameStateMachine.States
         public void Enter()
         {
             LoadProgressOrInitNew();
-            _gameStateMachine.Enter<LoadSceneState, string>(_progressService.Progress.WorldData.PositionOnLevel.Level);
+            _gameStateMachine.Value.Enter<LoadSceneState, string>(_progressService.Progress.WorldData.PositionOnLevel.Level);
         }
 
         public void Exit()

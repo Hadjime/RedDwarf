@@ -15,8 +15,7 @@ using InternalAssets.Scripts.Utils.Log;
 using UnityEngine;
 using Zenject;
 
-
-namespace InternalAssets.Scripts.Infrastructure.Installlers
+namespace InternalAssets.Scripts.Infrastructure.Services
 {
 	[CreateAssetMenu(fileName = "ServicesInstaller", menuName = "Installers/ServicesInstaller")]
 	public class ServicesInstaller : ScriptableObjectInstaller<ServicesInstaller>
@@ -35,10 +34,6 @@ namespace InternalAssets.Scripts.Infrastructure.Installlers
 			Container.BindInterfacesAndSelfTo<SceneLoader>().AsSingle();
 			
 			RegisterAdsService();
-			
-			//TODO возможно понадобится в дальнейшем и надо подумать как его сюда запихнуть
-			// _services.RegisterSingle<IGameStateMachine>(_stateMachine);
-			
 			RegisterAssetProvider();
 
 			Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();

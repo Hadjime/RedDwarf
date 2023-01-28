@@ -1,4 +1,6 @@
-﻿using InternalAssets.Scripts.Infrastructure.Scene;
+﻿using System.Collections.Generic;
+using InternalAssets.Scripts.Infrastructure.GameStateMachine;
+using InternalAssets.Scripts.Infrastructure.Scene;
 using InternalAssets.Scripts.Infrastructure.Services.Input;
 using InternalAssets.Scripts.Infrastructure.Services.StaticDI;
 using Zenject;
@@ -13,7 +15,7 @@ namespace InternalAssets.Scripts.Infrastructure
 
 		public Game(ICoroutineRunner coroutineRunner, DiContainer diContainer)
 		{
-			StateMachine = new GameStateMachine.GameStateMachine(new SceneLoader(), diContainer);
+			// StateMachine = new GameStateMachine.GameStateMachine(new SceneLoader(), diContainer, new List<IState>());
 		}
 	}
 }
